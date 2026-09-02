@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy-950: #060b16;
+  --color-navy-900: #0b1424;
+  --color-navy-800: #122038;
+  --color-navy-700: #1c3055;
+  --color-navy-600: #2a4472;
+  --color-navy-500: #3d5c92;
+
+  --color-gold-600: #a8813a;
+  --color-gold-500: #c69d4a;
+  --color-gold-400: #d9b45f;
+  --color-gold-300: #e8d199;
+
+  --color-parchment: #faf8f4;
+  --color-sand: #efeae0;
+  --color-sand-dark: #ddd5c6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, "Times New Roman", serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-parchment);
+  color: var(--color-navy-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Anchored sections sit below the sticky nav when jumped to. */
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
