@@ -1,212 +1,266 @@
 [
   {
-    "slug": "amara-okonkwo",
-    "name": "Amara Okonkwo",
-    "role": "President",
-    "cohort": "exec",
-    "year": "Fourth Year",
+    "slug": "mason-yu",
+    "name": "Mason Yu",
+    "role": null,
+    "isExec": null,
+    "year": 3,
     "major": "Business Economics",
-    "hometown": "Sacramento, CA",
-    "photo": "/members/amara-okonkwo.jpg",
-    "bio": "Runs chapter strategy and the exec board. Spent last summer in investment banking and came back convinced the recruiting process is far more learnable than it looks from the outside.",
-    "interests": ["Investment banking", "Chapter operations", "Distance running", "Jollof debates"],
-    "funFacts": ["Has read the same book about airlines four times.", "Can name every campus coffee cart by walking distance.", "Once pitched a stock to a room of 200 people with no slides."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "president@tritonbusinesssociety.org"
+    "hometown": "Northridge, CA",
+    "careerInterests": [
+      "Marketing",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Snowboarding",
+      "Sketching",
+      "Eating",
+      "Sleeping",
+      "Frolicking in green meadows"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "diego-marquez",
-    "name": "Diego Márquez",
-    "role": "VP, Internal",
-    "cohort": "exec",
-    "year": "Third Year",
-    "major": "Management Science",
-    "hometown": "Chula Vista, CA",
-    "photo": "/members/diego-marquez.jpg",
-    "bio": "Owns everything member-facing: pledge education, big-little pairings, and the retreat that somehow gets bigger every year.",
-    "interests": ["Product management", "Pickup soccer", "Film photography", "Taco rankings"],
-    "funFacts": ["Maintains a spreadsheet ranking 60+ taco shops in San Diego County.", "Learned to code the week before a hackathon and placed second.", "Sleeps exactly six hours and insists this is fine."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "internal@tritonbusinesssociety.org"
+    "slug": "christopher-cappello",
+    "name": "Christopher Cappello",
+    "role": null,
+    "isExec": null,
+    "year": 3,
+    "major": "Business Economics, Political Science minor",
+    "hometown": "San Diego, CA",
+    "careerInterests": [
+      "M&A / Venture Capital Attorney",
+      "U.S. Senator",
+      "President"
+    ],
+    "hobbies": [
+      "Electronic music production",
+      "Body surfing",
+      "Matcha",
+      "Hurdling",
+      "Music searching",
+      "Volcano surfing"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "priya-raghunathan",
-    "name": "Priya Raghunathan",
-    "role": "VP, External",
-    "cohort": "exec",
-    "year": "Fourth Year",
-    "major": "Economics & Political Science",
-    "hometown": "Fremont, CA",
-    "photo": "/members/priya-raghunathan.jpg",
-    "bio": "Handles firm relationships, the speaker series, and the winter trek. If a recruiter knows the chapter by name, that is usually why.",
-    "interests": ["Management consulting", "Policy", "Competitive debate", "Long email drafts"],
-    "funFacts": ["Cold-emailed 90 firms in one quarter and heard back from 31.", "Speaks four languages, three of them badly by her own account.", "Has never once lost an argument about tipping."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "external@tritonbusinesssociety.org"
+    "slug": "arjun-dhruv",
+    "name": "Arjun Dhruv",
+    "role": "Webmaster",
+    "isExec": true,
+    "year": 2,
+    "major": "Mathematics and Computer Science",
+    "hometown": "Saratoga, CA",
+    "careerInterests": [
+      "Software Engineering",
+      "Machine Learning",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Basketball",
+      "Pickleball",
+      "Music",
+      "Harry Potter",
+      "Fantasy Football"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "jonah-feldman",
-    "name": "Jonah Feldman",
-    "role": "Director of Finance",
-    "cohort": "exec",
-    "year": "Third Year",
-    "major": "Mathematics–Economics",
-    "hometown": "Portland, OR",
-    "photo": "/members/jonah-feldman.jpg",
-    "bio": "Keeps the books and runs the student-managed fund. Will explain the difference between IRR and MOIC to anyone who stands still long enough.",
-    "interests": ["Public markets", "Quantitative research", "Chess", "Bread baking"],
-    "funFacts": ["Beat the chapter's S&P benchmark two quarters running, then lost to it badly.", "Bakes sourdough on a strict Sunday schedule.", "Rated 1900 online, 1400 over the board, and bitter about the gap."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "finance@tritonbusinesssociety.org"
+    "slug": "dilora-obilo",
+    "name": "Dilora Obilo",
+    "role": null,
+    "isExec": null,
+    "year": 3,
+    "major": "Business Economics, Finance minor",
+    "hometown": "Houston, TX",
+    "careerInterests": [
+      "Asset Management",
+      "Wealth Management"
+    ],
+    "hobbies": [
+      "Shopping",
+      "Traveling",
+      "Pilates",
+      "Reading",
+      "Taking pics"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "mei-lin-chow",
-    "name": "Mei-Lin Chow",
-    "role": "Director of Professional Development",
-    "cohort": "exec",
-    "year": "Third Year",
-    "major": "Cognitive Science, HCI",
-    "hometown": "San Jose, CA",
-    "photo": "/members/mei-lin-chow.jpg",
-    "bio": "Designs the quarterly curriculum — résumé clinics, mock interviews, case workshops — and personally sits in on more practice rounds than anyone.",
-    "interests": ["UX research", "Behavioral economics", "Ceramics", "Interview prep"],
-    "funFacts": ["Has conducted over 200 mock interviews.", "Threw 40 mugs last quarter and gave away 39.", "Keeps a running list of the worst interview questions ever asked."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "prodev@tritonbusinesssociety.org"
+    "slug": "savun-takhar",
+    "name": "Savun Takhar",
+    "role": null,
+    "isExec": null,
+    "year": 4,
+    "major": "Mathematics and Economics",
+    "hometown": "Union City, CA",
+    "careerInterests": [
+      "Consulting",
+      "Product Management"
+    ],
+    "hobbies": [
+      "Hiking",
+      "Sports",
+      "Food",
+      "Legos",
+      "Sneaker collecting"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "tobias-almeida",
-    "name": "Tobias Almeida",
-    "role": "Director of Marketing",
-    "cohort": "exec",
-    "year": "Second Year",
-    "major": "Communication & Design",
-    "hometown": "Miami, FL",
-    "photo": "/members/tobias-almeida.jpg",
-    "bio": "Runs the brand, the socials, and the rush campaign. Rebuilt the chapter's visual identity over one winter break.",
-    "interests": ["Brand strategy", "Motion design", "Vinyl collecting", "Street photography"],
-    "funFacts": ["Grew the chapter Instagram from 400 to 5,000 in two quarters.", "Owns more records than shirts.", "Names every design file after a song."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "marketing@tritonbusinesssociety.org"
+    "slug": "vritti-godani",
+    "name": "Vritti Godani",
+    "role": null,
+    "isExec": null,
+    "year": 4,
+    "major": "Business Economics",
+    "hometown": "Arcadia, CA",
+    "careerInterests": [
+      "Consulting",
+      "Marketing"
+    ],
+    "hobbies": [
+      "NYT Mini games",
+      "Workout classes",
+      "Dancing"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "nia-bennett",
-    "name": "Nia Bennett",
-    "role": "Active Member",
-    "cohort": "active",
-    "year": "Second Year",
+    "slug": "carrie-chen",
+    "name": "Carrie Chen",
+    "role": null,
+    "isExec": null,
+    "year": 2,
+    "major": "Cognitive Science (Design & Interaction)",
+    "hometown": "Diamond Bar, CA",
+    "careerInterests": [
+      "Project Management",
+      "Product Design",
+      "UI/UX Design",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Reading and writing",
+      "Caffeine",
+      "Making music",
+      "Fried chicken enthusiast"
+    ],
+    "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "aarush-kochar",
+    "name": "Aarush Kochar",
+    "role": null,
+    "isExec": null,
+    "year": 2,
+    "major": "Real Estate & Development, Finance",
+    "hometown": "Corona, CA",
+    "careerInterests": [
+      "Real Estate Development",
+      "Real Estate Investment"
+    ],
+    "hobbies": [
+      "Gym",
+      "Traveling",
+      "Guitar",
+      "Reading",
+      "Swimming",
+      "Cafe hopping"
+    ],
+    "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "jada-vera",
+    "name": "Jada Vera",
+    "role": null,
+    "isExec": null,
+    "year": 4,
     "major": "Business Psychology",
-    "hometown": "Oakland, CA",
-    "photo": "/members/nia-bennett.jpg",
-    "bio": "Joined in the fall class and immediately signed up for two consulting projects at once.",
-    "interests": ["Brand consulting", "Organizational behavior", "Spoken word", "Thrifting"],
-    "funFacts": ["Performed at a campus open mic three days after moving in.", "Has never paid full price for a blazer.", "Reads two books at a time, one fiction and one not."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "members@tritonbusinesssociety.org"
+    "hometown": "Long Beach, CA",
+    "careerInterests": [
+      "Product Management",
+      "Sales & Operations"
+    ],
+    "hobbies": [
+      "Trying new foods",
+      "Going to new places",
+      "Being spontaneous",
+      "Braiding Mason's wig"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "hiro-tanaka",
-    "name": "Hiro Tanaka",
-    "role": "Active Member",
-    "cohort": "active",
-    "year": "Third Year",
-    "major": "Data Science",
-    "hometown": "Honolulu, HI",
-    "photo": "/members/hiro-tanaka.jpg",
-    "bio": "Builds the internal tooling nobody asked for and everybody now depends on, including the chapter's attendance dashboard.",
-    "interests": ["Quantitative trading", "Machine learning", "Surfing", "Mechanical keyboards"],
-    "funFacts": ["Surfs before 7am class more often than not.", "Built the chapter's attendance dashboard in a weekend.", "Has soldered three keyboards and used one."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "members@tritonbusinesssociety.org"
+    "slug": "nyle-santiago-millan",
+    "name": "Nyle Santiago Millan",
+    "role": null,
+    "isExec": null,
+    "year": 4,
+    "major": "Urban Studies & Planning",
+    "hometown": "Sylmar, CA",
+    "careerInterests": [
+      "Real Estate",
+      "Development"
+    ],
+    "hobbies": [
+      "Gym",
+      "Videography",
+      "Learning songs in Mandarin",
+      "Foodmaxing"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "camila-reyes",
-    "name": "Camila Reyes",
-    "role": "Active Member",
-    "cohort": "active",
-    "year": "Fourth Year",
-    "major": "International Business",
-    "hometown": "Tijuana, MX",
-    "photo": "/members/camila-reyes.jpg",
-    "bio": "Splits time between the consulting practice and an internship at a cross-border logistics firm.",
-    "interests": ["Supply chain", "Cross-border trade", "Salsa dancing", "Cooking"],
-    "funFacts": ["Commuted across the border for two years of high school.", "Teaches a beginner salsa class on Sundays.", "Makes mole from scratch, which takes her most of a Saturday."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "members@tritonbusinesssociety.org"
+    "slug": "dina-choi",
+    "name": "Dina Choi",
+    "role": null,
+    "isExec": null,
+    "year": 4,
+    "major": "Business Economics & Finance",
+    "hometown": "Cupertino, CA",
+    "careerInterests": [
+      "Finance",
+      "Venture Capital",
+      "Product Management"
+    ],
+    "hobbies": [
+      "Hiking",
+      "Reading",
+      "Ripstiking",
+      "Making alternative soundtracks for films"
+    ],
+    "photo": null,
+    "linkedin": null
   },
   {
-    "slug": "elias-duarte",
-    "name": "Elias Duarte",
-    "role": "Active Member",
-    "cohort": "active",
-    "year": "Second Year",
-    "major": "Real Estate & Development",
-    "hometown": "Phoenix, AZ",
-    "photo": "/members/elias-duarte.jpg",
-    "bio": "Came in wanting to do real estate private equity and has not wavered once since the first info session.",
-    "interests": ["Real estate", "Urban planning", "Rock climbing", "Architecture"],
-    "funFacts": ["Can estimate a building's floor count from a photo, usually correctly.", "Climbs V6 and claims V7 on a good day.", "Has toured 40 buildings downtown for fun."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "members@tritonbusinesssociety.org"
-  },
-  {
-    "slug": "rania-haddad",
-    "name": "Rania Haddad",
-    "role": "Active Member",
-    "cohort": "active",
-    "year": "Third Year",
-    "major": "Public Health & Economics",
-    "hometown": "Dearborn, MI",
-    "photo": "/members/rania-haddad.jpg",
-    "bio": "Leads the pro-bono engagement with a South Bay health nonprofit and is aiming at healthcare consulting.",
-    "interests": ["Healthcare strategy", "Health policy", "Baking", "Arabic poetry"],
-    "funFacts": ["Ran a vaccine clinic drive that registered 600 people.", "Brings knafeh to every chapter potluck.", "Translates poetry for fun and refuses to show anyone."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "members@tritonbusinesssociety.org"
-  },
-  {
-    "slug": "grant-whitaker",
-    "name": "Grant Whitaker",
-    "role": "Active Member",
-    "cohort": "active",
-    "year": "Fourth Year",
-    "major": "Management Science",
-    "hometown": "Denver, CO",
-    "photo": "/members/grant-whitaker.jpg",
-    "bio": "Returning summer analyst who now spends most Thursdays running mock interviews for the new class.",
-    "interests": ["Investment banking", "Skiing", "Golf", "Interview coaching"],
-    "funFacts": ["Has done 60+ mock interviews on the interviewer side.", "Skis 30 days a year and has the GPA dip to prove it.", "Owns exactly one tie and it has never been retired."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "members@tritonbusinesssociety.org"
-  },
-  {
-    "slug": "yuki-sato",
-    "name": "Yuki Sato",
-    "role": "Active Member",
-    "cohort": "active",
-    "year": "Second Year",
-    "major": "Computer Science & Business",
-    "hometown": "Seattle, WA",
-    "photo": "/members/yuki-sato.jpg",
-    "bio": "Product-minded, joined to get closer to the business side of software, and has been shadowing the consulting practice since.",
-    "interests": ["Product management", "Startups", "Jazz piano", "Board games"],
-    "funFacts": ["Shipped an app that 300 classmates actually used.", "Plays piano at the Che Café open mic.", "Owns 40 board games and has taught every one to the chapter."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "members@tritonbusinesssociety.org"
-  },
-  {
-    "slug": "sasha-volkov",
-    "name": "Sasha Volkov",
-    "role": "Active Member",
-    "cohort": "active",
-    "year": "Third Year",
-    "major": "Economics",
-    "hometown": "Chicago, IL",
-    "photo": "/members/sasha-volkov.jpg",
-    "bio": "Transferred in last year, joined the winter class, and now runs point on the chapter's alumni outreach list.",
-    "interests": ["Private equity", "Economic history", "Powerlifting", "Cold plunges"],
-    "funFacts": ["Transferred from community college and says it was the best decision available.", "Deadlifts more than anyone will admit to knowing.", "Has convinced eleven members to try a cold plunge."],
-    "linkedin": "https://linkedin.com/in/placeholder",
-    "email": "members@tritonbusinesssociety.org"
+    "slug": "richard-li",
+    "name": "Richard Li",
+    "role": null,
+    "isExec": null,
+    "year": 2,
+    "major": "Mathematics and Economics",
+    "hometown": "Irvine, CA",
+    "careerInterests": [
+      "Finance",
+      "Burger flipper"
+    ],
+    "hobbies": [
+      "Lifting",
+      "Basketball",
+      "Cologne",
+      "Sports statistics analysis"
+    ],
+    "photo": null,
+    "linkedin": null
   }
 ]

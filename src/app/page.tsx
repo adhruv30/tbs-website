@@ -1,8 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { CompanyGrid } from '@/components/company-grid'
 import { HeroSlideshow } from '@/components/hero-slideshow'
-import { about, hero, heroImages, letter, pillars } from '@/data/site'
+import { MemoriesGrid } from '@/components/memories-grid'
+import {
+  about,
+  companies,
+  hero,
+  heroImages,
+  letter,
+  memories,
+  pillars,
+  whereWereAt,
+} from '@/data/site'
 
 export default function HomePage() {
   return (
@@ -10,7 +21,9 @@ export default function HomePage() {
       <Hero />
       <Pillars />
       <About />
+      <WhereWereAt />
       <PresidentLetter />
+      <OurMemories />
     </>
   )
 }
@@ -87,10 +100,7 @@ function Pillars() {
               <h3 className="mt-4 font-serif text-xl leading-snug font-semibold text-navy-900">
                 {pillar.title}
               </h3>
-              <p className="mt-2 text-sm font-medium text-navy-700">
-                {pillar.summary}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-navy-700/70">
+              <p className="mt-3 text-sm leading-relaxed text-navy-700/75">
                 {pillar.body}
               </p>
             </li>
@@ -146,6 +156,28 @@ function About() {
   )
 }
 
+function WhereWereAt() {
+  return (
+    <section className="bg-parchment py-20 sm:py-28">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <p className="text-xs font-semibold tracking-[0.22em] text-gold-600 uppercase">
+          {whereWereAt.eyebrow}
+        </p>
+        <h2 className="mt-4 font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
+          {whereWereAt.heading}
+        </h2>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-navy-700/75 text-pretty sm:text-lg">
+          {whereWereAt.intro}
+        </p>
+
+        <div className="mt-12 sm:mt-16">
+          <CompanyGrid items={companies} />
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function PresidentLetter() {
   return (
     <section className="bg-sand py-20 sm:py-28">
@@ -158,6 +190,9 @@ function PresidentLetter() {
         </h2>
 
         <div className="mt-10 space-y-6 border-l-2 border-gold-500/40 pl-6 sm:pl-8">
+          <p className="text-base leading-relaxed text-navy-800/85 sm:text-lg">
+            {letter.greeting}
+          </p>
           {letter.paragraphs.map((paragraph) => (
             <p
               key={paragraph.slice(0, 32)}
@@ -185,6 +220,28 @@ function PresidentLetter() {
             </p>
             <p className="text-sm text-gold-600">{letter.author.role}</p>
           </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function OurMemories() {
+  return (
+    <section className="bg-parchment py-20 sm:py-28">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <p className="text-xs font-semibold tracking-[0.22em] text-gold-600 uppercase">
+          {memories.eyebrow}
+        </p>
+        <h2 className="mt-4 font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
+          {memories.heading}
+        </h2>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-navy-700/75 text-pretty sm:text-lg">
+          {memories.intro}
+        </p>
+
+        <div className="mt-10 sm:mt-12">
+          <MemoriesGrid emptyNote={memories.emptyNote} />
         </div>
       </div>
     </section>

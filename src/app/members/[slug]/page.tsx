@@ -1,15 +1,33 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { getMember, members } from '@/data/members'
+import { MemberAvatar } from '@/components/member-avatar'
+import { SocialIcon } from '@/components/social-icons'
+import {
+  classLabel,
+  cohortOf,
+  getMember,
+  members,
+  type Member,
+} from '@/data/members'
 
 // Every profile is known at build time, so anything else is a 404.
 export const dynamicParams = false
 
 export function generateStaticParams() {
   return members.map((member) => ({ slug: member.slug }))
+}
+
+/** One-line summary built from whichever fields this member actually has. */
+function describe(member: Member): string {
+  return [classLabel(member.year), member.major, member.hometown]
+    .filter(Boolean)
+    .join(' · ')
+}
+
+function slugifyLabel(label: string): string {
+  return label.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 }
 
 export async function generateMetadata(
@@ -19,13 +37,16 @@ export async function generateMetadata(
   const member = getMember(slug)
   if (!member) return {}
 
+  const title = member.role ? `${member.name} — ${member.role}` : member.name
+  const description = describe(member)
+
   return {
-    title: `${member.name} — ${member.role}`,
-    description: member.bio,
+    title,
+    description,
     openGraph: {
-      title: `${member.name} — ${member.role}`,
-      description: member.bio,
-      images: [{ url: member.photo }],
+      title,
+      description,
+      ...(member.photo ? { images: [{ url: member.photo }] } : {}),
     },
   }
 }
@@ -37,10 +58,25 @@ export default async function MemberProfilePage(
   const member = getMember(slug)
   if (!member) notFound()
 
+  const year = classLabel(member.year)
+
+  // Null / empty fields never enter these lists, so they cannot render a
+  // stray label with no value.
+  const facts = [
+    ...(year ? [{ label: 'Class', value: year }] : []),
+    { label: 'Major', value: member.major },
+    { label: 'Hometown', value: member.hometown },
+  ]
+
+  const lists = [
+    { label: 'Career interests', items: member.careerInterests },
+    { label: 'Hobbies', items: member.hobbies },
+  ].filter((list) => list.items.length > 0)
+
   return (
-    <article className="pb-20 sm:pb-28">
-      <div className="bg-navy-950 pt-24 pb-32 sm:pt-28 sm:pb-40">
-        <div className="mx-auto w-full max-w-4xl px-5 sm:px-8">
+    <article>
+      <div className="bg-navy-950 pt-10 pb-24 sm:pt-12 sm:pb-28">
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
           <Link
             href="/members"
             className="inline-flex items-center gap-2 text-sm text-parchment/60 transition-colors hover:text-gold-400"
@@ -60,110 +96,86 @@ export default async function MemberProfilePage(
         </div>
       </div>
 
-      <div className="mx-auto -mt-24 w-full max-w-4xl px-5 sm:-mt-32 sm:px-8">
-        <div className="grid gap-8 sm:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] sm:items-end sm:gap-10">
-          <div className="relative aspect-[4/5] w-full max-w-[15rem] overflow-hidden rounded-lg border border-sand-dark bg-navy-900 shadow-lg">
-            <Image
-              src={member.photo}
-              alt={`Portrait of ${member.name}`}
-              fill
-              sizes="(min-width: 640px) 240px, 90vw"
-              preload
-              className="object-cover"
+      <div className="mx-auto -mt-16 w-full max-w-6xl px-5 pb-16 sm:-mt-24 sm:px-8 sm:pb-24">
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,23rem)_minmax(0,1fr)] lg:gap-8">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[17rem] overflow-hidden rounded-xl border border-sand-dark bg-navy-900 shadow-xl lg:sticky lg:top-28 lg:mx-0 lg:max-w-none">
+            <MemberAvatar
+              member={member}
+              sizes="(min-width: 1024px) 368px, (min-width: 640px) 272px, 70vw"
+              preload={Boolean(member.photo)}
+              initialsClassName="text-6xl lg:text-7xl"
             />
           </div>
 
-          <div className="sm:pb-2">
-            <p className="text-xs font-semibold tracking-[0.22em] text-gold-600 uppercase">
-              {member.cohort === 'exec' ? 'Executive Board' : 'Active Member'}
-            </p>
-            <h1 className="mt-3 font-serif text-4xl leading-tight font-bold tracking-tight text-balance sm:text-5xl">
-              {member.name}
-            </h1>
-            <p className="mt-3 font-serif text-lg text-navy-700 sm:text-xl">
-              {member.role}
-            </p>
+          <div className="rounded-xl border border-sand-dark bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+            <span className="inline-flex rounded-full bg-navy-900 px-3.5 py-1.5 text-[0.65rem] font-semibold tracking-[0.18em] text-gold-400 uppercase">
+              {cohortOf(member) === 'exec' ? 'Executive Board' : 'Active Member'}
+            </span>
 
-            {member.linkedin || member.email ? (
-              <div className="mt-6 flex flex-wrap gap-3">
-                {member.linkedin ? (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="rounded-full border border-navy-900/20 px-5 py-2 text-sm font-medium transition-colors hover:border-navy-900 hover:bg-navy-900 hover:text-parchment"
-                  >
-                    LinkedIn
-                  </a>
-                ) : null}
-                {member.email ? (
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="rounded-full border border-navy-900/20 px-5 py-2 text-sm font-medium transition-colors hover:border-navy-900 hover:bg-navy-900 hover:text-parchment"
-                  >
-                    Email
-                  </a>
-                ) : null}
-              </div>
-            ) : null}
-          </div>
-        </div>
-
-        <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-y border-sand-dark py-8 sm:mt-14 sm:grid-cols-3">
-          {[
-            { label: 'Year', value: member.year },
-            { label: 'Major', value: member.major },
-            { label: 'Hometown', value: member.hometown },
-          ].map((field) => (
-            <div key={field.label}>
-              <dt className="text-xs font-semibold tracking-[0.18em] text-navy-700/50 uppercase">
-                {field.label}
-              </dt>
-              <dd className="mt-2 text-base text-navy-900">{field.value}</dd>
-            </div>
-          ))}
-        </dl>
-
-        <p className="mt-10 max-w-2xl text-lg leading-relaxed text-navy-800/85 text-pretty">
-          {member.bio}
-        </p>
-
-        <div className="mt-12 grid gap-10 sm:mt-16 sm:grid-cols-2 sm:gap-12">
-          <section aria-labelledby="interests-heading">
-            <h2
-              id="interests-heading"
-              className="font-serif text-xl font-semibold text-navy-900"
-            >
-              Interests
-            </h2>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {member.interests.map((interest) => (
-                <li
-                  key={interest}
-                  className="rounded-full bg-sand px-4 py-2 text-sm text-navy-800"
+            <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
+              <h1 className="font-serif text-4xl leading-[1.1] font-bold tracking-tight text-balance text-navy-900 sm:text-5xl">
+                {member.name}
+              </h1>
+              {member.linkedin ? (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sand text-navy-800 transition-colors hover:bg-navy-900 hover:text-gold-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-700"
                 >
-                  {interest}
-                </li>
-              ))}
-            </ul>
-          </section>
+                  <SocialIcon name="linkedin" className="h-5 w-5" />
+                  <span className="sr-only">{member.name} on LinkedIn</span>
+                </a>
+              ) : null}
+            </div>
 
-          <section aria-labelledby="fun-facts-heading">
-            <h2
-              id="fun-facts-heading"
-              className="font-serif text-xl font-semibold text-navy-900"
-            >
-              Fun facts
-            </h2>
-            <ul className="mt-5 space-y-4">
-              {member.funFacts.map((fact) => (
-                <li key={fact} className="flex gap-3 text-navy-800/85">
-                  <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
-                  <span className="text-sm leading-relaxed sm:text-base">{fact}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
+            {member.role ? (
+              <p className="mt-3 font-serif text-lg text-gold-600 sm:text-xl">
+                {member.role}
+              </p>
+            ) : null}
+
+            <div className="mt-8 grid gap-x-10 gap-y-8 border-t border-sand-dark pt-8 sm:grid-cols-2">
+              <dl className="space-y-6">
+                {facts.map((fact) => (
+                  <div key={fact.label}>
+                    <dt className="text-[0.7rem] font-semibold tracking-[0.18em] text-navy-700/50 uppercase">
+                      {fact.label}
+                    </dt>
+                    <dd className="mt-1.5 text-base text-navy-900">{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              {lists.length > 0 ? (
+                <div className="space-y-6">
+                  {lists.map((list) => {
+                    const id = `${slugifyLabel(list.label)}-heading`
+                    return (
+                      <section key={list.label} aria-labelledby={id}>
+                        <h2
+                          id={id}
+                          className="text-[0.7rem] font-semibold tracking-[0.18em] text-navy-700/50 uppercase"
+                        >
+                          {list.label}
+                        </h2>
+                        <ul className="mt-2.5 flex flex-wrap gap-2">
+                          {list.items.map((item) => (
+                            <li
+                              key={item}
+                              className="rounded-full bg-sand px-3.5 py-1.5 text-sm text-navy-800"
+                            >
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    )
+                  })}
+                </div>
+              ) : null}
+            </div>
+          </div>
         </div>
       </div>
     </article>

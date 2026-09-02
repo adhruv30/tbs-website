@@ -14,7 +14,6 @@ export type Social = {
 
 export type Pillar = {
   title: string
-  summary: string
   body: string
 }
 
@@ -26,7 +25,7 @@ export const site = {
   description:
     'Triton Business Society is a professional business fraternity at UC San Diego building the next generation of principled, ambitious leaders.',
   url: 'https://tritonbusinesssociety.org',
-  email: 'hello@tritonbusinesssociety.org',
+  email: 'tritonbusinesssociety@gmail.com',
   location: 'Rady School of Management, UC San Diego',
 } as const
 
@@ -39,15 +38,15 @@ export const navLinks: NavLink[] = [
 export const socials: Social[] = [
   {
     label: 'Instagram',
-    href: 'https://instagram.com/tritonbusinesssociety',
+    href: 'https://www.instagram.com/tritonbusinesssociety/',
     icon: 'instagram',
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/company/triton-business-society',
+    href: 'https://www.linkedin.com/company/tritonbusinesssociety',
     icon: 'linkedin',
   },
-  { label: 'Email', href: 'mailto:hello@tritonbusinesssociety.org', icon: 'email' },
+  { label: 'Email', href: `mailto:${site.email}`, icon: 'email' },
 ]
 
 /**
@@ -62,7 +61,7 @@ export const heroImages = [
 ] as const
 
 export const hero = {
-  eyebrow: 'Established 2014 · UC San Diego',
+  eyebrow: 'UC San Diego',
   title: 'Triton Business Society',
   subtitle:
     'A professional business fraternity built on preparation, character, and the people who push you further than you would go alone.',
@@ -76,27 +75,23 @@ export const pillars = {
   eyebrow: 'What we stand for',
   heading: 'Four Pillars',
   intro:
-    'Every chapter decision — who we recruit, what we build, how we show up — traces back to these four commitments.',
+    'Every chapter decision \u2014 who we recruit, what we build, how we show up \u2014 traces back to these four commitments.',
   items: [
     {
       title: 'Professionalism',
-      summary: 'Recruiting-ready from day one.',
-      body: 'Mock interviews, résumé clinics, and case workshops run every quarter, led by members who just finished the process themselves.',
+      body: 'We are dedicated to upholding a high standard of conduct, integrity, and ethics in all that we do.',
     },
     {
-      title: 'Brotherhood',
-      summary: 'A class you never rush alone.',
-      body: 'Pledge families, big-little pairings, and a chapter that shows up for each other long past the last final of senior year.',
+      title: 'Community',
+      body: 'We are more than just a business club. We create life-long friendships and memories that will last forever.',
     },
     {
-      title: 'Integrity',
-      summary: 'The standard holds when nobody is watching.',
-      body: 'We hold each other to the way business ought to be done — candidly, ethically, and with credit given where it is earned.',
+      title: 'Leadership',
+      body: 'We believe in taking initiative and becoming the next generation of leaders across a variety of industries.',
     },
     {
-      title: 'Impact',
-      summary: 'Work that outlasts the quarter.',
-      body: 'Pro-bono consulting for San Diego nonprofits, a student-run fund, and an alumni network that keeps opening doors.',
+      title: 'Growth',
+      body: 'We are committed to fostering personal and professional growth for ourselves and others, always striving to be the best we can be.',
     },
   ] satisfies Pillar[],
 }
@@ -105,7 +100,7 @@ export const about = {
   eyebrow: 'About',
   heading: 'Built by students, for the students who come next.',
   paragraphs: [
-    'Triton Business Society started in 2014 with nine students, a borrowed classroom in Peterson Hall, and a shared frustration: the path into finance, consulting, and product was legible to some people and invisible to everyone else. The chapter exists to make it legible to everyone.',
+    'Triton Business Society started with a handful of students, a borrowed classroom in Peterson Hall, and a shared frustration: the path into finance, consulting, and product was legible to some people and invisible to everyone else. The chapter exists to make it legible to everyone.',
     'Today we run a quarterly professional development curriculum, a pro-bono consulting practice serving San Diego nonprofits, and a mentorship program that pairs every new member with an upperclassman and an alum working in the field they are chasing.',
     'We recruit twice a year, from every major and every college. What we look for is not a finished résumé — it is the willingness to prepare, to be coached, and to turn around and coach the next class.',
   ],
@@ -113,23 +108,25 @@ export const about = {
     { value: '120+', label: 'Active members' },
     { value: '400+', label: 'Alumni network' },
     { value: '38', label: 'Firms placed into' },
-    { value: '2014', label: 'Founded' },
+    { value: '20+', label: 'Years on campus' },
   ],
 }
 
 export const letter = {
   eyebrow: 'Letter from the President',
-  heading: 'You are closer than you think.',
+  // Display headline, lifted from the letter itself \u2014 edit freely.
+  heading: 'The best decision I could have made.',
+  greeting: 'Hello!',
   paragraphs: [
-    'When I walked into my first TBS info session, I had no internship, no idea what a technical interview was, and a résumé that fit comfortably in half a page. What I had was a room full of people willing to tell me, plainly, what I did not know yet.',
-    'That is still the most valuable thing this chapter offers. Not the speaker events or the treks, though those matter — the honesty. Someone who went through recruiting six months before you, sitting down and walking you through exactly where it went wrong for them.',
-    'If you are reading this from the other side of that gap, I want you to know how quickly it closes when you stop trying to cross it alone. Come to an info session. Ask us anything. We will tell you the truth.',
+    'I joined Triton Business Society in my freshman fall quarter, and looking back, it was truly the best decision I could have made. Before coming to college, I had only a vague idea of what I wanted to do. I knew I was drawn to business and finance, but I had no clear direction on what to do next. Joining TBS changed that completely. It gave me not only direction and clarity, but also a support system, a group of people who were just as motivated as I was, many of whom have now become lifelong friends. TBS taught me how to not only break into a competitive field like finance but thrive in it, and more importantly, how to use the tools I\u2019ve gained to give back and help others.',
+    'What truly sets TBS apart is our tight-knit community and strong alumni network. Over more than two decades, our alumni have built a legacy of mentorship, guidance, and opportunity. We are incredibly proud to have an alumni base that\u2019s always ready to help you get wherever it is you want to go. Through business seminars, networking events, and resume workshops, I\u2019ve learned alongside some of the most driven and supportive people on campus.',
+    'Today, that same culture of growth, collaboration, and ambition continues to thrive. Our members go on to secure internships at Fortune 500 companies, launch their own startups, and make meaningful impacts both on campus and across countless industries. No matter what path you\u2019re interested in, whether it\u2019s consulting, accounting, marketing, or computer and data science, Triton Business Society provides the foundation, resources, and community to help turn those goals into reality. For me, it\u2019s been the most impactful community I\u2019ve found at UC San Diego, and I\u2019m proud to be representing us.',
   ],
   signoff: 'With Triton pride,',
   author: {
-    name: 'Amara Okonkwo',
-    role: 'President, 2025–26',
-    photo: '/members/amara-okonkwo.jpg',
+    name: 'Darshana',
+    role: 'President',
+    photo: '/members/darshana.jpg',
   },
 }
 
@@ -142,6 +139,46 @@ export const contact = {
     { label: 'Where', value: site.location },
     { label: 'Office hours', value: 'Thursdays, 4–6pm · Rady Courtyard' },
   ],
+}
+
+export type Company = {
+  name: string
+  /** Path under `public/logos/`. SVG preferred so it stays crisp when tinted. */
+  logo: string
+}
+
+/**
+ * Companies members have interned or worked at. Drop an SVG in `public/logos/`
+ * and add a row here \u2014 the grid sizes itself.
+ */
+export const companies: Company[] = [
+  { name: 'Deloitte', logo: '/logos/deloitte.svg' },
+  { name: 'EY', logo: '/logos/ey.svg' },
+  { name: 'KPMG', logo: '/logos/kpmg.svg' },
+  { name: 'PwC', logo: '/logos/pwc.svg' },
+  { name: 'Goldman Sachs', logo: '/logos/goldman-sachs.svg' },
+  { name: 'J.P. Morgan', logo: '/logos/jpmorgan.svg' },
+  { name: 'Amazon', logo: '/logos/amazon.svg' },
+  { name: 'Google', logo: '/logos/google.svg' },
+  { name: 'Microsoft', logo: '/logos/microsoft.svg' },
+  { name: 'Qualcomm', logo: '/logos/qualcomm.svg' },
+]
+
+export const whereWereAt = {
+  eyebrow: 'Our track record',
+  heading: "Where We're At",
+  intro:
+    'Members have interned and gone full time at firms across finance, consulting, tech, and beyond.',
+}
+
+export const memories = {
+  eyebrow: 'Life in the chapter',
+  heading: 'Our Memories',
+  intro:
+    'Retreats, socials, case nights, and everything in between.',
+  /** Shown when `public/memories/` has no images in it yet. */
+  emptyNote:
+    'No photos yet \u2014 drop JPGs or PNGs into public/memories/ and they will appear here automatically.',
 }
 
 export const membersPage = {
