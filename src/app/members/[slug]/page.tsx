@@ -63,11 +63,8 @@ export default async function MemberProfilePage(
 
   // Null / empty fields never enter these lists, so they cannot render a
   // stray label with no value.
-  const facts = [
-    ...(year ? [{ label: 'Class', value: year }] : []),
-    ...(member.major ? [{ label: 'Major', value: member.major }] : []),
-    ...(member.hometown ? [{ label: 'Hometown', value: member.hometown }] : []),
-  ]
+  // Class and hometown render under the name instead of in this grid.
+  const facts = member.major ? [{ label: 'Major', value: member.major }] : []
 
   const lists = [
     { label: 'Career interests', items: member.careerInterests },
@@ -136,12 +133,49 @@ export default async function MemberProfilePage(
               </p>
             ) : null}
 
+            {year || member.hometown ? (
+              <div className="mt-3 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-sm text-navy-700/75 sm:text-base">
+                {year ? <span>{year}</span> : null}
+                {member.hometown ? (
+                  <span className="inline-flex items-center gap-1.5">
+                    {/*
+                      viewBox is cropped to the pin's own bounds (incl. stroke)
+                      so the icon box doesn't add invisible padding before the
+                      place name.
+                    */}
+                    <svg
+                      viewBox="4.6 3.2 14.8 18.6"
+                      aria-hidden
+                      className="h-4 w-3.5 shrink-0 text-gold-600"
+                    >
+                      <path
+                        d="M12 21s6.5-5.4 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.6 12 21 12 21Z"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        fill="none"
+                        strokeLinejoin="round"
+                      />
+                      <circle
+                        cx="12"
+                        cy="10.2"
+                        r="2.4"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        fill="none"
+                      />
+                    </svg>
+                    {member.hometown}
+                  </span>
+                ) : null}
+              </div>
+            ) : null}
+
             {/*
               A member with no details filled in yet renders as just the badge,
               name and photo — no divider rule sitting above an empty grid.
             */}
             {facts.length > 0 || lists.length > 0 ? (
-            <div className="mt-8 grid gap-x-10 gap-y-8 border-t border-sand-dark pt-8 sm:grid-cols-2">
+            <div className="mt-8 border-t border-sand-dark pt-8">
               {facts.length > 0 ? (
                 <dl className="space-y-6">
                   {facts.map((fact) => (
@@ -158,7 +192,11 @@ export default async function MemberProfilePage(
               ) : null}
 
               {lists.length > 0 ? (
-                <div className="space-y-6">
+                <div
+                  className={`grid gap-x-10 gap-y-8 sm:grid-cols-2 ${
+                    facts.length > 0 ? 'mt-8' : ''
+                  }`}
+                >
                   {lists.map((list) => {
                     const id = `${slugifyLabel(list.label)}-heading`
                     return (

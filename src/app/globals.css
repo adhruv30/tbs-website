@@ -43,3 +43,56 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Hero wordmark: each word slides in from the left, staggered. */
+@keyframes hero-word-in {
+  from {
+    opacity: 0;
+    transform: translateX(-1.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-word {
+  display: inline-block;
+  animation: hero-word-in 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* The global reduce block shortens durations but not delays, which would still
+   flash the later words in. Drop the animation entirely instead. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-word {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Gallery strip: one run of tiles rendered twice, translated by half its width
+   for a seamless loop. */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-x 45s linear infinite;
+}
+
+/* Pause so a photo can actually be looked at. */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}

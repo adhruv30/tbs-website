@@ -4,11 +4,22 @@
     "name": "Fiona Chen",
     "role": "President",
     "isExec": true,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Cognitive Science (Machine Learning)",
+    "hometown": "Los Angeles, CA",
+    "careerInterests": [
+      "Product Management",
+      "Consulting",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Tennis",
+      "Matcha",
+      "Beach",
+      "Equestrianism",
+      "Golf",
+      "Cars"
+    ],
     "photo": "/members/fiona-chen.avif",
     "linkedin": null
   },
@@ -17,11 +28,21 @@
     "name": "Krishna Patel",
     "role": "Senior Vice President",
     "isExec": true,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 2,
+    "major": "Data Science, Business-Economics minor",
+    "hometown": "Boston, MA",
+    "careerInterests": [
+      "Software Engineering",
+      "Entrepreneurship",
+      "Data Analytics"
+    ],
+    "hobbies": [
+      "Skiing",
+      "Coffee",
+      "Traveling",
+      "Shopping",
+      "Pilates"
+    ],
     "photo": "/members/krishna-patel.avif",
     "linkedin": null
   },
@@ -43,7 +64,7 @@
       "Cologne",
       "Sports statistics analysis"
     ],
-    "photo": null,
+    "photo": "/members/richard-li.avif",
     "linkedin": null
   },
   {
@@ -51,11 +72,20 @@
     "name": "Leena Khoja",
     "role": "Co-VP of Recruitment",
     "isExec": true,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 2,
+    "major": "Economics",
+    "hometown": "Riyadh, Saudi Arabia",
+    "careerInterests": [
+      "Finance",
+      "Consulting"
+    ],
+    "hobbies": [
+      "Acrylic painting",
+      "Thrifting",
+      "Aerial silks",
+      "Reading",
+      "Gym"
+    ],
     "photo": "/members/leena-khoja.avif",
     "linkedin": null
   },
@@ -77,12 +107,21 @@
     "name": "Yejee Lee",
     "role": "VP of Community Service",
     "isExec": true,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
-    "photo": null,
+    "year": 2,
+    "major": "Cognitive and Behavioral Neuroscience",
+    "hometown": "Bellevue, WA",
+    "careerInterests": [
+      "Clinical Psychologist"
+    ],
+    "hobbies": [
+      "Hiking",
+      "Gaming",
+      "Tree planting",
+      "Baking",
+      "Journaling",
+      "Drawing"
+    ],
+    "photo": "/members/yejee-lee.avif",
     "linkedin": null
   },
   {
@@ -113,11 +152,20 @@
     "name": "Koshik Kumaravel",
     "role": "VP of Operations",
     "isExec": true,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 2,
+    "major": "Artificial Intelligence",
+    "hometown": "Irvine, CA",
+    "careerInterests": [
+      "Barber",
+      "Software Engineering",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Volleyball",
+      "Working out",
+      "Snowboarding",
+      "Cutting hair"
+    ],
     "photo": "/members/koshik-kumaravel.avif",
     "linkedin": null
   },
@@ -171,11 +219,17 @@
     "name": "Nevin Peppers",
     "role": "VP of Social Activities",
     "isExec": true,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Business Economics",
+    "hometown": "San Diego, CA",
+    "careerInterests": [
+      "Project Management",
+      "Supply Chain"
+    ],
+    "hobbies": [
+      "Watching rom coms and sunsets",
+      "Professional glover"
+    ],
     "photo": "/members/nevin-peppers.avif",
     "linkedin": null
   },
@@ -223,7 +277,7 @@
   {
     "slug": "aarush-kochar",
     "name": "Aarush Kochar",
-    "role": null,
+    "role": "VP of Professional Activities",
     "isExec": true,
     "year": 2,
     "major": "Real Estate & Development, Finance",
@@ -248,11 +302,20 @@
     "name": "Andrew Nguyen",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "General Biology, Business Economics minor",
+    "hometown": "Glendale, CA",
+    "careerInterests": [
+      "Biotech Marketing",
+      "Bio Consultant",
+      "MRI Physicist"
+    ],
+    "hobbies": [
+      "Rubik Cubes",
+      "Watching Flightreacts",
+      "UFC",
+      "Buying clothes"
+    ],
     "photo": "/members/andrew-nguyen.avif",
     "linkedin": null
   },
@@ -261,11 +324,21 @@
     "name": "Arushi Dubey",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 2,
+    "major": "Economics",
+    "hometown": "Dubai, UAE",
+    "careerInterests": [
+      "Finance",
+      "Accounting",
+      "Consulting"
+    ],
+    "hobbies": [
+      "Guitar",
+      "Poster collecting",
+      "Watching and logging films",
+      "Music",
+      "Meow"
+    ],
     "photo": "/members/arushi-dubey.avif",
     "linkedin": null
   },
@@ -274,11 +347,21 @@
     "name": "Brendan Nguyen",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Mathematics-Computer Science",
+    "hometown": "Gilroy, CA",
+    "careerInterests": [
+      "Software Engineering",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Basketball",
+      "Music",
+      "Thrifting",
+      "Gym",
+      "Photography/videography",
+      "Mango connoisseur"
+    ],
     "photo": "/members/brendan-nguyen.avif",
     "linkedin": null
   },
@@ -311,11 +394,19 @@
     "name": "Claire Yoo",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Cognitive Science (Design & Interaction)",
+    "hometown": "Yorba Linda, CA",
+    "careerInterests": [
+      "Product Management"
+    ],
+    "hobbies": [
+      "Dance",
+      "Yoga",
+      "Baking",
+      "Cafe hopping",
+      "Side quests"
+    ],
     "photo": "/members/claire-yoo.avif",
     "linkedin": null
   },
@@ -324,11 +415,20 @@
     "name": "Connor Zhao",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Business Economics & International Business",
+    "hometown": "Kaifeng, China",
+    "careerInterests": [
+      "Data Scientist",
+      "Finance (Asset Management, Analyst)"
+    ],
+    "hobbies": [
+      "Running (marathon)",
+      "Cooking",
+      "Weight lifting",
+      "Cars",
+      "Tech gadgets"
+    ],
     "photo": "/members/connor-zhao.avif",
     "linkedin": null
   },
@@ -337,11 +437,21 @@
     "name": "Darshana Zala",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "Business Economics, Finance minor",
+    "hometown": "Chino Hills, CA",
+    "careerInterests": [
+      "Corporate Law"
+    ],
+    "hobbies": [
+      "Baking",
+      "Dancing",
+      "Volleyball",
+      "Watching shows",
+      "Painting",
+      "Traveling",
+      "Working out"
+    ],
     "photo": "/members/darshana-zala.avif",
     "linkedin": null
   },
@@ -394,11 +504,20 @@
     "name": "Jessie Hu",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "International Business & Art History",
+    "hometown": "Shanghai, LA",
+    "careerInterests": [
+      "Art",
+      "Business"
+    ],
+    "hobbies": [
+      "Dancing",
+      "Music festivals",
+      "Film",
+      "Photography",
+      "Hinar"
+    ],
     "photo": "/members/jessie-hu.avif",
     "linkedin": null
   },
@@ -407,11 +526,24 @@
     "name": "Katrina Dinh",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "Business Economics",
+    "hometown": "San Jose, CA",
+    "careerInterests": [
+      "Consulting",
+      "Accounting",
+      "Wealth Management"
+    ],
+    "hobbies": [
+      "Pickleball",
+      "Basketball",
+      "Golfing",
+      "Gym",
+      "Music festivals",
+      "Hiking",
+      "Traveling",
+      "Thrifting"
+    ],
     "photo": "/members/katrina-dinh.avif",
     "linkedin": null
   },
@@ -420,11 +552,19 @@
     "name": "Kavyan Patel",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 5,
+    "major": "Data Science",
+    "hometown": "San Jose, CA",
+    "careerInterests": [
+      "Software Engineering",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Basketball",
+      "Gym",
+      "Consuming caffeine",
+      "Chipotle"
+    ],
     "photo": "/members/kavyan-patel.avif",
     "linkedin": null
   },
@@ -433,11 +573,20 @@
     "name": "Leandro Zheng",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Cognitive Science (Design & Interaction), Marketing and Business Economics minor",
+    "hometown": "San Francisco, CA",
+    "careerInterests": [
+      "Sports Marketing",
+      "Sports Management",
+      "Product Management"
+    ],
+    "hobbies": [
+      "Sports & e-sports",
+      "Fashion",
+      "Sunsets",
+      "Ranch-99"
+    ],
     "photo": "/members/leandro-zheng.avif",
     "linkedin": null
   },
@@ -446,11 +595,16 @@
     "name": "Megan Choe",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "International Business / Business Psychology",
+    "hometown": "Stevenson Ranch, CA",
+    "careerInterests": [
+      "Pilot"
+    ],
+    "hobbies": [
+      "Mogging",
+      "FBGM"
+    ],
     "photo": "/members/megan-choe.avif",
     "linkedin": null
   },
@@ -459,11 +613,22 @@
     "name": "Morgan Arrasmith",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "Business Economics",
+    "hometown": "Simi Valley, CA",
+    "careerInterests": [
+      "Finance",
+      "Consulting",
+      "Law"
+    ],
+    "hobbies": [
+      "Lacrosse",
+      "Napping",
+      "Reading",
+      "Football",
+      "Yoga",
+      "Extreme pogo sticking"
+    ],
     "photo": "/members/morgan-arrasmith.avif",
     "linkedin": null
   },
@@ -485,7 +650,7 @@
       "Learning songs in Mandarin",
       "Foodmaxing"
     ],
-    "photo": null,
+    "photo": "/members/nyle-santiago-millan.avif",
     "linkedin": null
   },
   {
@@ -493,11 +658,19 @@
     "name": "Omar Rahabi",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 2,
+    "major": "Business Economics",
+    "hometown": "Abu Dhabi, UAE",
+    "careerInterests": [
+      "Portfolio Management"
+    ],
+    "hobbies": [
+      "Padel",
+      "F1",
+      "Wakeboarding",
+      "Chess",
+      "Tiramisu"
+    ],
     "photo": "/members/omar-rahabi.avif",
     "linkedin": null
   },
@@ -506,11 +679,20 @@
     "name": "Pratham Savla",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Computer Science",
+    "hometown": "Santa Clara, CA",
+    "careerInterests": [
+      "Software Engineering",
+      "Entrepreneurship"
+    ],
+    "hobbies": [
+      "Dropshipping",
+      "Traveling",
+      "Gym",
+      "Late night drives",
+      "Food"
+    ],
     "photo": "/members/pratham-savla.avif",
     "linkedin": null
   },
@@ -519,11 +701,19 @@
     "name": "Samara Rathod",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "General Biology, Business Economics minor",
+    "hometown": "Mumbai, India",
+    "careerInterests": [
+      "Research",
+      "Product Development"
+    ],
+    "hobbies": [
+      "Puzzles",
+      "Badminton",
+      "Making playlists",
+      "Coffee"
+    ],
     "photo": "/members/samara-rathod.avif",
     "linkedin": null
   },
@@ -532,11 +722,21 @@
     "name": "Sara Asad",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Economics, Political Science minor",
+    "hometown": "Rancho Santa Margarita, CA",
+    "careerInterests": [
+      "Corporate Law",
+      "Economic Consulting"
+    ],
+    "hobbies": [
+      "Basketball",
+      "Running",
+      "Road trips",
+      "Nintendo",
+      "Legos",
+      "Matcha"
+    ],
     "photo": "/members/sara-asad.avif",
     "linkedin": null
   },
@@ -567,11 +767,20 @@
     "name": "Scarlett Jeffries",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Cognitive Science (Machine Learning & Neural Computation), Data Science minor",
+    "hometown": "Loveland, CO",
+    "careerInterests": [
+      "Data Science",
+      "Software Engineering"
+    ],
+    "hobbies": [
+      "Skiing",
+      "Tennis",
+      "Crocheting",
+      "Scrapbooking",
+      "Collecting Sonny Angels"
+    ],
     "photo": "/members/scarlett-jeffries.avif",
     "linkedin": null
   },
@@ -580,11 +789,20 @@
     "name": "Sophia Chan",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 4,
+    "major": "Business Economics, Accounting minor",
+    "hometown": "Arcadia, CA",
+    "careerInterests": [
+      "Accounting"
+    ],
+    "hobbies": [
+      "Gym",
+      "Collecting blind boxes and plushies",
+      "Volleyball",
+      "Pickleball",
+      "Pokémon Go",
+      "Matcha"
+    ],
     "photo": "/members/sophia-chan.avif",
     "linkedin": null
   },
@@ -593,11 +811,23 @@
     "name": "Sophie He",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "Cognitive Science (Machine Learning & Neural Computation), Data Science minor",
+    "hometown": "Los Angeles, CA",
+    "careerInterests": [
+      "Data Analyst",
+      "Product Management",
+      "Consulting"
+    ],
+    "hobbies": [
+      "Swimming",
+      "Cooking",
+      "Beach",
+      "Golf",
+      "F1",
+      "Traveling",
+      "Hot workout classes"
+    ],
     "photo": "/members/sophie-he.avif",
     "linkedin": null
   },
@@ -606,11 +836,20 @@
     "name": "Tammer Rayes",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "Business Economics",
+    "hometown": "Beirut, Lebanon",
+    "careerInterests": [
+      "Finance",
+      "Consulting",
+      "Accounting"
+    ],
+    "hobbies": [
+      "Road trips",
+      "Walking",
+      "Playing board games",
+      "Gym"
+    ],
     "photo": "/members/tammer-rayes.avif",
     "linkedin": null
   },
@@ -619,11 +858,21 @@
     "name": "Tanisha Varma",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 2,
+    "major": "Cognitive Science (Design & Interaction)",
+    "hometown": "Milpitas, CA",
+    "careerInterests": [
+      "Product Management",
+      "UI/UX Design",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Movies",
+      "Dystopian books",
+      "Arts and crafts",
+      "Badminton",
+      "Cava"
+    ],
     "photo": "/members/tanisha-varma.avif",
     "linkedin": null
   },
@@ -632,11 +881,21 @@
     "name": "Unice Liu",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 2,
+    "major": "International Business & Media Industry Communications",
+    "hometown": "Cerritos, CA",
+    "careerInterests": [
+      "Marketing",
+      "Event Management",
+      "Entertainment Business",
+      "Project Operations"
+    ],
+    "hobbies": [
+      "Food reviews",
+      "Interior design",
+      "Photography",
+      "Being a potato connoisseur"
+    ],
     "photo": "/members/unice-liu.avif",
     "linkedin": null
   },
@@ -645,11 +904,20 @@
     "name": "Venkat Mangalampeta",
     "role": null,
     "isExec": null,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
+    "year": 3,
+    "major": "Data Science",
+    "hometown": "Mountain House, CA",
+    "careerInterests": [
+      "Software Engineer",
+      "Data Analytics"
+    ],
+    "hobbies": [
+      "Basketball",
+      "Sports betting",
+      "Listening to music",
+      "Working out",
+      "Anything strawberry flavored"
+    ],
     "photo": "/members/venkat-mangalampeta.avif",
     "linkedin": null
   }

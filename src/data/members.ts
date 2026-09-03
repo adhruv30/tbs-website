@@ -2,7 +2,7 @@ import membersJson from './members.json'
 
 export type Cohort = 'exec' | 'active'
 
-export type ClassYear = 1 | 2 | 3 | 4
+export type ClassYear = 1 | 2 | 3 | 4 | 5
 
 export type Member = {
   slug: string
@@ -25,6 +25,7 @@ const CLASS_LABELS: Record<ClassYear, string> = {
   2: 'Sophomore',
   3: 'Junior',
   4: 'Senior',
+  5: 'Fifth Year',
 }
 
 /** `null` when the year is unknown, so callers can omit the field entirely. */

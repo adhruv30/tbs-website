@@ -31,7 +31,7 @@ export function RosterPage({
           className="-z-10 object-cover"
         />
         {/* Scrim: keeps the heading readable over any part of the photo. */}
-        <div className="absolute inset-0 -z-10 bg-navy-950/80" aria-hidden />
+        <div className="absolute inset-0 -z-10 bg-navy-950/55" aria-hidden />
 
         <div className="mx-auto w-full max-w-[1700px] px-5 sm:px-8">
           <h1 className="text-center font-serif text-5xl leading-tight font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl">

@@ -1,18 +1,18 @@
 import Link from 'next/link'
 
 import { CompanyGrid } from '@/components/company-grid'
-import { HeroSlideshow } from '@/components/hero-slideshow'
+import { GalleryStrip } from '@/components/gallery-strip'
+import { HeroBackdrop } from '@/components/hero-backdrop'
 import { MemberAvatar } from '@/components/member-avatar'
-import { MemoriesGrid } from '@/components/memories-grid'
+import { getValueBackdrops } from '@/components/value-backdrops'
+import { ValuesSection } from '@/components/values-section'
 import { getPresident } from '@/data/members'
 import {
   about,
   companies,
   hero,
-  heroImages,
   letter,
-  memories,
-  pillars,
+  values,
   whereWereAt,
 } from '@/data/site'
 
@@ -20,11 +20,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Pillars />
-      <About />
+      <GalleryStrip />
+      <Values />
       <WhereWereAt />
+      <About />
       <PresidentLetter />
-      <OurMemories />
     </>
   )
 }
@@ -32,28 +32,32 @@ export default function HomePage() {
 function Hero() {
   return (
     <section
-      className="relative -mt-16 flex min-h-[100svh] items-center overflow-hidden sm:-mt-20"
+      className="relative -mt-[calc(4rem+1px)] flex min-h-[min(calc(100svh_-_10rem),46rem)] items-end overflow-hidden sm:-mt-[calc(5rem+1px)]"
       aria-labelledby="hero-title"
     >
-      <HeroSlideshow
-        slides={heroImages}
-        intervalSeconds={hero.slideDurationSeconds}
-      />
+      <HeroBackdrop />
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 pt-28 pb-24 text-parchment sm:px-8 sm:pt-32 sm:pb-28">
-        <p className="text-[0.7rem] font-semibold tracking-[0.24em] text-gold-400 uppercase sm:text-xs">
-          {hero.eyebrow}
-        </p>
+      {/*
+        Sat low in the frame (items-end + this bottom padding) so the wordmark
+        clears the faces and lands around the front row's midsection, with the
+        buttons in the space below them.
+      */}
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-16 text-center text-parchment sm:px-8 sm:pb-20">
         <h1
           id="hero-title"
-          className="mt-5 max-w-4xl font-serif text-[2.75rem] leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl"
+          className="max-w-4xl font-serif text-[2.75rem] leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl"
         >
-          {hero.title}
+          {hero.title.split(' ').map((word, index) => (
+            <span
+              key={`${word}-${index}`}
+              className="hero-word mr-[0.25em]"
+              style={{ animationDelay: `${index * 0.24}s` }}
+            >
+              {word}
+            </span>
+          ))}
         </h1>
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-parchment/80 text-pretty sm:mt-7 sm:text-lg">
-          {hero.subtitle}
-        </p>
-        <div className="mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+        <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
           <Link
             href={hero.primaryCta.href}
             className="inline-flex items-center justify-center rounded-full bg-gold-500 px-7 py-3.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-300"
@@ -62,7 +66,7 @@ function Hero() {
           </Link>
           <Link
             href={hero.secondaryCta.href}
-            className="inline-flex items-center justify-center rounded-full border border-parchment/35 px-7 py-3.5 text-sm font-semibold text-parchment transition-colors hover:border-parchment hover:bg-parchment/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-parchment"
+            className="inline-flex items-center justify-center rounded-full border border-parchment/35 bg-navy-950/45 px-7 py-3.5 text-sm font-semibold text-parchment transition-colors hover:border-parchment hover:bg-navy-950/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-parchment"
           >
             {hero.secondaryCta.label}
           </Link>
@@ -72,43 +76,15 @@ function Hero() {
   )
 }
 
-function Pillars() {
-  return (
-    <section className="bg-parchment py-20 sm:py-28">
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <p className="text-xs font-semibold tracking-[0.22em] text-gold-600 uppercase">
-          {pillars.eyebrow}
-        </p>
-        <h2 className="mt-4 font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
-          {pillars.heading}
-        </h2>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-navy-700/75 text-pretty sm:text-lg">
-          {pillars.intro}
-        </p>
+async function Values() {
+  const backdrops = await getValueBackdrops(values.items.map((item) => item.title))
 
-        <ul className="mt-12 grid gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-          {pillars.items.map((pillar, index) => (
-            <li
-              key={pillar.title}
-              className="flex flex-col rounded-lg border border-sand-dark bg-white p-6 transition-colors hover:border-gold-500/60 sm:p-7"
-            >
-              <span
-                aria-hidden
-                className="font-serif text-sm font-semibold text-gold-500"
-              >
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <h3 className="mt-4 font-serif text-xl leading-snug font-semibold text-navy-900">
-                {pillar.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-navy-700/75">
-                {pillar.body}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+  return (
+    <ValuesSection
+      heading={values.heading}
+      items={values.items}
+      backdrops={backdrops}
+    />
   )
 }
 
@@ -161,15 +137,9 @@ function WhereWereAt() {
   return (
     <section className="bg-parchment py-20 sm:py-28">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <p className="text-xs font-semibold tracking-[0.22em] text-gold-600 uppercase">
-          {whereWereAt.eyebrow}
-        </p>
-        <h2 className="mt-4 font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
+        <h2 className="text-center font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
           {whereWereAt.heading}
         </h2>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-navy-700/75 text-pretty sm:text-lg">
-          {whereWereAt.intro}
-        </p>
 
         <div className="mt-12 sm:mt-16">
           <CompanyGrid items={companies} />
@@ -217,28 +187,6 @@ function PresidentLetter() {
             />
           </div>
         ) : null}
-      </div>
-    </section>
-  )
-}
-
-function OurMemories() {
-  return (
-    <section className="bg-parchment py-20 sm:py-28">
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <p className="text-xs font-semibold tracking-[0.22em] text-gold-600 uppercase">
-          {memories.eyebrow}
-        </p>
-        <h2 className="mt-4 font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
-          {memories.heading}
-        </h2>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-navy-700/75 text-pretty sm:text-lg">
-          {memories.intro}
-        </p>
-
-        <div className="mt-10 sm:mt-12">
-          <MemoriesGrid emptyNote={memories.emptyNote} />
-        </div>
       </div>
     </section>
   )
