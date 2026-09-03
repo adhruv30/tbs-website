@@ -52,7 +52,10 @@ export async function HeroBackdrop() {
           sizes="100vw"
           preload
           quality={70}
-          className="object-cover"
+          // Vertical crop split: 0% = flush to the top of the photo (pushes
+          // people down into the wordmark), 50% = centred (crops the back
+          // row's heads). Tune this one number if the framing needs a nudge.
+          className="object-cover object-[center_25%]"
         />
       ) : null}
       {/*

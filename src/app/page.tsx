@@ -42,7 +42,7 @@ function Hero() {
         clears the faces and lands around the front row's midsection, with the
         buttons in the space below them.
       */}
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-16 text-center text-parchment sm:px-8 sm:pb-20">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-10 text-center text-parchment sm:px-8 sm:pb-12">
         <h1
           id="hero-title"
           className="max-w-4xl font-serif text-[2.75rem] leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl"
