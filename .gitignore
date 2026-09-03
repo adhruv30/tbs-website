@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source headshots — local staging only; the site serves the processed
+# copies from public/members/, so these originals stay out of the repo
+/headshots/

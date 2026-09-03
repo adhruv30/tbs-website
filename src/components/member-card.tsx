@@ -1,12 +1,9 @@
 import Link from 'next/link'
 
 import { MemberAvatar } from '@/components/member-avatar'
-import { classLabel, type Member } from '@/data/members'
+import type { Member } from '@/data/members'
 
 export function MemberCard({ member, index }: { member: Member; index: number }) {
-  // Null fields are dropped rather than rendered as empty text.
-  const meta = [classLabel(member.year), member.major].filter(Boolean)
-
   return (
     <li>
       <Link
@@ -16,23 +13,23 @@ export function MemberCard({ member, index }: { member: Member; index: number })
         <div className="relative aspect-[4/5] overflow-hidden bg-navy-900">
           <MemberAvatar
             member={member}
-            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 45vw, 90vw"
+            sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 45vw, 90vw"
             // First row is above the fold on most viewports.
-            loading={index < 4 ? 'eager' : 'lazy'}
-            initialsClassName="text-4xl sm:text-5xl"
+            loading={index < 5 ? 'eager' : 'lazy'}
+            initialsClassName="text-3xl sm:text-4xl"
             imageClassName="transition-transform duration-500 group-hover:scale-[1.04]"
           />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-navy-950/70 to-transparent" />
         </div>
-        <div className="p-4 sm:p-5">
-          <h3 className="font-serif text-lg leading-snug font-semibold text-navy-900">
+        <div className="p-3 text-center sm:p-4">
+          <h3 className="font-serif text-base leading-snug font-semibold text-balance text-navy-900 sm:text-lg">
             {member.name}
           </h3>
+          {/* Only exec carry a role; everyone else shows just their name. */}
           {member.role ? (
-            <p className="mt-1 text-sm font-medium text-gold-600">{member.role}</p>
-          ) : null}
-          {meta.length > 0 ? (
-            <p className="mt-2 text-sm text-navy-700/70">{meta.join(' · ')}</p>
+            <p className="mt-1 font-serif text-xs leading-snug text-balance text-gold-600 sm:text-sm">
+              {member.role}
+            </p>
           ) : null}
         </div>
       </Link>

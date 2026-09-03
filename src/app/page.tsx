@@ -1,9 +1,10 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { CompanyGrid } from '@/components/company-grid'
 import { HeroSlideshow } from '@/components/hero-slideshow'
+import { MemberAvatar } from '@/components/member-avatar'
 import { MemoriesGrid } from '@/components/memories-grid'
+import { getPresident } from '@/data/members'
 import {
   about,
   companies,
@@ -179,48 +180,43 @@ function WhereWereAt() {
 }
 
 function PresidentLetter() {
-  return (
-    <section className="bg-sand py-20 sm:py-28">
-      <div className="mx-auto w-full max-w-4xl px-5 sm:px-8">
-        <p className="text-xs font-semibold tracking-[0.22em] text-gold-600 uppercase">
-          {letter.eyebrow}
-        </p>
-        <h2 className="mt-4 font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
-          {letter.heading}
-        </h2>
+  const president = getPresident()
 
-        <div className="mt-10 space-y-6 border-l-2 border-gold-500/40 pl-6 sm:pl-8">
-          <p className="text-base leading-relaxed text-navy-800/85 sm:text-lg">
-            {letter.greeting}
-          </p>
-          {letter.paragraphs.map((paragraph) => (
-            <p
-              key={paragraph.slice(0, 32)}
-              className="text-base leading-relaxed text-navy-800/85 text-pretty sm:text-lg"
-            >
-              {paragraph}
+  return (
+    <section className="bg-sand">
+      <div className="grid lg:grid-cols-2">
+        <div className="flex flex-col justify-center px-5 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24">
+          <div className="w-full max-w-xl lg:ml-auto">
+            <h2 className="font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl">
+              {letter.heading}
+            </h2>
+
+            {/* Only the letter body is a placeholder — heading and sign-off are real. */}
+            <p className="mt-8 rounded-lg border border-dashed border-sand-dark bg-white/60 px-6 py-10 text-center font-serif text-sm text-navy-700/70">
+              {letter.placeholder}
             </p>
-          ))}
+
+            {president ? (
+              <p className="mt-8 font-serif text-base leading-relaxed text-navy-800/85">
+                {letter.signoff}
+                <br />
+                {president.name.split(' ')[0]}
+              </p>
+            ) : null}
+          </div>
         </div>
 
-        <div className="mt-10 flex items-center gap-4 sm:mt-12 sm:gap-5">
-          <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full bg-navy-900 sm:h-20 sm:w-20">
-            <Image
-              src={letter.author.photo}
-              alt={`Portrait of ${letter.author.name}`}
-              fill
-              sizes="80px"
-              className="object-cover"
+        {president ? (
+          <div className="relative min-h-[26rem] sm:min-h-[32rem] lg:min-h-[40rem]">
+            <MemberAvatar
+              member={president}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              initialsClassName="text-7xl"
+              // Anchor to the top so the portrait's head isn't cropped out.
+              imageClassName="object-top"
             />
           </div>
-          <div>
-            <p className="text-sm text-navy-700/70">{letter.signoff}</p>
-            <p className="mt-1 font-serif text-lg font-semibold text-navy-900">
-              {letter.author.name}
-            </p>
-            <p className="text-sm text-gold-600">{letter.author.role}</p>
-          </div>
-        </div>
+        ) : null}
       </div>
     </section>
   )

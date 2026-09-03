@@ -3,7 +3,12 @@
  * every page reads from this file, so nothing else needs to change.
  */
 
-export type NavLink = { label: string; href: string }
+export type NavLink = {
+  label: string
+  href: string
+  /** Rendered as a hover/focus dropdown in the desktop nav. */
+  children?: { label: string; href: string }[]
+}
 
 export type Social = {
   label: string
@@ -30,7 +35,14 @@ export const site = {
 } as const
 
 export const navLinks: NavLink[] = [
-  { label: 'Members', href: '/members' },
+  {
+    label: 'Members',
+    href: '/members',
+    children: [
+      { label: 'Active Members', href: '/members' },
+      { label: 'Executive Committee', href: '/executive-committee' },
+    ],
+  },
   { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/#contact' },
 ]
@@ -113,21 +125,14 @@ export const about = {
 }
 
 export const letter = {
-  eyebrow: 'Letter from the President',
-  // Display headline, lifted from the letter itself \u2014 edit freely.
-  heading: 'The best decision I could have made.',
-  greeting: 'Hello!',
-  paragraphs: [
-    'I joined Triton Business Society in my freshman fall quarter, and looking back, it was truly the best decision I could have made. Before coming to college, I had only a vague idea of what I wanted to do. I knew I was drawn to business and finance, but I had no clear direction on what to do next. Joining TBS changed that completely. It gave me not only direction and clarity, but also a support system, a group of people who were just as motivated as I was, many of whom have now become lifelong friends. TBS taught me how to not only break into a competitive field like finance but thrive in it, and more importantly, how to use the tools I\u2019ve gained to give back and help others.',
-    'What truly sets TBS apart is our tight-knit community and strong alumni network. Over more than two decades, our alumni have built a legacy of mentorship, guidance, and opportunity. We are incredibly proud to have an alumni base that\u2019s always ready to help you get wherever it is you want to go. Through business seminars, networking events, and resume workshops, I\u2019ve learned alongside some of the most driven and supportive people on campus.',
-    'Today, that same culture of growth, collaboration, and ambition continues to thrive. Our members go on to secure internships at Fortune 500 companies, launch their own startups, and make meaningful impacts both on campus and across countless industries. No matter what path you\u2019re interested in, whether it\u2019s consulting, accounting, marketing, or computer and data science, Triton Business Society provides the foundation, resources, and community to help turn those goals into reality. For me, it\u2019s been the most impactful community I\u2019ve found at UC San Diego, and I\u2019m proud to be representing us.',
-  ],
-  signoff: 'With Triton pride,',
-  author: {
-    name: 'Darshana',
-    role: 'President',
-    photo: '/members/darshana.jpg',
-  },
+  heading: 'From Our President.',
+  /**
+   * TODO: replace `placeholder` with the president's letter — swap it for a
+   * `paragraphs: string[]` field and render those in place of the placeholder.
+   */
+  placeholder:
+    'This letter still needs to be written. Add it in src/data/site.ts under `letter`.',
+  signoff: 'Best,',
 }
 
 export const contact = {
@@ -182,12 +187,9 @@ export const memories = {
 }
 
 export const membersPage = {
-  eyebrow: 'Our people',
-  heading: 'Members',
-  intro:
-    'The chapter is the product. Here is everyone currently running it — the executive board and the active class.',
-  tabs: [
-    { id: 'exec', label: 'Exec' },
-    { id: 'active', label: 'Active' },
-  ],
-} as const
+  heading: 'Active Members',
+}
+
+export const execPage = {
+  heading: 'Executive Committee',
+}

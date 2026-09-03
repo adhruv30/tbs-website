@@ -59,13 +59,14 @@ export default async function MemberProfilePage(
   if (!member) notFound()
 
   const year = classLabel(member.year)
+  const isExec = cohortOf(member) === 'exec'
 
   // Null / empty fields never enter these lists, so they cannot render a
   // stray label with no value.
   const facts = [
     ...(year ? [{ label: 'Class', value: year }] : []),
-    { label: 'Major', value: member.major },
-    { label: 'Hometown', value: member.hometown },
+    ...(member.major ? [{ label: 'Major', value: member.major }] : []),
+    ...(member.hometown ? [{ label: 'Hometown', value: member.hometown }] : []),
   ]
 
   const lists = [
@@ -78,7 +79,7 @@ export default async function MemberProfilePage(
       <div className="bg-navy-950 pt-10 pb-24 sm:pt-12 sm:pb-28">
         <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
           <Link
-            href="/members"
+            href={isExec ? '/executive-committee' : '/members'}
             className="inline-flex items-center gap-2 text-sm text-parchment/60 transition-colors hover:text-gold-400"
           >
             <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4">
@@ -91,7 +92,7 @@ export default async function MemberProfilePage(
                 strokeLinejoin="round"
               />
             </svg>
-            All members
+            {isExec ? 'Executive committee' : 'Active members'}
           </Link>
         </div>
       </div>
@@ -109,7 +110,7 @@ export default async function MemberProfilePage(
 
           <div className="rounded-xl border border-sand-dark bg-white p-6 shadow-sm sm:p-8 lg:p-10">
             <span className="inline-flex rounded-full bg-navy-900 px-3.5 py-1.5 text-[0.65rem] font-semibold tracking-[0.18em] text-gold-400 uppercase">
-              {cohortOf(member) === 'exec' ? 'Executive Board' : 'Active Member'}
+              {isExec ? 'Executive Committee' : 'Active Member'}
             </span>
 
             <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
@@ -135,17 +136,26 @@ export default async function MemberProfilePage(
               </p>
             ) : null}
 
+            {/*
+              A member with no details filled in yet renders as just the badge,
+              name and photo — no divider rule sitting above an empty grid.
+            */}
+            {facts.length > 0 || lists.length > 0 ? (
             <div className="mt-8 grid gap-x-10 gap-y-8 border-t border-sand-dark pt-8 sm:grid-cols-2">
-              <dl className="space-y-6">
-                {facts.map((fact) => (
-                  <div key={fact.label}>
-                    <dt className="text-[0.7rem] font-semibold tracking-[0.18em] text-navy-700/50 uppercase">
-                      {fact.label}
-                    </dt>
-                    <dd className="mt-1.5 text-base text-navy-900">{fact.value}</dd>
-                  </div>
-                ))}
-              </dl>
+              {facts.length > 0 ? (
+                <dl className="space-y-6">
+                  {facts.map((fact) => (
+                    <div key={fact.label}>
+                      <dt className="text-[0.7rem] font-semibold tracking-[0.18em] text-navy-700/50 uppercase">
+                        {fact.label}
+                      </dt>
+                      <dd className="mt-1.5 text-base text-navy-900">
+                        {fact.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              ) : null}
 
               {lists.length > 0 ? (
                 <div className="space-y-6">
@@ -175,6 +185,7 @@ export default async function MemberProfilePage(
                 </div>
               ) : null}
             </div>
+            ) : null}
           </div>
         </div>
       </div>

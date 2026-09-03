@@ -1,9 +1,131 @@
 [
   {
+    "slug": "fiona-chen",
+    "name": "Fiona Chen",
+    "role": "President",
+    "isExec": true,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/fiona-chen.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "krishna-patel",
+    "name": "Krishna Patel",
+    "role": "Senior Vice President",
+    "isExec": true,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/krishna-patel.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "richard-li",
+    "name": "Richard Li",
+    "role": "VP of Finance",
+    "isExec": true,
+    "year": 2,
+    "major": "Mathematics and Economics",
+    "hometown": "Irvine, CA",
+    "careerInterests": [
+      "Finance",
+      "Burger flipper"
+    ],
+    "hobbies": [
+      "Lifting",
+      "Basketball",
+      "Cologne",
+      "Sports statistics analysis"
+    ],
+    "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "leena-khoja",
+    "name": "Leena Khoja",
+    "role": "Co-VP of Recruitment",
+    "isExec": true,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/leena-khoja.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "harshini-kanakala",
+    "name": "Harshini Kanakala",
+    "role": "Co-VP of Recruitment",
+    "isExec": true,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "yejee-lee",
+    "name": "Yejee Lee",
+    "role": "VP of Community Service",
+    "isExec": true,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "arjun-dhruv",
+    "name": "Arjun Dhruv",
+    "role": "VP of Scholarship & Awards",
+    "isExec": true,
+    "year": 2,
+    "major": "Mathematics and Computer Science",
+    "hometown": "Saratoga, CA",
+    "careerInterests": [
+      "Software Engineering",
+      "Machine Learning",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Basketball",
+      "Pickleball",
+      "Music",
+      "Harry Potter",
+      "Fantasy Football"
+    ],
+    "photo": "/members/arjun-dhruv.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "koshik-kumaravel",
+    "name": "Koshik Kumaravel",
+    "role": "VP of Operations",
+    "isExec": true,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/koshik-kumaravel.avif",
+    "linkedin": null
+  },
+  {
     "slug": "mason-yu",
     "name": "Mason Yu",
-    "role": null,
-    "isExec": null,
+    "role": "Co-VP of Marketing",
+    "isExec": true,
     "year": 3,
     "major": "Business Economics",
     "hometown": "Northridge, CA",
@@ -19,6 +141,145 @@
       "Frolicking in green meadows"
     ],
     "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "carrie-chen",
+    "name": "Carrie Chen",
+    "role": "Co-VP of Marketing",
+    "isExec": true,
+    "year": 2,
+    "major": "Cognitive Science (Design & Interaction)",
+    "hometown": "Diamond Bar, CA",
+    "careerInterests": [
+      "Project Management",
+      "Product Design",
+      "UI/UX Design",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Reading and writing",
+      "Caffeine",
+      "Making music",
+      "Fried chicken enthusiast"
+    ],
+    "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "nevin-peppers",
+    "name": "Nevin Peppers",
+    "role": "VP of Social Activities",
+    "isExec": true,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/nevin-peppers.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "vritti-godani",
+    "name": "Vritti Godani",
+    "role": "VP of Alumni Relations",
+    "isExec": true,
+    "year": 4,
+    "major": "Business Economics",
+    "hometown": "Arcadia, CA",
+    "careerInterests": [
+      "Consulting",
+      "Marketing"
+    ],
+    "hobbies": [
+      "NYT Mini games",
+      "Workout classes",
+      "Dancing"
+    ],
+    "photo": "/members/vritti-godani.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "jada-vera",
+    "name": "Jada Vera",
+    "role": "VP of Diversity, Equity and Inclusion",
+    "isExec": true,
+    "year": 4,
+    "major": "Business Psychology",
+    "hometown": "Long Beach, CA",
+    "careerInterests": [
+      "Product Management",
+      "Sales & Operations"
+    ],
+    "hobbies": [
+      "Trying new foods",
+      "Going to new places",
+      "Being spontaneous",
+      "Braiding Mason's wig"
+    ],
+    "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "aarush-kochar",
+    "name": "Aarush Kochar",
+    "role": null,
+    "isExec": true,
+    "year": 2,
+    "major": "Real Estate & Development, Finance",
+    "hometown": "Corona, CA",
+    "careerInterests": [
+      "Real Estate Development",
+      "Real Estate Investment"
+    ],
+    "hobbies": [
+      "Gym",
+      "Traveling",
+      "Guitar",
+      "Reading",
+      "Swimming",
+      "Cafe hopping"
+    ],
+    "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "andrew-nguyen",
+    "name": "Andrew Nguyen",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/andrew-nguyen.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "arushi-dubey",
+    "name": "Arushi Dubey",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/arushi-dubey.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "brendan-nguyen",
+    "name": "Brendan Nguyen",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/brendan-nguyen.avif",
     "linkedin": null
   },
   {
@@ -42,30 +303,46 @@
       "Music searching",
       "Volcano surfing"
     ],
-    "photo": null,
+    "photo": "/members/christopher-cappello.avif",
     "linkedin": null
   },
   {
-    "slug": "arjun-dhruv",
-    "name": "Arjun Dhruv",
-    "role": "Webmaster",
-    "isExec": true,
-    "year": 2,
-    "major": "Mathematics and Computer Science",
-    "hometown": "Saratoga, CA",
-    "careerInterests": [
-      "Software Engineering",
-      "Machine Learning",
-      "Data Science"
-    ],
-    "hobbies": [
-      "Basketball",
-      "Pickleball",
-      "Music",
-      "Harry Potter",
-      "Fantasy Football"
-    ],
-    "photo": null,
+    "slug": "claire-yoo",
+    "name": "Claire Yoo",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/claire-yoo.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "connor-zhao",
+    "name": "Connor Zhao",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/connor-zhao.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "darshana-zala",
+    "name": "Darshana Zala",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/darshana-zala.avif",
     "linkedin": null
   },
   {
@@ -86,136 +363,6 @@
       "Pilates",
       "Reading",
       "Taking pics"
-    ],
-    "photo": null,
-    "linkedin": null
-  },
-  {
-    "slug": "savun-takhar",
-    "name": "Savun Takhar",
-    "role": null,
-    "isExec": null,
-    "year": 4,
-    "major": "Mathematics and Economics",
-    "hometown": "Union City, CA",
-    "careerInterests": [
-      "Consulting",
-      "Product Management"
-    ],
-    "hobbies": [
-      "Hiking",
-      "Sports",
-      "Food",
-      "Legos",
-      "Sneaker collecting"
-    ],
-    "photo": null,
-    "linkedin": null
-  },
-  {
-    "slug": "vritti-godani",
-    "name": "Vritti Godani",
-    "role": null,
-    "isExec": null,
-    "year": 4,
-    "major": "Business Economics",
-    "hometown": "Arcadia, CA",
-    "careerInterests": [
-      "Consulting",
-      "Marketing"
-    ],
-    "hobbies": [
-      "NYT Mini games",
-      "Workout classes",
-      "Dancing"
-    ],
-    "photo": null,
-    "linkedin": null
-  },
-  {
-    "slug": "carrie-chen",
-    "name": "Carrie Chen",
-    "role": null,
-    "isExec": null,
-    "year": 2,
-    "major": "Cognitive Science (Design & Interaction)",
-    "hometown": "Diamond Bar, CA",
-    "careerInterests": [
-      "Project Management",
-      "Product Design",
-      "UI/UX Design",
-      "Marketing"
-    ],
-    "hobbies": [
-      "Reading and writing",
-      "Caffeine",
-      "Making music",
-      "Fried chicken enthusiast"
-    ],
-    "photo": null,
-    "linkedin": null
-  },
-  {
-    "slug": "aarush-kochar",
-    "name": "Aarush Kochar",
-    "role": null,
-    "isExec": null,
-    "year": 2,
-    "major": "Real Estate & Development, Finance",
-    "hometown": "Corona, CA",
-    "careerInterests": [
-      "Real Estate Development",
-      "Real Estate Investment"
-    ],
-    "hobbies": [
-      "Gym",
-      "Traveling",
-      "Guitar",
-      "Reading",
-      "Swimming",
-      "Cafe hopping"
-    ],
-    "photo": null,
-    "linkedin": null
-  },
-  {
-    "slug": "jada-vera",
-    "name": "Jada Vera",
-    "role": null,
-    "isExec": null,
-    "year": 4,
-    "major": "Business Psychology",
-    "hometown": "Long Beach, CA",
-    "careerInterests": [
-      "Product Management",
-      "Sales & Operations"
-    ],
-    "hobbies": [
-      "Trying new foods",
-      "Going to new places",
-      "Being spontaneous",
-      "Braiding Mason's wig"
-    ],
-    "photo": null,
-    "linkedin": null
-  },
-  {
-    "slug": "nyle-santiago-millan",
-    "name": "Nyle Santiago Millan",
-    "role": null,
-    "isExec": null,
-    "year": 4,
-    "major": "Urban Studies & Planning",
-    "hometown": "Sylmar, CA",
-    "careerInterests": [
-      "Real Estate",
-      "Development"
-    ],
-    "hobbies": [
-      "Gym",
-      "Videography",
-      "Learning songs in Mandarin",
-      "Foodmaxing"
     ],
     "photo": null,
     "linkedin": null
@@ -243,24 +390,267 @@
     "linkedin": null
   },
   {
-    "slug": "richard-li",
-    "name": "Richard Li",
+    "slug": "jessie-hu",
+    "name": "Jessie Hu",
     "role": null,
     "isExec": null,
-    "year": 2,
-    "major": "Mathematics and Economics",
-    "hometown": "Irvine, CA",
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/jessie-hu.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "katrina-dinh",
+    "name": "Katrina Dinh",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/katrina-dinh.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "kavyan-patel",
+    "name": "Kavyan Patel",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/kavyan-patel.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "leandro-zheng",
+    "name": "Leandro Zheng",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/leandro-zheng.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "megan-choe",
+    "name": "Megan Choe",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/megan-choe.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "morgan-arrasmith",
+    "name": "Morgan Arrasmith",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/morgan-arrasmith.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "nyle-santiago-millan",
+    "name": "Nyle Santiago Millan",
+    "role": null,
+    "isExec": null,
+    "year": 4,
+    "major": "Urban Studies & Planning",
+    "hometown": "Sylmar, CA",
     "careerInterests": [
-      "Finance",
-      "Burger flipper"
+      "Real Estate",
+      "Development"
     ],
     "hobbies": [
-      "Lifting",
-      "Basketball",
-      "Cologne",
-      "Sports statistics analysis"
+      "Gym",
+      "Videography",
+      "Learning songs in Mandarin",
+      "Foodmaxing"
     ],
     "photo": null,
+    "linkedin": null
+  },
+  {
+    "slug": "omar-rahabi",
+    "name": "Omar Rahabi",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/omar-rahabi.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "pratham-savla",
+    "name": "Pratham Savla",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/pratham-savla.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "samara-rathod",
+    "name": "Samara Rathod",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/samara-rathod.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "sara-asad",
+    "name": "Sara Asad",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/sara-asad.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "savun-takhar",
+    "name": "Savun Takhar",
+    "role": null,
+    "isExec": null,
+    "year": 4,
+    "major": "Mathematics and Economics",
+    "hometown": "Union City, CA",
+    "careerInterests": [
+      "Consulting",
+      "Product Management"
+    ],
+    "hobbies": [
+      "Hiking",
+      "Sports",
+      "Food",
+      "Legos",
+      "Sneaker collecting"
+    ],
+    "photo": "/members/savun-takhar.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "scarlett-jeffries",
+    "name": "Scarlett Jeffries",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/scarlett-jeffries.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "sophia-chan",
+    "name": "Sophia Chan",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/sophia-chan.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "sophie-he",
+    "name": "Sophie He",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/sophie-he.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "tammer-rayes",
+    "name": "Tammer Rayes",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/tammer-rayes.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "tanisha-varma",
+    "name": "Tanisha Varma",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/tanisha-varma.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "unice-liu",
+    "name": "Unice Liu",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/unice-liu.avif",
+    "linkedin": null
+  },
+  {
+    "slug": "venkat-mangalampeta",
+    "name": "Venkat Mangalampeta",
+    "role": null,
+    "isExec": null,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": "/members/venkat-mangalampeta.avif",
     "linkedin": null
   }
 ]

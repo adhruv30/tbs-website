@@ -63,16 +63,59 @@ export function SiteNav() {
 
         <div className="hidden items-center gap-8 md:flex">
           <ul className="flex items-center gap-7">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-sm font-medium tracking-wide text-parchment/85 transition-colors hover:text-gold-400"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) =>
+              link.children ? (
+                // Opens on hover and on keyboard focus, so it is reachable by tab.
+                <li key={link.href} className="group relative">
+                  <Link
+                    href={link.href}
+                    aria-haspopup="true"
+                    className="flex items-center gap-1.5 text-sm font-medium tracking-wide text-parchment/85 transition-colors group-hover:text-gold-400 group-focus-within:text-gold-400"
+                  >
+                    {link.label}
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden
+                      className="h-3.5 w-3.5 transition-transform group-hover:rotate-180 group-focus-within:rotate-180"
+                    >
+                      <path
+                        d="m6 9 6 6 6-6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+
+                  {/* pt-3 keeps a hover bridge between the trigger and the panel */}
+                  <div className="invisible absolute top-full left-0 pt-3 opacity-0 transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <ul className="min-w-[15rem] rounded-lg border border-navy-800 bg-navy-950/98 py-2 shadow-xl backdrop-blur-md">
+                      {link.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            className="block px-5 py-2.5 text-sm text-parchment/85 transition-colors hover:bg-navy-900 hover:text-gold-400"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium tracking-wide text-parchment/85 transition-colors hover:text-gold-400"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
           <SocialLinks
             items={socials}
@@ -117,13 +160,33 @@ export function SiteNav() {
           <ul className="mx-auto w-full max-w-6xl px-5 py-2">
             {navLinks.map((link) => (
               <li key={link.href} className="border-b border-navy-800/50 last:border-0">
-                <Link
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block py-4 font-serif text-lg text-parchment transition-colors hover:text-gold-400"
-                >
-                  {link.label}
-                </Link>
+                {link.children ? (
+                  // No hover on touch, so the children are always listed.
+                  <div className="py-4">
+                    <p className="font-serif text-lg text-parchment/50">{link.label}</p>
+                    <ul className="mt-2">
+                      {link.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="block py-2 pl-4 font-serif text-lg text-parchment transition-colors hover:text-gold-400"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block py-4 font-serif text-lg text-parchment transition-colors hover:text-gold-400"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

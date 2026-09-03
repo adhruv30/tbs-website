@@ -10,8 +10,8 @@ export type Member = {
   role: string | null
   isExec: boolean | null
   year: ClassYear | null
-  major: string
-  hometown: string
+  major: string | null
+  hometown: string | null
   careerInterests: string[]
   hobbies: string[]
   photo: string | null
@@ -54,4 +54,9 @@ export function initialsOf(name: string): string {
     .map((word) => word[0])
     .join('')
     .toUpperCase()
+}
+
+/** The member holding the President role, used by the home page letter. */
+export function getPresident(): Member | undefined {
+  return members.find((member) => member.role === 'President')
 }
