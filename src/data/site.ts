@@ -63,8 +63,62 @@ export const socials: Social[] = [
 
 export const hero = {
   title: 'Triton Business Society',
-  primaryCta: { label: 'Meet the members', href: '/members' },
-  secondaryCta: { label: 'Rush with us', href: '/#contact' },
+  primaryCta: { label: 'Members', href: '/members' },
+  secondaryCta: { label: 'Recruitment', href: '/rush' },
+}
+
+export const rushPage = {
+  heading: "Fall '26 Rush",
+  description: 'Recruitment FAQs for Triton Business Society, fall quarter 2026.',
+  /** Shown only while `public/rush/` is empty. */
+  emptyNote: 'Flyers coming soon.',
+  faq: {
+    heading: "Recruitment FAQ's.",
+    items: [
+      {
+        question: 'Why should I join Triton Business Society?',
+        answer:
+          'As an independent, student-run business organization at UC San Diego, Triton Business Society boasts an admirable alumni network and hosts a variety of social and professional events. Our members can attest to the impact Triton Business Society has had on their college experiences, whether it be professional development or making life-long friendships. We truly believe you can find a community in Triton Business Society, and we are here to help you grow!',
+      },
+      {
+        question: 'How do I join Triton Business Society?',
+        answer:
+          'TBS hosts a recruitment week every Fall and Winter Quarter. We post more information regarding recruitment events on our Instagram account @tritonbusinesssociety. We hope to see you there!',
+      },
+      {
+        question:
+          'Is it hard to join Triton Business Society? How selective is the process?',
+        answer:
+          'We are open to all majors, and to anyone who has an interest in business! Our recruitment process is comparable to other business orgs on campus.',
+      },
+      {
+        question: 'Are there any requirements to join Triton Business Society?',
+        answer:
+          'You need to have at least a 2.5 GPA and a minimum of 2 quarters left after joining until graduation, to be eligible to join.',
+      },
+      {
+        question: 'What advice do you have for Recruitment Week?',
+        answer:
+          "Be yourself! As much as you may be trying to get to know us, we are trying to get to know you! Make sure to talk to us during our networking time at the beginning and end of our events. These times are a great way to get to know the members more personally, so be sure to ask questions! If you have no prior business-related experience - don't worry! One of our core values is growth, so we are looking for members with all kinds of backgrounds and experiences. Come say hi!",
+      },
+      {
+        question: 'How many new members do you accept?',
+        answer:
+          'We do not have a set number of members we are looking for! The amount of new members we take changes every quarter, so we encourage you to attend our recruitment events.',
+      },
+      {
+        question: 'What is the time commitment like?',
+        answer: 'The time commitment is like another 4 unit class.',
+      },
+    ],
+    more: {
+      heading: 'More Questions?',
+      /** Rendered around the email and Instagram links. */
+      before: 'Feel free to contact us at ',
+      between: ' or DM us on Instagram ',
+      instagram: 'tritonbusinesssociety',
+    },
+  },
 }
 
 export const values = {

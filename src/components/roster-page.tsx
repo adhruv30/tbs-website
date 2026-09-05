@@ -10,9 +10,11 @@ import type { Member } from '@/data/members'
 export function RosterPage({
   heading,
   members,
+  showRoles = true,
 }: {
   heading: string
   members: Member[]
+  showRoles?: boolean
 }) {
   return (
     <>
@@ -41,7 +43,7 @@ export function RosterPage({
       </div>
 
       <div className="mx-auto w-full max-w-[1700px] px-5 py-12 sm:px-8 sm:py-16">
-        <MemberGrid members={members} />
+        <MemberGrid members={members} showRoles={showRoles} />
       </div>
     </>
   )

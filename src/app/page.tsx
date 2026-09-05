@@ -16,6 +16,26 @@ import {
   whereWereAt,
 } from '@/data/site'
 
+/*
+ * Hand-writing the hero wordmark as one unbroken stroke. The words are separate
+ * elements only because each needs its own clip; the timing has to hide that.
+ * So a word's reveal lasts in proportion to its length, and the next starts the
+ * instant the last ends -- no beat between them. A pause at the spaces would
+ * give the seams away, and there is nothing to draw there anyway.
+ */
+const WRITE_SECONDS_PER_CHAR = 0.075
+
+function getHeroStrokes(title: string) {
+  let elapsed = 0
+  return title.split(' ').map((word) => {
+    // Rounded so the inline style is a clean number, not 0.5700000000000001s.
+    const duration = Number((word.length * WRITE_SECONDS_PER_CHAR).toFixed(3))
+    const delay = Number(elapsed.toFixed(3))
+    elapsed += duration
+    return { word, duration, delay }
+  })
+}
+
 export default function HomePage() {
   return (
     <>
@@ -47,11 +67,14 @@ function Hero() {
           id="hero-title"
           className="max-w-4xl font-serif text-[2.75rem] leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl"
         >
-          {hero.title.split(' ').map((word, index) => (
+          {getHeroStrokes(hero.title).map(({ word, duration, delay }, index) => (
             <span
               key={`${word}-${index}`}
-              className="hero-word mr-[0.25em]"
-              style={{ animationDelay: `${index * 0.24}s` }}
+              className="hero-word"
+              style={{
+                animationDuration: `${duration}s`,
+                animationDelay: `${delay}s`,
+              }}
             >
               {word}
             </span>
@@ -60,13 +83,13 @@ function Hero() {
         <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
           <Link
             href={hero.primaryCta.href}
-            className="inline-flex items-center justify-center rounded-full bg-gold-500 px-7 py-3.5 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-300"
+            className="inline-flex items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-base font-semibold text-navy-950 transition-colors hover:bg-gold-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-300"
           >
             {hero.primaryCta.label}
           </Link>
           <Link
             href={hero.secondaryCta.href}
-            className="inline-flex items-center justify-center rounded-full border border-parchment/35 bg-navy-950/45 px-7 py-3.5 text-sm font-semibold text-parchment transition-colors hover:border-parchment hover:bg-navy-950/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-parchment"
+            className="inline-flex items-center justify-center rounded-full border border-parchment/35 bg-navy-950/45 px-6 py-3 text-base font-semibold text-parchment transition-colors hover:border-parchment hover:bg-navy-950/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-parchment"
           >
             {hero.secondaryCta.label}
           </Link>

@@ -3,7 +3,16 @@ import Link from 'next/link'
 import { MemberAvatar } from '@/components/member-avatar'
 import type { Member } from '@/data/members'
 
-export function MemberCard({ member, index }: { member: Member; index: number }) {
+export function MemberCard({
+  member,
+  index,
+  showRole = true,
+}: {
+  member: Member
+  index: number
+  /** The full roster lists exec alongside everyone else, titles withheld. */
+  showRole?: boolean
+}) {
   return (
     <li>
       <Link
@@ -25,8 +34,8 @@ export function MemberCard({ member, index }: { member: Member; index: number })
           <h3 className="font-serif text-base leading-snug font-semibold text-balance text-navy-900 sm:text-lg">
             {member.name}
           </h3>
-          {/* Only exec carry a role; everyone else shows just their name. */}
-          {member.role ? (
+          {/* Only exec carry a role, and only where the page asks for it. */}
+          {showRole && member.role ? (
             <p className="mt-1 font-serif text-xs leading-snug text-balance text-gold-600 sm:text-sm">
               {member.role}
             </p>

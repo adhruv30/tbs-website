@@ -52,9 +52,20 @@ export function SiteNav() {
           className="group flex items-center gap-3 text-parchment"
           aria-label={`${site.name} — home`}
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold-500/70 font-serif text-[0.7rem] font-bold tracking-[0.08em] text-gold-400 transition-colors group-hover:border-gold-400 group-hover:text-gold-300">
-            {site.initials}
-          </span>
+          {/*
+            Decorative: the surrounding link is already labelled.
+
+            The rose sits high-right and the letters low-left, so the mark's
+            geometric centre is well above its lettering -- centring the box
+            would leave the wordmark floating above the TBS. The S spans
+            y84-152 of the artwork's 167, putting its centre at 70.7% of the
+            height, so lifting the mark by that 20.7% overshoot drops the S
+            onto the wordmark's centre line and lets the rose rise above it.
+          */}
+          <span
+            aria-hidden
+            className="brand-mark h-8 shrink-0 -translate-y-[20.7%] text-gold-400 transition-colors group-hover:text-gold-300 sm:h-9"
+          />
           <span className="font-serif text-base leading-tight font-semibold tracking-tight sm:text-lg">
             <span className="sm:hidden">{site.shortName}</span>
             <span className="hidden sm:inline">{site.name}</span>

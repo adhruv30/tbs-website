@@ -19,7 +19,6 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, "Times New Roman", serif;
 }
 
@@ -27,6 +26,19 @@ body {
   background: var(--color-parchment);
   color: var(--color-navy-900);
   -webkit-font-smoothing: antialiased;
+}
+
+/* The official TBS mark. The artwork is black ink on transparency, so it is
+   painted as an alpha mask tinted by `color` rather than drawn directly --
+   that lets it sit gold on the navy nav and inherit hover transitions, instead
+   of being a black shape invisible against a dark background. Width comes from
+   the trimmed artwork's own aspect, so callers only set a height. */
+.brand-mark {
+  display: block;
+  aspect-ratio: 191 / 167;
+  background-color: currentColor;
+  -webkit-mask: url('/brand/tbs-logo.png') center / contain no-repeat;
+  mask: url('/brand/tbs-logo.png') center / contain no-repeat;
 }
 
 /* Anchored sections sit below the sticky nav when jumped to. */
@@ -44,21 +56,41 @@ body {
   }
 }
 
-/* Hero wordmark: each word slides in from the left, staggered. */
-@keyframes hero-word-in {
+/* Hero wordmark: written out by hand. Each word starts clipped to nothing and
+   the right edge of the clip sweeps across it, so letters appear under a moving
+   pen instead of fading in. Duration is set per word from its length (see
+   page.tsx) and the timing is linear, which is what keeps the pen at one speed
+   across a short word and a long one. */
+@keyframes hero-word-write {
   from {
-    opacity: 0;
-    transform: translateX(-1.75rem);
+    clip-path: inset(0 100% 0 0);
   }
   to {
-    opacity: 1;
-    transform: translateX(0);
+    clip-path: inset(0);
   }
 }
 
 .hero-word {
   display: inline-block;
-  animation: hero-word-in 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  /* clip-path clips to the border box, and Playfair's ink runs outside it --
+     the descender on a `y`, and a little side bearing on the outer letters. So
+     the box needs real room or the sweep shaves them. The padding makes that
+     room and the matching negative margin hands every bit of it back, leaving
+     the line box exactly where it was.
+
+     The sides stay tight because horizontal padding is also dead sweep time:
+     the pen crosses it with nothing to draw. Vertical padding is free. */
+  padding: 0.25em 0.1em 0.35em;
+  margin: -0.25em -0.1em -0.35em;
+
+  animation-name: hero-word-write;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.hero-word:not(:last-child) {
+  margin-right: 0.15em;
 }
 
 /* The global reduce block shortens durations but not delays, which would still
@@ -66,8 +98,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-word {
     animation: none !important;
-    opacity: 1;
-    transform: none;
+    clip-path: none;
   }
 }
 
@@ -83,7 +114,7 @@ body {
 }
 
 .marquee-track {
-  animation: marquee-x 45s linear infinite;
+  animation: marquee-x 30s linear infinite;
 }
 
 /* Pause so a photo can actually be looked at. */
