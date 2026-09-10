@@ -4,34 +4,37 @@ import path from 'node:path'
 import type { Metadata } from 'next'
 import Image, { type StaticImageData } from 'next/image'
 
-import { rushPage, site } from '@/data/site'
+import { recruitmentPage, site } from '@/data/site'
 
-const RUSH_DIR = path.join(process.cwd(), 'public', 'rush')
+const RECRUITMENT_DIR = path.join(process.cwd(), 'public', 'recruitment')
 const IMAGE_EXTENSIONS = /\.(jpe?g|png|webp|avif)$/i
 
 export const metadata: Metadata = {
-  title: rushPage.heading,
-  description: rushPage.description,
+  title: recruitmentPage.heading,
+  description: recruitmentPage.description,
 }
 
 /**
- * Reads `public/rush/` at build time and resolves each flyer through a static
- * import, so dropping the design team's artwork in needs no code edit and
- * always gets a fresh content-hashed URL. Same convention as the hero and the
- * gallery strip. The page shows the first one; the rest of the panel is the FAQ.
+ * Reads `public/recruitment/` at build time and resolves each flyer through
+ * a static import, so dropping the design team's artwork in needs no code edit
+ * and always gets a fresh content-hashed URL. Same convention as the hero and
+ * the gallery strip. The page shows the first one; the rest of the panel is
+ * the FAQ.
  *
  * Extensions must be lowercase: the filter below is case-insensitive so an
  * uppercase `.PNG` off a design export still gets picked up, but Turbopack's
  * module resolution is case-sensitive and fails the build on one. Rename rather
  * than loosening this.
  *
- * The `../../../public/rush/` prefix is static on purpose: the bundler needs it
- * to know which directory to include.
+ * The `../../../public/recruitment/` prefix is static on purpose: the bundler
+ * needs it to know which directory to include.
  */
 async function getFlyers(): Promise<StaticImageData[]> {
   let files: string[] = []
   try {
-    files = fs.readdirSync(RUSH_DIR).filter((file) => IMAGE_EXTENSIONS.test(file))
+    files = fs
+      .readdirSync(RECRUITMENT_DIR)
+      .filter((file) => IMAGE_EXTENSIONS.test(file))
   } catch {
     return []
   }
@@ -40,7 +43,7 @@ async function getFlyers(): Promise<StaticImageData[]> {
   const flyers = await Promise.all(
     files.map(async (file) => {
       try {
-        const mod = await import(`../../../public/rush/${file}`)
+        const mod = await import(`../../../public/recruitment/${file}`)
         return mod.default as StaticImageData
       } catch {
         return null
@@ -50,10 +53,10 @@ async function getFlyers(): Promise<StaticImageData[]> {
   return flyers.filter((flyer): flyer is StaticImageData => flyer !== null)
 }
 
-export default async function RushPage() {
+export default async function RecruitmentPage() {
   const flyers = await getFlyers()
   const flyer = flyers[0]
-  const { faq } = rushPage
+  const { faq } = recruitmentPage
   const instagramUrl = `https://www.instagram.com/${faq.more.instagram}/`
 
   return (
@@ -70,12 +73,12 @@ export default async function RushPage() {
       <div className="flex min-h-[calc(100svh-4rem-1px)] flex-col sm:min-h-[calc(100svh-5rem-1px)] md:h-[calc(100svh-5rem-1px)] md:min-h-0 md:flex-row">
         {/* The flyer carries its own copy, so the page heading is for screen
             readers and the tab title only. */}
-        <h1 className="sr-only">{rushPage.heading}</h1>
+        <h1 className="sr-only">{recruitmentPage.heading}</h1>
 
         {flyer ? (
           <Image
             src={flyer}
-            alt={`${rushPage.heading} flyer`}
+            alt={`${recruitmentPage.heading} flyer`}
             sizes="(min-width: 768px) 42vw, 100vw"
             priority
             className="h-auto w-full object-contain md:h-full md:w-[42%] md:shrink-0 md:object-left"
@@ -83,7 +86,7 @@ export default async function RushPage() {
         ) : (
           // Awaiting artwork -- a blank column would read as broken.
           <p className="m-6 rounded-lg border border-dashed border-parchment/25 px-6 py-20 text-center text-parchment/70 md:w-[42%] md:shrink-0">
-            {rushPage.emptyNote}
+            {recruitmentPage.emptyNote}
           </p>
         )}
 

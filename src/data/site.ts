@@ -15,6 +15,12 @@ export type Social = {
   href: string
   /** Maps to an icon in `src/components/social-icons.tsx`. */
   icon: 'instagram' | 'linkedin' | 'email'
+  /**
+   * What the contact stack prints next to the icon: the handle with its `@`
+   * for the social accounts, the plain address for email. The nav renders
+   * these as bare icons and ignores it.
+   */
+  handle: string
 }
 
 export type Value = {
@@ -25,10 +31,10 @@ export type Value = {
 export const site = {
   name: 'Triton Business Society',
   shortName: 'TBS',
-  tagline: 'The business organization of UC San Diego.',
+  tagline: 'The Largest Pre-Professional Business Organization at UC San Diego',
   description:
-    'Triton Business Society is a pre-professional business org at UC San Diego building the next generation of principled, ambitious leaders.',
-  url: 'https://tritonbusinesssociety.org',
+    'Triton Business Society is a pre-professional business organization at UC San Diego building the next generation of principled, ambitious leaders.',
+  url: 'https://tbsatucsd.com',
   email: 'tritonbusinesssociety@gmail.com',
   location: 'Rady School of Management, UC San Diego',
 } as const
@@ -42,6 +48,7 @@ export const navLinks: NavLink[] = [
       { label: 'Executive Committee', href: '/executive-committee' },
     ],
   },
+  { label: 'Recruitment', href: '/recruitment' },
   { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/#contact' },
 ]
@@ -51,33 +58,40 @@ export const socials: Social[] = [
     label: 'Instagram',
     href: 'https://www.instagram.com/tritonbusinesssociety/',
     icon: 'instagram',
+    handle: '@tritonbusinesssociety',
   },
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/company/tritonbusinesssociety',
     icon: 'linkedin',
+    handle: '@tritonbusinesssociety',
   },
-  { label: 'Email', href: `mailto:${site.email}`, icon: 'email' },
+  {
+    label: 'Email',
+    href: `mailto:${site.email}`,
+    icon: 'email',
+    handle: site.email,
+  },
 ]
 
 export const hero = {
   title: 'Triton Business Society',
   primaryCta: { label: 'Members', href: '/members' },
-  secondaryCta: { label: 'Recruitment', href: '/rush' },
+  secondaryCta: { label: 'Recruitment', href: '/recruitment' },
 }
 
-export const rushPage = {
-  heading: "Fall '26 Rush",
+export const recruitmentPage = {
+  heading: "Fall '26 Recruitment",
   description: 'Recruitment FAQs for Triton Business Society, fall quarter 2026.',
-  /** Shown only while `public/rush/` is empty. */
+  /** Shown only while `public/recruitment/` is empty. */
   emptyNote: 'Flyers coming soon.',
   faq: {
-    heading: "Recruitment FAQ's.",
+    heading: "Recruitment FAQ's",
     items: [
       {
         question: 'Why should I join Triton Business Society?',
         answer:
-          'As an independent, student-run business organization at UC San Diego, Triton Business Society boasts an admirable alumni network and hosts a variety of social and professional events. Our members can attest to the impact Triton Business Society has had on their college experiences, whether it be professional development or making life-long friendships. We truly believe you can find a community in Triton Business Society, and we are here to help you grow!',
+          'As an independent, student-run pre-professional business organization at UC San Diego, Triton Business Society boasts an admirable alumni network and hosts a variety of social and professional events. Our members can attest to the impact Triton Business Society has had on their college experiences, whether it be professional development or making life-long friendships. We truly believe you can find a community in Triton Business Society, and we are here to help you grow!',
       },
       {
         question: 'How do I join Triton Business Society?',
@@ -146,13 +160,13 @@ export const about = {
   eyebrow: 'About',
   heading: 'What is Triton Business Society?',
   paragraphs: [
-    'Founded at the University of California, San Diego, Triton Business Society (TBS) is a professional organization with a commitment to providing professional development and education for business-minded students on campus. Our 40+ active members have worked everywhere from local start-ups to tech giants. With an alumni network spanning across top companies and career paths across many industries, TBS helps our members get to where they want to go.',
+    'Founded at the University of California, San Diego, Triton Business Society (TBS) is a pre-professional business organization with a commitment to providing professional development and education for business-minded students on campus. Our 40+ active members have worked everywhere from local start-ups to tech giants. With an alumni network spanning across top companies and career paths across many industries, TBS helps our members get to where they want to go.',
     'While TBS offers opportunities for professional growth, we pride ourselves on the close community we have established. We seek to balance professionalism and social bonding throughout our organization. With members from a diverse array of backgrounds and experiences, we have been able to form life-long friendships while pursuing our professional aspirations together. More than a club, we are a community. We welcome you to learn more about us at our upcoming Recruitment Week events. Hope to see you there!',
   ],
 }
 
 export const letter = {
-  heading: 'From Our President.',
+  heading: 'From Our President',
   /** Slug of the member who signs the letter and appears in the portrait. */
   authorSlug: 'darshana-zala',
   paragraphs: [
@@ -167,14 +181,11 @@ export const letter = {
 
 export const contact = {
   eyebrow: 'Contact',
-  heading: 'Come find us.',
-  body: 'Rush events run in weeks 1 and 2 of fall and winter quarter. If you missed them, reach out anyway — we answer every email.',
-  items: [
-    { label: 'Email', value: site.email, href: `mailto:${site.email}` },
-    { label: 'Where', value: site.location },
-    { label: 'Office hours', value: 'Thursdays, 4–6pm · Rady Courtyard' },
-  ],
-}
+  heading: 'Come find us',
+  body: 'Our Fall 2026 Recruitment is right around the corner. Feel free to email us or DM us with any questions!',
+  /** The contact stack, top to bottom. Keyed to `socials` by icon. */
+  order: ['email', 'instagram', 'linkedin'],
+} as const
 
 export type Company = {
   name: string
@@ -231,6 +242,9 @@ export const companies: Company[] = [
   { name: 'NFL', logo: '/logos/nfl.svg' },
   { name: 'Epic Games', logo: '/logos/epic-games.svg' },
   { name: 'NBCUniversal', logo: '/logos/nbcuniversal.svg' },
+  // No free SVG exists: Wikimedia Commons has no Northwestern Mutual logo
+  // (every other mark here came from there), and the only vector on en.wikipedia
+  // is non-free fair use. Renders as the name until a licensed mark turns up.
   { name: 'Northwestern Mutual', logo: null },
 ]
 
