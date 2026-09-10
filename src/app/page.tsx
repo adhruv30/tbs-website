@@ -6,7 +6,7 @@ import { HeroBackdrop } from '@/components/hero-backdrop'
 import { MemberAvatar } from '@/components/member-avatar'
 import { getValueBackdrops } from '@/components/value-backdrops'
 import { ValuesSection } from '@/components/values-section'
-import { getPresident } from '@/data/members'
+import { getMember } from '@/data/members'
 import {
   about,
   companies,
@@ -135,22 +135,6 @@ function About() {
             ))}
           </div>
         </div>
-
-        <dl className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-parchment/12 pt-12 sm:mt-20 lg:grid-cols-4">
-          {about.stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="sr-only">{stat.label}</dt>
-              <dd>
-                <span className="block font-serif text-4xl font-semibold text-gold-400 sm:text-5xl">
-                  {stat.value}
-                </span>
-                <span className="mt-2 block text-sm tracking-wide text-parchment/60">
-                  {stat.label}
-                </span>
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   )
@@ -173,7 +157,8 @@ function WhereWereAt() {
 }
 
 function PresidentLetter() {
-  const president = getPresident()
+  // The letter is signed by its author, who need not be the sitting President.
+  const author = getMember(letter.authorSlug)
 
   return (
     <section className="bg-sand">
@@ -184,25 +169,31 @@ function PresidentLetter() {
               {letter.heading}
             </h2>
 
-            {/* Only the letter body is a placeholder — heading and sign-off are real. */}
-            <p className="mt-8 rounded-lg border border-dashed border-sand-dark bg-white/60 px-6 py-10 text-center font-serif text-sm text-navy-700/70">
-              {letter.placeholder}
-            </p>
+            <div className="mt-8 space-y-5">
+              {letter.paragraphs.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 32)}
+                  className="font-serif text-base leading-relaxed text-navy-800/85 text-pretty"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
-            {president ? (
+            {author ? (
               <p className="mt-8 font-serif text-base leading-relaxed text-navy-800/85">
                 {letter.signoff}
                 <br />
-                {president.name.split(' ')[0]}
+                {author.name.split(' ')[0]}
               </p>
             ) : null}
           </div>
         </div>
 
-        {president ? (
+        {author ? (
           <div className="relative min-h-[26rem] sm:min-h-[32rem] lg:min-h-[40rem]">
             <MemberAvatar
-              member={president}
+              member={author}
               sizes="(min-width: 1024px) 50vw, 100vw"
               initialsClassName="text-7xl"
               // Anchor to the top so the portrait's head isn't cropped out.

@@ -21,7 +21,7 @@
       "Cars"
     ],
     "photo": "/members/fiona-chen.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/fionac2005/"
   },
   {
     "slug": "krishna-patel",
@@ -44,7 +44,7 @@
       "Pilates"
     ],
     "photo": "/members/krishna-patel.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/krishna--patell/"
   },
   {
     "slug": "richard-li",
@@ -65,7 +65,7 @@
       "Sports statistics analysis"
     ],
     "photo": "/members/richard-li.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/richard-r-li/"
   },
   {
     "slug": "leena-khoja",
@@ -87,7 +87,7 @@
       "Gym"
     ],
     "photo": "/members/leena-khoja.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/leena-khoja07/"
   },
   {
     "slug": "harshini-kanakala",
@@ -100,7 +100,7 @@
     "careerInterests": [],
     "hobbies": [],
     "photo": null,
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/harshini-kanakala/"
   },
   {
     "slug": "yejee-lee",
@@ -122,7 +122,7 @@
       "Drawing"
     ],
     "photo": "/members/yejee-lee.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/yejee-lee/"
   },
   {
     "slug": "arjun-dhruv",
@@ -145,7 +145,7 @@
       "Fantasy Football"
     ],
     "photo": "/members/arjun-dhruv.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/arjun-dhruv/"
   },
   {
     "slug": "koshik-kumaravel",
@@ -167,7 +167,7 @@
       "Cutting hair"
     ],
     "photo": "/members/koshik-kumaravel.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/koshik-kumaravel/"
   },
   {
     "slug": "mason-yu",
@@ -189,7 +189,7 @@
       "Frolicking in green meadows"
     ],
     "photo": null,
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/mason-yu28/"
   },
   {
     "slug": "carrie-chen",
@@ -212,7 +212,7 @@
       "Fried chicken enthusiast"
     ],
     "photo": null,
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/carrie-chenn/"
   },
   {
     "slug": "nevin-peppers",
@@ -231,7 +231,7 @@
       "Professional glover"
     ],
     "photo": "/members/nevin-peppers.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/nevin-peppers05/"
   },
   {
     "slug": "vritti-godani",
@@ -251,28 +251,30 @@
       "Dancing"
     ],
     "photo": "/members/vritti-godani.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/vritti-godani/"
   },
   {
-    "slug": "jada-vera",
-    "name": "Jada Vera",
+    "slug": "arushi-dubey",
+    "name": "Arushi Dubey",
     "role": "VP of Diversity, Equity and Inclusion",
     "isExec": true,
-    "year": 4,
-    "major": "Business Psychology",
-    "hometown": "Long Beach, CA",
+    "year": 2,
+    "major": "Economics",
+    "hometown": "Dubai, UAE",
     "careerInterests": [
-      "Product Management",
-      "Sales & Operations"
+      "Finance",
+      "Accounting",
+      "Consulting"
     ],
     "hobbies": [
-      "Trying new foods",
-      "Going to new places",
-      "Being spontaneous",
-      "Braiding Mason's wig"
+      "Guitar",
+      "Poster collecting",
+      "Watching and logging films",
+      "Music",
+      "Meow"
     ],
-    "photo": null,
-    "linkedin": null
+    "photo": "/members/arushi-dubey.avif",
+    "linkedin": "https://www.linkedin.com/in/arushi-dubey26/"
   },
   {
     "slug": "aarush-kochar",
@@ -295,7 +297,7 @@
       "Cafe hopping"
     ],
     "photo": null,
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/aarush-kochar/"
   },
   {
     "slug": "andrew-nguyen",
@@ -317,30 +319,28 @@
       "Buying clothes"
     ],
     "photo": "/members/andrew-nguyen.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/andrewnguuyen/"
   },
   {
-    "slug": "arushi-dubey",
-    "name": "Arushi Dubey",
+    "slug": "jada-vera",
+    "name": "Jada Vera",
     "role": null,
     "isExec": null,
-    "year": 2,
-    "major": "Economics",
-    "hometown": "Dubai, UAE",
+    "year": 4,
+    "major": "Business Psychology",
+    "hometown": "Long Beach, CA",
     "careerInterests": [
-      "Finance",
-      "Accounting",
-      "Consulting"
+      "Product Management",
+      "Sales & Operations"
     ],
     "hobbies": [
-      "Guitar",
-      "Poster collecting",
-      "Watching and logging films",
-      "Music",
-      "Meow"
+      "Trying new foods",
+      "Going to new places",
+      "Being spontaneous",
+      "Braiding Mason's wig"
     ],
-    "photo": "/members/arushi-dubey.avif",
-    "linkedin": null
+    "photo": null,
+    "linkedin": "https://www.linkedin.com/in/jada-vera/"
   },
   {
     "slug": "brendan-nguyen",
@@ -363,7 +363,7 @@
       "Mango connoisseur"
     ],
     "photo": "/members/brendan-nguyen.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/brendanqnguyen/"
   },
   {
     "slug": "christopher-cappello",
@@ -387,7 +387,7 @@
       "Volcano surfing"
     ],
     "photo": "/members/christopher-cappello.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/christopher-capp/"
   },
   {
     "slug": "claire-yoo",
@@ -408,11 +408,11 @@
       "Side quests"
     ],
     "photo": "/members/claire-yoo.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/clairehyoo/"
   },
   {
-    "slug": "connor-zhao",
-    "name": "Connor Zhao",
+    "slug": "conner-zhao",
+    "name": "Conner Zhao",
     "role": null,
     "isExec": null,
     "year": 4,
@@ -429,8 +429,8 @@
       "Cars",
       "Tech gadgets"
     ],
-    "photo": "/members/connor-zhao.avif",
-    "linkedin": null
+    "photo": "/members/conner-zhao.avif",
+    "linkedin": "https://www.linkedin.com/in/connerzhao/"
   },
   {
     "slug": "darshana-zala",
@@ -453,7 +453,7 @@
       "Working out"
     ],
     "photo": "/members/darshana-zala.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/darshana-zala/"
   },
   {
     "slug": "dilora-obilo",
@@ -475,7 +475,7 @@
       "Taking pics"
     ],
     "photo": null,
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/dilora-obilo/"
   },
   {
     "slug": "dina-choi",
@@ -497,7 +497,7 @@
       "Making alternative soundtracks for films"
     ],
     "photo": null,
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/dina-choi/"
   },
   {
     "slug": "jessie-hu",
@@ -519,7 +519,7 @@
       "Hinar"
     ],
     "photo": "/members/jessie-hu.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/jessie-hu1/"
   },
   {
     "slug": "katrina-dinh",
@@ -545,7 +545,7 @@
       "Thrifting"
     ],
     "photo": "/members/katrina-dinh.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/katrinadinh10/"
   },
   {
     "slug": "kavyan-patel",
@@ -566,7 +566,7 @@
       "Chipotle"
     ],
     "photo": "/members/kavyan-patel.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/k-patel/"
   },
   {
     "slug": "leandro-zheng",
@@ -588,7 +588,7 @@
       "Ranch-99"
     ],
     "photo": "/members/leandro-zheng.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/leandro-zheng/"
   },
   {
     "slug": "megan-choe",
@@ -606,7 +606,7 @@
       "FBGM"
     ],
     "photo": "/members/megan-choe.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/megan-choe/"
   },
   {
     "slug": "morgan-arrasmith",
@@ -630,7 +630,7 @@
       "Extreme pogo sticking"
     ],
     "photo": "/members/morgan-arrasmith.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/morgan-arrasmith/"
   },
   {
     "slug": "nyle-santiago-millan",
@@ -651,7 +651,7 @@
       "Foodmaxing"
     ],
     "photo": "/members/nyle-santiago-millan.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/nyle-millan/"
   },
   {
     "slug": "omar-rahabi",
@@ -672,7 +672,7 @@
       "Tiramisu"
     ],
     "photo": "/members/omar-rahabi.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/omar-rahabi/"
   },
   {
     "slug": "pratham-savla",
@@ -694,7 +694,7 @@
       "Food"
     ],
     "photo": "/members/pratham-savla.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/pratham-savla1/"
   },
   {
     "slug": "samara-rathod",
@@ -715,7 +715,7 @@
       "Coffee"
     ],
     "photo": "/members/samara-rathod.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/samararathod/"
   },
   {
     "slug": "sara-asad",
@@ -738,7 +738,7 @@
       "Matcha"
     ],
     "photo": "/members/sara-asad.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/sara-asad/"
   },
   {
     "slug": "savun-takhar",
@@ -760,7 +760,7 @@
       "Sneaker collecting"
     ],
     "photo": "/members/savun-takhar.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/savun-takhar/"
   },
   {
     "slug": "scarlett-jeffries",
@@ -782,7 +782,7 @@
       "Collecting Sonny Angels"
     ],
     "photo": "/members/scarlett-jeffries.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/scarlettjeffries/"
   },
   {
     "slug": "sophia-chan",
@@ -804,7 +804,7 @@
       "Matcha"
     ],
     "photo": "/members/sophia-chan.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/sophia-chan123/"
   },
   {
     "slug": "sophie-he",
@@ -829,7 +829,7 @@
       "Hot workout classes"
     ],
     "photo": "/members/sophie-he.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/sophie-he1/"
   },
   {
     "slug": "tammer-rayes",
@@ -851,7 +851,7 @@
       "Gym"
     ],
     "photo": "/members/tammer-rayes.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/tammer-rayes/"
   },
   {
     "slug": "tanisha-varma",
@@ -874,7 +874,7 @@
       "Cava"
     ],
     "photo": "/members/tanisha-varma.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/tanishavarma/"
   },
   {
     "slug": "unice-liu",
@@ -897,7 +897,7 @@
       "Being a potato connoisseur"
     ],
     "photo": "/members/unice-liu.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/unice-liu/"
   },
   {
     "slug": "venkat-mangalampeta",
@@ -919,6 +919,6 @@
       "Anything strawberry flavored"
     ],
     "photo": "/members/venkat-mangalampeta.avif",
-    "linkedin": null
+    "linkedin": "https://www.linkedin.com/in/venkat-mangalampeta/"
   }
 ]

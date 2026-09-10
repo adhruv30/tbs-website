@@ -36,6 +36,10 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${playfair.variable} h-full scroll-smooth`}
     >
       <body className="flex min-h-full flex-col bg-parchment font-serif text-navy-900">
+        {/* Scroll-reveal starts hidden; without JS it must never stay that way. */}
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
         <SiteNav />
         <main className="flex-1">{children}</main>
         <SiteFooter />

@@ -5,6 +5,7 @@ import Image from 'next/image'
 // Do not replace this with the string path '/membersBackdrop.jpg'.
 import membersBackdrop from '../../public/membersBackdrop.jpg'
 import { MemberGrid } from '@/components/member-grid'
+import { Reveal } from '@/components/reveal'
 import type { Member } from '@/data/members'
 
 export function RosterPage({
@@ -36,9 +37,11 @@ export function RosterPage({
         <div className="absolute inset-0 -z-10 bg-navy-950/55" aria-hidden />
 
         <div className="mx-auto w-full max-w-[1700px] px-5 sm:px-8">
-          <h1 className="text-center font-serif text-5xl leading-tight font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl">
-            {heading}
-          </h1>
+          <Reveal>
+            <h1 className="text-center font-serif text-5xl leading-tight font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl">
+              {heading}
+            </h1>
+          </Reveal>
         </div>
       </div>
 

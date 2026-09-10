@@ -18,9 +18,13 @@ const icons: Record<Social['icon'], (props: IconProps) => React.ReactElement> = 
       <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" />
     </svg>
   ),
+  /**
+   * LinkedIn's own mark: the rounded square is filled and the "in" is knocked
+   * out of it, so whatever sits behind the icon shows through the letters.
+   */
   linkedin: ({ className }) => (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
-      <path d="M6.94 8.4H4.06V20h2.88V8.4ZM5.5 3.9a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4ZM20 13.6c0-3.2-1.72-4.7-4-4.7a3.45 3.45 0 0 0-3.13 1.73H12.8V8.4H9.94c.04.83 0 11.6 0 11.6h2.87v-6.48a2 2 0 0 1 .1-.7 1.57 1.57 0 0 1 1.47-1.05c1.04 0 1.46.79 1.46 1.95V20H20Z" />
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </svg>
   ),
   email: ({ className }) => (

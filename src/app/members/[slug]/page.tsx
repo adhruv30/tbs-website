@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 import { MemberAvatar } from '@/components/member-avatar'
+import { Reveal } from '@/components/reveal'
 import { SocialIcon } from '@/components/social-icons'
 import {
   classLabel,
@@ -74,12 +75,16 @@ export default async function MemberProfilePage(
   return (
     <article>
       <div className="bg-navy-950 pt-10 pb-24 sm:pt-12 sm:pb-28">
-        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
           <Link
             href={isExec ? '/executive-committee' : '/members'}
-            className="inline-flex items-center gap-2 text-sm text-parchment/60 transition-colors hover:text-gold-400"
+            className="group inline-flex items-center gap-2 text-sm text-parchment/60 transition-colors hover:text-gold-400"
           >
-            <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4">
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden
+              className="h-4 w-4 transition-transform duration-300 ease-out group-hover:-translate-x-1"
+            >
               <path
                 d="M15 5 8 12l7 7"
                 stroke="currentColor"
@@ -94,24 +99,27 @@ export default async function MemberProfilePage(
         </div>
       </div>
 
-      <div className="mx-auto -mt-16 w-full max-w-6xl px-5 pb-16 sm:-mt-24 sm:px-8 sm:pb-24">
-        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,23rem)_minmax(0,1fr)] lg:gap-8">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[17rem] overflow-hidden rounded-xl border border-sand-dark bg-navy-900 shadow-xl lg:sticky lg:top-28 lg:mx-0 lg:max-w-none">
+      <div className="mx-auto -mt-16 w-full max-w-5xl px-5 pb-14 sm:-mt-24 sm:px-8 sm:pb-20">
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,21rem)_minmax(0,1fr)] lg:items-stretch lg:gap-8">
+          <Reveal className="relative mx-auto aspect-[4/5] w-full max-w-[17rem] overflow-hidden border border-sand-dark bg-navy-900 shadow-xl lg:mx-0 lg:aspect-auto lg:max-w-none lg:min-h-[26rem]">
             <MemberAvatar
               member={member}
               sizes="(min-width: 1024px) 368px, (min-width: 640px) 272px, 70vw"
               preload={Boolean(member.photo)}
               initialsClassName="text-6xl lg:text-7xl"
             />
-          </div>
+          </Reveal>
 
-          <div className="rounded-xl border border-sand-dark bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+          <Reveal
+            delay={120}
+            className="border border-sand-dark bg-white p-5 shadow-sm sm:p-7 lg:p-8"
+          >
             <span className="inline-flex rounded-full bg-navy-900 px-3.5 py-1.5 text-[0.65rem] font-semibold tracking-[0.18em] text-gold-400 uppercase">
               {isExec ? 'Executive Committee' : 'Active Member'}
             </span>
 
-            <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">
-              <h1 className="font-serif text-4xl leading-[1.1] font-bold tracking-tight text-balance text-navy-900 sm:text-5xl">
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
+              <h1 className="font-serif text-4xl leading-[1.1] font-bold tracking-tight text-balance text-navy-950 sm:text-5xl">
                 {member.name}
               </h1>
               {member.linkedin ? (
@@ -119,22 +127,24 @@ export default async function MemberProfilePage(
                   href={member.linkedin}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sand text-navy-800 transition-colors hover:bg-navy-900 hover:text-gold-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-700"
+                  // The mark's "in" is knocked out, so the bubble's own color
+                  // shows through the letters.
+                  className="inline-flex shrink-0 items-center justify-center rounded-2xl bg-sand p-2 text-navy-950 shadow-sm ring-1 ring-navy-950/5 transition duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-700"
                 >
-                  <SocialIcon name="linkedin" className="h-5 w-5" />
-                  <span className="sr-only">{member.name} on LinkedIn</span>
+                  <SocialIcon name="linkedin" className="h-7 w-7" />
+                  <span className="sr-only">LinkedIn profile for {member.name}</span>
                 </a>
               ) : null}
             </div>
 
             {member.role ? (
-              <p className="mt-3 font-serif text-lg text-gold-600 sm:text-xl">
+              <p className="mt-2 font-serif text-lg text-gold-600 sm:text-xl">
                 {member.role}
               </p>
             ) : null}
 
             {year || member.hometown ? (
-              <div className="mt-3 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-sm text-navy-700/75 sm:text-base">
+              <div className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-2 text-sm text-navy-950 sm:text-base">
                 {year ? <span>{year}</span> : null}
                 {member.hometown ? (
                   <span className="inline-flex items-center gap-1.5">
@@ -175,15 +185,15 @@ export default async function MemberProfilePage(
               name and photo — no divider rule sitting above an empty grid.
             */}
             {facts.length > 0 || lists.length > 0 ? (
-            <div className="mt-8 border-t border-sand-dark pt-8">
+            <div className="mt-6 border-t border-sand-dark pt-6">
               {facts.length > 0 ? (
-                <dl className="space-y-6">
+                <dl className="space-y-4">
                   {facts.map((fact) => (
                     <div key={fact.label}>
-                      <dt className="text-[0.7rem] font-semibold tracking-[0.18em] text-navy-700/50 uppercase">
+                      <dt className="text-xs font-extrabold tracking-[0.12em] text-navy-950 uppercase">
                         {fact.label}
                       </dt>
-                      <dd className="mt-1.5 text-base text-navy-900">
+                      <dd className="mt-1 text-base text-navy-900">
                         {fact.value}
                       </dd>
                     </div>
@@ -193,8 +203,8 @@ export default async function MemberProfilePage(
 
               {lists.length > 0 ? (
                 <div
-                  className={`grid gap-x-10 gap-y-8 sm:grid-cols-2 ${
-                    facts.length > 0 ? 'mt-8' : ''
+                  className={`grid gap-x-8 gap-y-6 sm:grid-cols-2 ${
+                    facts.length > 0 ? 'mt-6' : ''
                   }`}
                 >
                   {lists.map((list) => {
@@ -203,20 +213,13 @@ export default async function MemberProfilePage(
                       <section key={list.label} aria-labelledby={id}>
                         <h2
                           id={id}
-                          className="text-[0.7rem] font-semibold tracking-[0.18em] text-navy-700/50 uppercase"
+                          className="text-xs font-extrabold tracking-[0.12em] text-navy-950 uppercase"
                         >
                           {list.label}
                         </h2>
-                        <ul className="mt-2.5 flex flex-wrap gap-2">
-                          {list.items.map((item) => (
-                            <li
-                              key={item}
-                              className="rounded-full bg-sand px-3.5 py-1.5 text-sm text-navy-800"
-                            >
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
+                        <p className="mt-1.5 text-base text-navy-900">
+                          {list.items.join(', ')}
+                        </p>
                       </section>
                     )
                   })}
@@ -224,7 +227,7 @@ export default async function MemberProfilePage(
               ) : null}
             </div>
             ) : null}
-          </div>
+          </Reveal>
         </div>
       </div>
     </article>

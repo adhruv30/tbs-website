@@ -66,8 +66,3 @@ export function initialsOf(name: string): string {
     .join('')
     .toUpperCase()
 }
-
-/** The member holding the President role, used by the home page letter. */
-export function getPresident(): Member | undefined {
-  return members.find((member) => member.role === 'President')
-}

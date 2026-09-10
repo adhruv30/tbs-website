@@ -3,7 +3,7 @@
  * every page reads from this file, so nothing else needs to change.
  */
 
-export type NavLink = {
+type NavLink = {
   label: string
   href: string
   /** Rendered as a hover/focus dropdown in the desktop nav. */
@@ -25,7 +25,6 @@ export type Value = {
 export const site = {
   name: 'Triton Business Society',
   shortName: 'TBS',
-  initials: 'TBS',
   tagline: 'The business organization of UC San Diego.',
   description:
     'Triton Business Society is a pre-professional business org at UC San Diego building the next generation of principled, ambitious leaders.',
@@ -150,22 +149,19 @@ export const about = {
     'Founded at the University of California, San Diego, Triton Business Society (TBS) is a professional organization with a commitment to providing professional development and education for business-minded students on campus. Our 40+ active members have worked everywhere from local start-ups to tech giants. With an alumni network spanning across top companies and career paths across many industries, TBS helps our members get to where they want to go.',
     'While TBS offers opportunities for professional growth, we pride ourselves on the close community we have established. We seek to balance professionalism and social bonding throughout our organization. With members from a diverse array of backgrounds and experiences, we have been able to form life-long friendships while pursuing our professional aspirations together. More than a club, we are a community. We welcome you to learn more about us at our upcoming Recruitment Week events. Hope to see you there!',
   ],
-  stats: [
-    { value: '40+', label: 'Active members' },
-    { value: '400+', label: 'Alumni network' },
-    { value: '38', label: 'Firms placed into' },
-    { value: '20+', label: 'Years on campus' },
-  ],
 }
 
 export const letter = {
   heading: 'From Our President.',
-  /**
-   * TODO: replace `placeholder` with the president's letter — swap it for a
-   * `paragraphs: string[]` field and render those in place of the placeholder.
-   */
-  placeholder:
-    'This letter still needs to be written. Add it in src/data/site.ts under `letter`.',
+  /** Slug of the member who signs the letter and appears in the portrait. */
+  authorSlug: 'darshana-zala',
+  paragraphs: [
+    'Hello!',
+    'I joined Triton Business Society in my freshman fall quarter, and looking back, it was truly the best decision I could have made. Before coming to college, I had only a vague idea of what I wanted to do. I knew I was drawn to business and finance, but I had no clear direction on what to do next. Joining TBS changed that completely. It gave me not only direction and clarity, but also a support system, a group of people who were just as motivated as I was, many of whom have now become lifelong friends. TBS taught me how to not only break into a competitive field like finance but thrive in it, and more importantly, how to use the tools I’ve gained to give back and help others.',
+    'What truly sets TBS apart is our tight-knit community and strong alumni network. Over more than two decades, our alumni have built a legacy of mentorship, guidance, and opportunity. We are incredibly proud to have an alumni base that’s always ready to help you get wherever it is you want to go.',
+    'Through business seminars, networking events, and resume workshops, I’ve learned alongside some of the most driven and supportive people on campus. Today, that same culture of growth, collaboration, and ambition continues to thrive. Our members go on to secure internships at Fortune 500 companies, launch their own startups, and make meaningful impacts both on campus and across countless industries. No matter what path you’re interested in, whether it’s consulting, accounting, marketing, or computer and data science, Triton Business Society provides the foundation, resources, and community to help turn those goals into reality.',
+    'For me, it’s been the most impactful community I’ve found at UC San Diego, and I’m proud to be representing us.',
+  ],
   signoff: 'Best,',
 }
 
