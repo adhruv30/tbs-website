@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 
 import { RosterPage } from '@/components/roster-page'
 import { membersByFirstName } from '@/data/members'
-import { membersPage } from '@/data/site'
+import { membersPage, pageOpenGraph } from '@/data/site'
+
+const description = 'The membership of Triton Business Society.'
 
 export const metadata: Metadata = {
   title: membersPage.heading,
-  description: 'The membership of Triton Business Society.',
+  description,
+  openGraph: pageOpenGraph(membersPage.heading, description),
 }
 
 export default function ActiveMembersPage() {

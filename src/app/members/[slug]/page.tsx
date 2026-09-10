@@ -127,9 +127,12 @@ export default async function MemberProfilePage(
                   href={member.linkedin}
                   target="_blank"
                   rel="noreferrer noopener"
-                  // The mark's "in" is knocked out, so the bubble's own color
-                  // shows through the letters.
-                  className="inline-flex shrink-0 items-center justify-center rounded-2xl bg-sand p-2 text-navy-950 shadow-sm ring-1 ring-navy-950/5 transition duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-700"
+                  /*
+                    The mark's "in" is knocked out, so the bubble's own color
+                    shows through the letters -- which means colouring the text
+                    turns the bubble LinkedIn blue and leaves the "in" sand.
+                  */
+                  className="inline-flex shrink-0 items-center justify-center rounded-2xl bg-sand p-2 text-navy-950 shadow-sm ring-1 ring-navy-950/5 transition duration-200 hover:-translate-y-0.5 hover:text-linkedin hover:shadow-md focus-visible:text-linkedin focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-700"
                 >
                   <SocialIcon name="linkedin" className="h-7 w-7" />
                   <span className="sr-only">LinkedIn profile for {member.name}</span>

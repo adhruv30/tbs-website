@@ -56,12 +56,15 @@ export function CompanyGrid({ items }: { items: Company[] }) {
                   fill
                   sizes="(min-width: 1024px) 12vw, (min-width: 640px) 22vw, 40vw"
                   // next/image serves .svg unoptimized automatically.
-                  className="object-contain transition-transform duration-300 ease-out group-hover/logo:scale-110 motion-reduce:transition-none"
+                  // `transition` rather than `transition-transform`: the
+                  // grayscale filter has to animate out alongside the scale.
+                  className="object-contain grayscale transition duration-300 ease-out group-hover/logo:scale-110 group-hover/logo:grayscale-0 motion-reduce:transition-none"
                 />
               </div>
             ) : (
-              // No usable mark available — the name still holds its slot.
-              <span className="text-center text-sm font-medium text-navy-700/70 transition-transform duration-300 ease-out group-hover/logo:scale-110 motion-reduce:transition-none">
+              // No usable mark available — the name still holds its slot, and
+              // darkens on hover in place of the logos' grayscale lifting.
+              <span className="text-center text-sm font-medium text-navy-700/70 transition duration-300 ease-out group-hover/logo:scale-110 group-hover/logo:text-navy-900 motion-reduce:transition-none">
                 {company.name}
               </span>
             )}

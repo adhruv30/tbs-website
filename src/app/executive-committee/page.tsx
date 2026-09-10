@@ -2,11 +2,14 @@ import type { Metadata } from 'next'
 
 import { RosterPage } from '@/components/roster-page'
 import { membersByCohort } from '@/data/members'
-import { execPage } from '@/data/site'
+import { execPage, pageOpenGraph } from '@/data/site'
+
+const description = 'The executive committee of Triton Business Society.'
 
 export const metadata: Metadata = {
   title: execPage.heading,
-  description: 'The executive committee of Triton Business Society.',
+  description,
+  openGraph: pageOpenGraph(execPage.heading, description),
 }
 
 export default function ExecutiveCommitteePage() {

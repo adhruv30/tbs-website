@@ -16,6 +16,10 @@
   --color-parchment: #faf8f4;
   --color-sand: #efeae0;
   --color-sand-dark: #ddd5c6;
+
+  /* LinkedIn's own brand blue, for their mark on hover. Not a site colour --
+     nothing else should reach for it. */
+  --color-linkedin: #0a66c2;
 }
 
 @theme inline {

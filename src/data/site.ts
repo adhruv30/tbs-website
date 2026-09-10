@@ -39,6 +39,37 @@ export const site = {
   location: 'Rady School of Management, UC San Diego',
 } as const
 
+/**
+ * The card image a page falls back to: a 1200x630 crop of the hero group
+ * photo, JPEG rather than AVIF because the crawlers that render these cards
+ * still don't decode AVIF.
+ */
+export const defaultOgImage = {
+  url: '/og/home.jpg',
+  width: 1200,
+  height: 630,
+  alt: `${site.name} members at UC San Diego`,
+}
+
+/**
+ * A page's own `openGraph`, built whole.
+ *
+ * Declaring `openGraph` on a page REPLACES the root layout's rather than
+ * merging into it, so a page that sets just a title and description silently
+ * drops the card image and demotes its Twitter card to `summary`. Going
+ * through here keeps the image attached.
+ *
+ * The root's title `template` is not applied to `openGraph.title` either, so
+ * the site suffix is added by hand to make the card read like the browser tab.
+ */
+export function pageOpenGraph(heading: string, description: string) {
+  return {
+    title: `${heading} · ${site.name}`,
+    description,
+    images: [defaultOgImage],
+  }
+}
+
 export const navLinks: NavLink[] = [
   {
     label: 'Members',
@@ -82,11 +113,12 @@ export const hero = {
 
 export const recruitmentPage = {
   heading: "Fall '26 Recruitment",
-  description: 'Recruitment FAQs for Triton Business Society, fall quarter 2026.',
+  description:
+    'Recruitment week information and FAQs for Triton Business Society, fall quarter 2026.',
   /** Shown only while `public/recruitment/` is empty. */
   emptyNote: 'Flyers coming soon.',
   faq: {
-    heading: "Recruitment FAQ's",
+    heading: 'Recruitment FAQs',
     items: [
       {
         question: 'Why should I join Triton Business Society?',

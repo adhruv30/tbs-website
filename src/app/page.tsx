@@ -63,8 +63,15 @@ function Hero() {
         buttons in the space below them.
       */}
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-10 text-center text-parchment sm:px-8 sm:pb-12">
+        {/*
+          The words are separate elements with no whitespace between them, and
+          the gap is a CSS margin, so the text content reads
+          "TritonBusinessSociety". The label restores the spaces for anything
+          that consumes the string rather than the glyphs.
+        */}
         <h1
           id="hero-title"
+          aria-label={hero.title}
           className="max-w-4xl font-serif text-[2.75rem] leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl"
         >
           {getHeroStrokes(hero.title).map(({ word, duration, delay }, index) => (

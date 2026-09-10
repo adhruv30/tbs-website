@@ -4,7 +4,7 @@ import path from 'node:path'
 import type { Metadata } from 'next'
 import Image, { type StaticImageData } from 'next/image'
 
-import { recruitmentPage, site } from '@/data/site'
+import { pageOpenGraph, recruitmentPage, site } from '@/data/site'
 
 const RECRUITMENT_DIR = path.join(process.cwd(), 'public', 'recruitment')
 const IMAGE_EXTENSIONS = /\.(jpe?g|png|webp|avif)$/i
@@ -12,6 +12,11 @@ const IMAGE_EXTENSIONS = /\.(jpe?g|png|webp|avif)$/i
 export const metadata: Metadata = {
   title: recruitmentPage.heading,
   description: recruitmentPage.description,
+  // Without this the card falls back to the generic site title and blurb.
+  openGraph: pageOpenGraph(
+    recruitmentPage.heading,
+    recruitmentPage.description,
+  ),
 }
 
 /**
