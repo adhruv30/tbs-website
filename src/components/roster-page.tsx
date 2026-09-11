@@ -1,15 +1,12 @@
 import Image from 'next/image'
 
-// Static import so the asset gets a content-hashed URL: swapping the file in
-// public/ changes the URL, so browsers can never serve a stale cached copy.
-// Do not replace this with the string path '/membersBackdrop.jpg'.
-import membersBackdrop from '../../public/membersBackdrop.jpg'
 import { MemberGrid } from '@/components/member-grid'
 import { Reveal } from '@/components/reveal'
-import type { RosterKey } from '@/components/roster-back-link'
+import { getRosterBackdrop } from '@/components/roster-backdrops'
 import type { Member } from '@/data/members'
+import type { RosterKey } from '@/data/rosters'
 
-export function RosterPage({
+export async function RosterPage({
   heading,
   members,
   from,
@@ -21,22 +18,29 @@ export function RosterPage({
   from: RosterKey
   showRoles?: boolean
 }) {
+  // Each roster gets its own photo, picked up by filename — see
+  // `getRosterBackdrop`. The navy ground behind it is what keeps the heading
+  // readable if one is missing.
+  const backdrop = await getRosterBackdrop(from)
+
   return (
     <>
       {/*
         Backdrop is scoped to this header band only — the roster below it stays
         on the page background. `isolate` keeps the -z-10 layers inside the band.
       */}
-      <div className="relative isolate overflow-hidden pt-24 pb-16 text-parchment sm:pt-28 sm:pb-20">
-        <Image
-          src={membersBackdrop}
-          alt=""
-          fill
-          sizes="100vw"
-          preload
-          quality={70}
-          className="-z-10 object-cover"
-        />
+      <div className="relative isolate overflow-hidden bg-navy-950 pt-32 pb-24 text-parchment sm:pt-44 sm:pb-32">
+        {backdrop ? (
+          <Image
+            src={backdrop}
+            alt=""
+            fill
+            sizes="100vw"
+            preload
+            quality={70}
+            className="-z-10 object-cover"
+          />
+        ) : null}
         {/* Scrim: keeps the heading readable over any part of the photo. */}
         <div className="absolute inset-0 -z-10 bg-navy-950/55" aria-hidden />
 

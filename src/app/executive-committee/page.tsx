@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { RosterPage } from '@/components/roster-page'
-import { membersByCohort } from '@/data/members'
+import { rosterMembers } from '@/data/members'
 import { execPage, pageOpenGraph } from '@/data/site'
 
 const description = 'The executive committee of Triton Business Society.'
@@ -16,7 +16,7 @@ export default function ExecutiveCommitteePage() {
   return (
     <RosterPage
       heading={execPage.heading}
-      members={membersByCohort('exec')}
+      members={rosterMembers('exec')}
       from="exec"
     />
   )

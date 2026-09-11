@@ -3,22 +3,7 @@
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 
-/**
- * The two rosters a profile can be reached from. Cards link with `?from=<key>`
- * (see `MemberCard`), and the key is looked up here rather than used to build a
- * URL, so a hand-edited value can only ever fall back — never point the link
- * somewhere unexpected.
- */
-export const ROSTERS = {
-  members: { href: '/members', label: 'Active members' },
-  exec: { href: '/executive-committee', label: 'Executive committee' },
-} as const
-
-export type RosterKey = keyof typeof ROSTERS
-
-function isRosterKey(value: string | null): value is RosterKey {
-  return value !== null && value in ROSTERS
-}
+import { ROSTERS, isRosterKey, type RosterKey } from '@/data/rosters'
 
 export function BackLink({ roster }: { roster: RosterKey }) {
   const { href, label } = ROSTERS[roster]

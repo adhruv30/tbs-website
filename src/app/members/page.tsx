@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { RosterPage } from '@/components/roster-page'
-import { membersByFirstName } from '@/data/members'
+import { rosterMembers } from '@/data/members'
 import { membersPage, pageOpenGraph } from '@/data/site'
 
 const description = 'The membership of Triton Business Society.'
@@ -18,7 +18,7 @@ export default function ActiveMembersPage() {
     // own profiles -- here they are simply members.
     <RosterPage
       heading={membersPage.heading}
-      members={membersByFirstName()}
+      members={rosterMembers('members')}
       from="members"
       showRoles={false}
     />

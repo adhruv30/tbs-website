@@ -1,4 +1,5 @@
 import membersJson from './members.json'
+import type { RosterKey } from './rosters'
 
 export type Cohort = 'exec' | 'active'
 
@@ -50,6 +51,42 @@ export function membersByFirstName(list: Member[] = members): Member[] {
   return [...list].sort((a, b) =>
     a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }),
   )
+}
+
+/**
+ * A roster in the order its page renders it. Both the roster pages and the
+ * profile pager read the sequence from here, so the "next" link can never walk
+ * an order different from the grid the visitor just came from.
+ */
+export function rosterMembers(roster: RosterKey): Member[] {
+  return roster === 'exec' ? membersByCohort('exec') : membersByFirstName()
+}
+
+/** Just enough of a member to label a link to them. */
+export type MemberRef = {
+  slug: string
+  name: string
+}
+
+export type Neighbors = {
+  previous: MemberRef | null
+  next: MemberRef | null
+}
+
+/**
+ * Who sits either side of this member on the given roster. The ends are
+ * `null` rather than wrapping around, so the first profile offers no
+ * "previous" and the last offers no "next".
+ */
+export function rosterNeighbors(slug: string, roster: RosterKey): Neighbors {
+  const list = rosterMembers(roster)
+  const index = list.findIndex((member) => member.slug === slug)
+  if (index === -1) return { previous: null, next: null }
+
+  const ref = (member: Member | undefined): MemberRef | null =>
+    member ? { slug: member.slug, name: member.name } : null
+
+  return { previous: ref(list[index - 1]), next: ref(list[index + 1]) }
 }
 
 export function getMember(slug: string): Member | undefined {

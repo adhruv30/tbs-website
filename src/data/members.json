@@ -181,12 +181,21 @@
     "name": "Harshini Kanakala",
     "role": "Co-VP of Recruitment",
     "isExec": true,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
-    "photo": null,
+    "year": 3,
+    "major": "Data Science",
+    "hometown": "Scripps Ranch, CA",
+    "careerInterests": [
+      "Data Science",
+      "Data Engineering",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Camping",
+      "Hiking",
+      "Exploring new places",
+      "Cooking"
+    ],
+    "photo": "/members/harshini-kanakala.avif",
     "linkedin": "https://www.linkedin.com/in/harshini-kanakala/"
   },
   {
@@ -339,7 +348,7 @@
       "Being spontaneous",
       "Braiding Mason's wig"
     ],
-    "photo": null,
+    "photo": "/members/jada-vera.avif",
     "linkedin": "https://www.linkedin.com/in/jada-vera/"
   },
   {
@@ -496,7 +505,7 @@
       "Ripstiking",
       "Making alternative soundtracks for films"
     ],
-    "photo": null,
+    "photo": "/members/dina-choi.avif",
     "linkedin": "https://www.linkedin.com/in/dina-choi/"
   },
   {

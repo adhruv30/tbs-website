@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 import { MemberAvatar } from '@/components/member-avatar'
-import type { RosterKey } from '@/components/roster-back-link'
 import type { Member } from '@/data/members'
+import type { RosterKey } from '@/data/rosters'
 
 export function MemberCard({
   member,

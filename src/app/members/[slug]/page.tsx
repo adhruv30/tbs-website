@@ -3,6 +3,11 @@ import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
 
 import { MemberAvatar } from '@/components/member-avatar'
+import {
+  MemberPager,
+  RosterMemberPager,
+  type NeighborsByRoster,
+} from '@/components/member-pager'
 import { Reveal } from '@/components/reveal'
 import {
   BackLink,
@@ -14,6 +19,7 @@ import {
   cohortOf,
   getMember,
   members,
+  rosterNeighbors,
   type Member,
 } from '@/data/members'
 
@@ -73,6 +79,14 @@ export default async function MemberProfilePage(
   // stray label with no value.
   // Class and hometown render under the name instead of in this grid.
   const facts = member.major ? [{ label: 'Major', value: member.major }] : []
+
+  // Exec are listed on both rosters, in two different orders, so their
+  // neighbours are resolved alongside the back link from whichever roster the
+  // visitor arrived on.
+  const neighborsByRoster: NeighborsByRoster = {
+    members: rosterNeighbors(member.slug, 'members'),
+    ...(isExec ? { exec: rosterNeighbors(member.slug, 'exec') } : {}),
+  }
 
   const lists = [
     { label: 'Career interests', items: member.careerInterests },
@@ -227,6 +241,20 @@ export default async function MemberProfilePage(
             ) : null}
           </Reveal>
         </div>
+
+        {/* Same Suspense dance as the back link above, for the same reason. */}
+        <Suspense
+          fallback={
+            <MemberPager
+              neighbors={
+                neighborsByRoster[backTo] ?? { previous: null, next: null }
+              }
+              roster={backTo}
+            />
+          }
+        >
+          <RosterMemberPager fallback={backTo} byRoster={neighborsByRoster} />
+        </Suspense>
       </div>
     </article>
   )
