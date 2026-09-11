@@ -1,9 +1,13 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { Suspense } from 'react'
 
 import { MemberAvatar } from '@/components/member-avatar'
 import { Reveal } from '@/components/reveal'
+import {
+  BackLink,
+  RosterBackLink,
+} from '@/components/roster-back-link'
 import { SocialIcon } from '@/components/social-icons'
 import {
   classLabel,
@@ -44,6 +48,8 @@ export async function generateMetadata(
   return {
     title,
     description,
+    // Cards link with `?from=`, so name the bare path as the one to index.
+    alternates: { canonical: `/members/${slug}` },
     openGraph: {
       title,
       description,
@@ -61,6 +67,7 @@ export default async function MemberProfilePage(
 
   const year = classLabel(member.year)
   const isExec = cohortOf(member) === 'exec'
+  const backTo = isExec ? 'exec' : 'members'
 
   // Null / empty fields never enter these lists, so they cannot render a
   // stray label with no value.
@@ -76,26 +83,14 @@ export default async function MemberProfilePage(
     <article>
       <div className="bg-navy-950 pt-10 pb-24 sm:pt-12 sm:pb-28">
         <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
-          <Link
-            href={isExec ? '/executive-committee' : '/members'}
-            className="group inline-flex items-center gap-2 text-sm text-parchment/60 transition-colors hover:text-gold-400"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden
-              className="h-4 w-4 transition-transform duration-300 ease-out group-hover:-translate-x-1"
-            >
-              <path
-                d="M15 5 8 12l7 7"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            {isExec ? 'Executive committee' : 'Active members'}
-          </Link>
+          {/*
+            Resolved from `?from=` on the client, so it must sit in Suspense or
+            the static build of these 42 pages fails. The fallback is both the
+            prerendered markup and the answer for anyone arriving without it.
+          */}
+          <Suspense fallback={<BackLink roster={backTo} />}>
+            <RosterBackLink fallback={backTo} />
+          </Suspense>
         </div>
       </div>
 

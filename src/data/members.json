@@ -68,106 +68,46 @@
     "linkedin": "https://www.linkedin.com/in/richard-r-li/"
   },
   {
-    "slug": "leena-khoja",
-    "name": "Leena Khoja",
-    "role": "Co-VP of Recruitment",
+    "slug": "aarush-kochar",
+    "name": "Aarush Kochar",
+    "role": "VP of Professional Activities",
     "isExec": true,
     "year": 2,
-    "major": "Economics",
-    "hometown": "Riyadh, Saudi Arabia",
+    "major": "Real Estate & Development, Finance",
+    "hometown": "Corona, CA",
     "careerInterests": [
-      "Finance",
-      "Consulting"
+      "Real Estate Development",
+      "Real Estate Investment"
     ],
     "hobbies": [
-      "Acrylic painting",
-      "Thrifting",
-      "Aerial silks",
+      "Gym",
+      "Traveling",
+      "Guitar",
       "Reading",
-      "Gym"
+      "Swimming",
+      "Cafe hopping"
     ],
-    "photo": "/members/leena-khoja.avif",
-    "linkedin": "https://www.linkedin.com/in/leena-khoja07/"
+    "photo": "/members/aarush-kochar.avif",
+    "linkedin": "https://www.linkedin.com/in/aarush-kochar/"
   },
   {
-    "slug": "harshini-kanakala",
-    "name": "Harshini Kanakala",
-    "role": "Co-VP of Recruitment",
+    "slug": "nevin-peppers",
+    "name": "Nevin Peppers",
+    "role": "VP of Social Activities",
     "isExec": true,
-    "year": null,
-    "major": null,
-    "hometown": null,
-    "careerInterests": [],
-    "hobbies": [],
-    "photo": null,
-    "linkedin": "https://www.linkedin.com/in/harshini-kanakala/"
-  },
-  {
-    "slug": "yejee-lee",
-    "name": "Yejee Lee",
-    "role": "VP of Community Service",
-    "isExec": true,
-    "year": 2,
-    "major": "Cognitive and Behavioral Neuroscience",
-    "hometown": "Bellevue, WA",
+    "year": 4,
+    "major": "Business Economics",
+    "hometown": "San Diego, CA",
     "careerInterests": [
-      "Clinical Psychologist"
+      "Project Management",
+      "Supply Chain"
     ],
     "hobbies": [
-      "Hiking",
-      "Gaming",
-      "Tree planting",
-      "Baking",
-      "Journaling",
-      "Drawing"
+      "Watching rom coms and sunsets",
+      "Professional glover"
     ],
-    "photo": "/members/yejee-lee.avif",
-    "linkedin": "https://www.linkedin.com/in/yejee-lee/"
-  },
-  {
-    "slug": "arjun-dhruv",
-    "name": "Arjun Dhruv",
-    "role": "VP of Scholarship & Awards",
-    "isExec": true,
-    "year": 2,
-    "major": "Mathematics and Computer Science",
-    "hometown": "Saratoga, CA",
-    "careerInterests": [
-      "Software Engineering",
-      "Machine Learning",
-      "Data Science"
-    ],
-    "hobbies": [
-      "Basketball",
-      "Pickleball",
-      "Music",
-      "Harry Potter",
-      "Fantasy Football"
-    ],
-    "photo": "/members/arjun-dhruv.avif",
-    "linkedin": "https://www.linkedin.com/in/arjun-dhruv/"
-  },
-  {
-    "slug": "koshik-kumaravel",
-    "name": "Koshik Kumaravel",
-    "role": "VP of Operations",
-    "isExec": true,
-    "year": 2,
-    "major": "Artificial Intelligence",
-    "hometown": "Irvine, CA",
-    "careerInterests": [
-      "Barber",
-      "Software Engineering",
-      "Machine Learning"
-    ],
-    "hobbies": [
-      "Volleyball",
-      "Working out",
-      "Snowboarding",
-      "Cutting hair"
-    ],
-    "photo": "/members/koshik-kumaravel.avif",
-    "linkedin": "https://www.linkedin.com/in/koshik-kumaravel/"
+    "photo": "/members/nevin-peppers.avif",
+    "linkedin": "https://www.linkedin.com/in/nevin-peppers05/"
   },
   {
     "slug": "mason-yu",
@@ -211,27 +151,65 @@
       "Making music",
       "Fried chicken enthusiast"
     ],
-    "photo": null,
+    "photo": "/members/carrie-chen.avif",
     "linkedin": "https://www.linkedin.com/in/carrie-chenn/"
   },
   {
-    "slug": "nevin-peppers",
-    "name": "Nevin Peppers",
-    "role": "VP of Social Activities",
+    "slug": "leena-khoja",
+    "name": "Leena Khoja",
+    "role": "Co-VP of Recruitment",
     "isExec": true,
-    "year": 4,
-    "major": "Business Economics",
-    "hometown": "San Diego, CA",
+    "year": 2,
+    "major": "Economics",
+    "hometown": "Riyadh, Saudi Arabia",
     "careerInterests": [
-      "Project Management",
-      "Supply Chain"
+      "Finance",
+      "Consulting"
     ],
     "hobbies": [
-      "Watching rom coms and sunsets",
-      "Professional glover"
+      "Acrylic painting",
+      "Thrifting",
+      "Aerial silks",
+      "Reading",
+      "Gym"
     ],
-    "photo": "/members/nevin-peppers.avif",
-    "linkedin": "https://www.linkedin.com/in/nevin-peppers05/"
+    "photo": "/members/leena-khoja.avif",
+    "linkedin": "https://www.linkedin.com/in/leena-khoja07/"
+  },
+  {
+    "slug": "harshini-kanakala",
+    "name": "Harshini Kanakala",
+    "role": "Co-VP of Recruitment",
+    "isExec": true,
+    "year": null,
+    "major": null,
+    "hometown": null,
+    "careerInterests": [],
+    "hobbies": [],
+    "photo": null,
+    "linkedin": "https://www.linkedin.com/in/harshini-kanakala/"
+  },
+  {
+    "slug": "koshik-kumaravel",
+    "name": "Koshik Kumaravel",
+    "role": "VP of Operations",
+    "isExec": true,
+    "year": 2,
+    "major": "Artificial Intelligence",
+    "hometown": "Irvine, CA",
+    "careerInterests": [
+      "Barber",
+      "Software Engineering",
+      "Machine Learning"
+    ],
+    "hobbies": [
+      "Volleyball",
+      "Working out",
+      "Snowboarding",
+      "Cutting hair"
+    ],
+    "photo": "/members/koshik-kumaravel.avif",
+    "linkedin": "https://www.linkedin.com/in/koshik-kumaravel/"
   },
   {
     "slug": "vritti-godani",
@@ -277,27 +255,49 @@
     "linkedin": "https://www.linkedin.com/in/arushi-dubey26/"
   },
   {
-    "slug": "aarush-kochar",
-    "name": "Aarush Kochar",
-    "role": "VP of Professional Activities",
+    "slug": "yejee-lee",
+    "name": "Yejee Lee",
+    "role": "VP of Community Service",
     "isExec": true,
     "year": 2,
-    "major": "Real Estate & Development, Finance",
-    "hometown": "Corona, CA",
+    "major": "Cognitive and Behavioral Neuroscience",
+    "hometown": "Bellevue, WA",
     "careerInterests": [
-      "Real Estate Development",
-      "Real Estate Investment"
+      "Clinical Psychologist"
     ],
     "hobbies": [
-      "Gym",
-      "Traveling",
-      "Guitar",
-      "Reading",
-      "Swimming",
-      "Cafe hopping"
+      "Hiking",
+      "Gaming",
+      "Tree planting",
+      "Baking",
+      "Journaling",
+      "Drawing"
     ],
-    "photo": null,
-    "linkedin": "https://www.linkedin.com/in/aarush-kochar/"
+    "photo": "/members/yejee-lee.avif",
+    "linkedin": "https://www.linkedin.com/in/yejee-lee/"
+  },
+  {
+    "slug": "arjun-dhruv",
+    "name": "Arjun Dhruv",
+    "role": "VP of Scholarship & Awards",
+    "isExec": true,
+    "year": 2,
+    "major": "Mathematics and Computer Science",
+    "hometown": "Saratoga, CA",
+    "careerInterests": [
+      "Software Engineering",
+      "Machine Learning",
+      "Data Science"
+    ],
+    "hobbies": [
+      "Basketball",
+      "Pickleball",
+      "Music",
+      "Harry Potter",
+      "Fantasy Football"
+    ],
+    "photo": "/members/arjun-dhruv.avif",
+    "linkedin": "https://www.linkedin.com/in/arjun-dhruv/"
   },
   {
     "slug": "andrew-nguyen",
@@ -474,7 +474,7 @@
       "Reading",
       "Taking pics"
     ],
-    "photo": null,
+    "photo": "/members/dilora-obilo.avif",
     "linkedin": "https://www.linkedin.com/in/dilora-obilo/"
   },
   {

@@ -19,6 +19,7 @@ export default function ActiveMembersPage() {
     <RosterPage
       heading={membersPage.heading}
       members={membersByFirstName()}
+      from="members"
       showRoles={false}
     />
   )

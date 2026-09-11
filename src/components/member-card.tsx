@@ -1,21 +1,25 @@
 import Link from 'next/link'
 
 import { MemberAvatar } from '@/components/member-avatar'
+import type { RosterKey } from '@/components/roster-back-link'
 import type { Member } from '@/data/members'
 
 export function MemberCard({
   member,
   index,
+  from,
   showRole = true,
 }: {
   member: Member
   index: number
+  /** Which roster this card sits on, so the profile can point back at it. */
+  from: RosterKey
   /** The full roster lists exec alongside everyone else, titles withheld. */
   showRole?: boolean
 }) {
   return (
     <Link
-      href={`/members/${member.slug}`}
+      href={`/members/${member.slug}?from=${from}`}
       className="group block h-full overflow-hidden border border-sand-dark bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold-500/60 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-700"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-navy-900">

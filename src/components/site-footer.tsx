@@ -82,24 +82,10 @@ export function SiteFooter() {
         ) : null}
 
         {/* With no block above, there is nothing to rule off from. */}
-        <div
-          className={`flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between ${
-            withContact ? 'mt-12 border-t border-parchment/12 pt-8' : ''
-          }`}
-        >
-          {/*
-            Styled as one of the footer's links, so it carries their classes
-            verbatim -- plus `cursor-pointer`, which a <button> does not get on
-            its own the way an <a href> does, and `self-start` to stop the
-            column stretching it. Not wired up yet: there is no auth to call.
-          */}
-          <button
-            type="button"
-            className="cursor-pointer self-start text-sm text-parchment/60 transition-colors hover:text-gold-400"
-          >
-            Login
-          </button>
-          <ul className="flex flex-wrap items-center gap-x-7 gap-y-2">
+        <div className={withContact ? 'mt-12 border-t border-parchment/12 pt-8' : ''}>
+          {/* `sm:justify-end` keeps the row where it sat when a Login button
+              held the opposite end; below sm it stays left, as it always did. */}
+          <ul className="flex flex-wrap items-center gap-x-7 gap-y-2 sm:justify-end">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link

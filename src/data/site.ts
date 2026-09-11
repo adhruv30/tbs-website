@@ -23,6 +23,15 @@ export type Social = {
   handle: string
 }
 
+export type PrivacySection = {
+  heading: string
+  body: string
+  /** Bulleted under `body`. */
+  items?: string[]
+  /** Prose after the list. */
+  footnote?: string
+}
+
 export type Value = {
   title: string
   body: string
@@ -290,4 +299,53 @@ export const membersPage = {
 
 export const execPage = {
   heading: 'Executive Committee',
+}
+
+const privacySections: PrivacySection[] = [
+  {
+    heading: 'What we collect',
+    body: 'Everything about a member on this site was submitted by that member. When you join, we ask for:',
+    items: [
+      'Your name',
+      'Your email address',
+      'Your year and major',
+      'Your hometown',
+      'Your career interests',
+      'Your hobbies',
+      'A headshot',
+    ],
+    /** Rendered after the list. */
+    footnote:
+      'We do not ask for anything beyond these fields, and we do not sell member information or share it with anyone outside the organization.',
+  },
+  {
+    heading: 'How we use it',
+    body: 'Your information does two things. It fills out your profile in our public member directory, and it identifies you in the members-only portal we use to run the organization.',
+  },
+  {
+    heading: 'Who can see it',
+    body: 'The member directory is public: anyone can visit it, and search engines can index it. Everything you submit for your profile should be treated as published on the open web. The member portal is restricted to current members who have signed in.',
+  },
+  {
+    heading: 'Signing in',
+    body: 'We use Google sign-in to authenticate members. Google tells us your name and email address so we can match you to your member profile — we never see or store your Google password. Signing in is only needed for the member portal; the rest of the site is open to everyone.',
+  },
+]
+
+export const privacyPage = {
+  eyebrow: 'Privacy',
+  heading: 'Privacy Policy',
+  description:
+    'What member information Triton Business Society collects, how it is used, and how to have it removed.',
+  updated: 'Last updated September 10, 2026',
+  intro:
+    'Triton Business Society is a student organization at UC San Diego. This page explains what member information we hold, where it shows up, and how to have it changed or taken down.',
+  sections: privacySections,
+  /** Rendered last, wrapping the email address in a `mailto:` link. */
+  removal: {
+    heading: 'Changing or removing your information',
+    before: 'Email us at ',
+    after:
+      ' to correct a detail, drop a field you would rather not have public, or take your profile down entirely. Tell us what you would like changed and we will take care of it as soon as we can — you do not have to give a reason.',
+  },
 }

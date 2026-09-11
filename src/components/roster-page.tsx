@@ -6,15 +6,19 @@ import Image from 'next/image'
 import membersBackdrop from '../../public/membersBackdrop.jpg'
 import { MemberGrid } from '@/components/member-grid'
 import { Reveal } from '@/components/reveal'
+import type { RosterKey } from '@/components/roster-back-link'
 import type { Member } from '@/data/members'
 
 export function RosterPage({
   heading,
   members,
+  from,
   showRoles = true,
 }: {
   heading: string
   members: Member[]
+  /** Tags every card so a profile can send the visitor back here. */
+  from: RosterKey
   showRoles?: boolean
 }) {
   return (
@@ -46,7 +50,7 @@ export function RosterPage({
       </div>
 
       <div className="mx-auto w-full max-w-[1700px] px-5 py-12 sm:px-8 sm:py-16">
-        <MemberGrid members={members} showRoles={showRoles} />
+        <MemberGrid members={members} from={from} showRoles={showRoles} />
       </div>
     </>
   )

@@ -1,12 +1,15 @@
 import { MemberCard } from '@/components/member-card'
 import { Reveal } from '@/components/reveal'
+import type { RosterKey } from '@/components/roster-back-link'
 import type { Member } from '@/data/members'
 
 export function MemberGrid({
   members,
+  from,
   showRoles = true,
 }: {
   members: Member[]
+  from: RosterKey
   showRoles?: boolean
 }) {
   return (
@@ -19,7 +22,12 @@ export function MemberGrid({
           // the last of 40-odd cards waiting seconds before it appeared.
           delay={(index % 5) * 70}
         >
-          <MemberCard member={member} index={index} showRole={showRoles} />
+          <MemberCard
+            member={member}
+            index={index}
+            from={from}
+            showRole={showRoles}
+          />
         </Reveal>
       ))}
     </ul>

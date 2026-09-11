@@ -14,6 +14,10 @@ export const metadata: Metadata = {
 
 export default function ExecutiveCommitteePage() {
   return (
-    <RosterPage heading={execPage.heading} members={membersByCohort('exec')} />
+    <RosterPage
+      heading={execPage.heading}
+      members={membersByCohort('exec')}
+      from="exec"
+    />
   )
 }
