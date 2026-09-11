@@ -74,7 +74,8 @@ body {
   }
 }
 
-.hero-word {
+.hero-word,
+.roster-word {
   display: inline-block;
 
   /* clip-path clips to the border box, and Playfair's ink runs outside it --
@@ -93,16 +94,77 @@ body {
   animation-fill-mode: both;
 }
 
-.hero-word:not(:last-child) {
+.hero-word:not(:last-child),
+.roster-word:not(:last-child) {
   margin-right: 0.15em;
 }
 
 /* The global reduce block shortens durations but not delays, which would still
    flash the later words in. Drop the animation entirely instead. */
 @media (prefers-reduced-motion: reduce) {
-  .hero-word {
+  .hero-word,
+  .roster-word {
     animation: none !important;
     clip-path: none;
+  }
+}
+
+/* Roster header intro. The band opens at the full height of the viewport with
+   the photo at full brightness -- the whole page is that one picture -- then
+   collapses into its header band while the scrim settles in underneath the
+   heading being written over it.
+
+   Height is animated, not a transform, because the photo is `object-cover`:
+   the crop has to be recomputed as the box shrinks, which is what makes the
+   picture settle into the band instead of squashing into it. That is why the
+   band's own height is a variable here rather than padding on the element. */
+@keyframes roster-band-settle {
+  from {
+    height: 100dvh;
+  }
+  to {
+    height: var(--roster-band-h);
+  }
+}
+
+@keyframes roster-scrim-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.roster-band {
+  --roster-band-h: 18rem;
+  height: var(--roster-band-h);
+  /* The delay is the beat where the photo is all there is to look at. */
+  animation: roster-band-settle 1.2s 0.35s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@media (min-width: 640px) {
+  .roster-band {
+    --roster-band-h: 25rem;
+  }
+}
+
+/* Runs long and starts as the band lands, so the picture is still dimming
+   while the words are being written across it. */
+.roster-scrim {
+  animation: roster-scrim-in 1.5s 1.45s ease-out both;
+}
+
+/* Same reasoning as the hero words: shortened durations would still leave the
+   delays, so the page would sit on a full-screen photo and then jump. */
+@media (prefers-reduced-motion: reduce) {
+  .roster-band {
+    animation: none !important;
+  }
+
+  .roster-scrim {
+    animation: none !important;
+    opacity: 1;
   }
 }
 
