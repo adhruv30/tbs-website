@@ -13,6 +13,12 @@
   --color-gold-400: #d9b45f;
   --color-gold-300: #e8d199;
 
+  /* The recruitment flyer's own ground, sampled from the artwork. The
+     recruitment page, and the nav and footer while on it, are painted with it
+     so the flyer has no visible edge -- plain black is a shade off and shows
+     as a seam down the side of the artwork. */
+  --color-ink: #0b0b0b;
+
   --color-parchment: #faf8f4;
   --color-sand: #efeae0;
   --color-sand-dark: #ddd5c6;
@@ -34,8 +40,8 @@ body {
 
 /* The official TBS mark. The artwork is black ink on transparency, so it is
    painted as an alpha mask tinted by `color` rather than drawn directly --
-   that lets it sit gold on the navy nav and inherit hover transitions, instead
-   of being a black shape invisible against a dark background. Width comes from
+   that lets it take the parchment of the nav lockup it sits in, instead of
+   being a black shape invisible against a dark background. Width comes from
    the trimmed artwork's own aspect, so callers only set a height. */
 .brand-mark {
   display: block;

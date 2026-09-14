@@ -25,12 +25,16 @@ const contactMethods = contact.order.flatMap((icon) => {
 })
 
 export function SiteFooter() {
-  const withContact = showsContact(usePathname())
+  const pathname = usePathname()
+  const withContact = showsContact(pathname)
+  // Matches the nav: on the recruitment page the chrome takes the flyer's own
+  // ground so nothing seams against the artwork. See `--color-ink`.
+  const ground = pathname === '/recruitment' ? 'bg-ink' : 'bg-navy-950'
 
   return (
     <footer
       id={withContact ? 'contact' : undefined}
-      className="bg-navy-950 text-parchment"
+      className={`${ground} text-parchment`}
     >
       <div
         className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${

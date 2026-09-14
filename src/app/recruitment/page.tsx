@@ -67,14 +67,17 @@ export default async function RecruitmentPage() {
   return (
     /*
      * Flyer left, FAQ right, together filling the viewport below the nav
-     * (5rem + 1px at md and up). Black ground rather than the site's parchment:
-     * the flyer is black-backed edge to edge, so the letterboxing `contain`
-     * leaves over reads as part of the artwork instead of as empty page.
+     * (5rem + 1px at md and up). `ink` is the flyer's own ground sampled from
+     * the artwork, not plain black: the flyer is black-backed edge to edge, so
+     * matching it exactly is what makes the letterboxing `contain` leaves over
+     * read as part of the artwork instead of as empty page. Pure black is a
+     * shade off and shows up as a seam beside the flyer. The nav and footer
+     * take the same ground on this route.
      *
      * Below md the two stack and the section grows normally -- half a phone
      * width is not enough to read either the flyer or the answers.
      */
-    <section className="bg-black text-parchment">
+    <section className="bg-ink text-parchment">
       <div className="flex min-h-[calc(100svh-4rem-1px)] flex-col sm:min-h-[calc(100svh-5rem-1px)] md:h-[calc(100svh-5rem-1px)] md:min-h-0 md:flex-row">
         {/* The flyer carries its own copy, so the page heading is for screen
             readers and the tab title only. */}

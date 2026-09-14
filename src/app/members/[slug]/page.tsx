@@ -127,7 +127,15 @@ export default async function MemberProfilePage(
               {isExec ? 'Executive Committee' : 'Active Member'}
             </span>
 
-            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
+            {/*
+              Deliberately not wrapping: a long name like Venkat Mangalampeta
+              fills the row on a phone and would push the LinkedIn mark onto a
+              line of its own. Without `flex-wrap` the heading shrinks and wraps
+              inside its own box instead, keeping the mark beside the name at
+              every width. Its floor is the longest word in the name, so it
+              never squeezes past legibility.
+            */}
+            <div className="mt-4 flex items-center gap-x-4">
               <h1 className="font-serif text-4xl leading-[1.1] font-bold tracking-tight text-balance text-navy-950 sm:text-5xl">
                 {member.name}
               </h1>

@@ -19,6 +19,17 @@ export function SiteNav() {
   const overlaysHero = pathname === '/'
   const solid = !overlaysHero || scrolled || menuOpen
 
+  /*
+   * The recruitment page is a full-bleed black flyer, so the chrome above it
+   * takes the flyer's own ground instead of the site navy -- navy would draw a
+   * seam straight across the top of the artwork. Opaque rather than the usual
+   * /95 blur, since a translucent bar over the parchment body lifts off black.
+   */
+  const onFlyer = pathname === '/recruitment'
+  const chrome = onFlyer
+    ? 'border-ink bg-ink'
+    : 'border-navy-800/60 bg-navy-950/95 backdrop-blur-md'
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
     onScroll()
@@ -39,7 +50,7 @@ export function SiteNav() {
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         solid
-          ? 'border-b border-navy-800/60 bg-navy-950/95 backdrop-blur-md'
+          ? `border-b ${chrome}`
           : 'border-b border-transparent bg-transparent'
       }`}
     >
@@ -64,7 +75,7 @@ export function SiteNav() {
           */}
           <span
             aria-hidden
-            className="brand-mark h-8 shrink-0 -translate-y-[20.7%] text-gold-400 transition-colors group-hover:text-gold-300 sm:h-9"
+            className="brand-mark h-8 shrink-0 -translate-y-[20.7%] sm:h-9"
           />
           <span className="font-serif text-base leading-tight font-semibold tracking-tight sm:text-lg">
             <span className="sm:hidden">{site.shortName}</span>
@@ -102,7 +113,13 @@ export function SiteNav() {
 
                   {/* pt-3 keeps a hover bridge between the trigger and the panel */}
                   <div className="invisible absolute top-full left-0 pt-3 opacity-0 transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <ul className="min-w-[15rem] rounded-lg border border-navy-800 bg-navy-950/98 py-2 shadow-xl backdrop-blur-md">
+                    <ul
+                      className={`min-w-[15rem] rounded-lg border py-2 shadow-xl ${
+                        onFlyer
+                          ? 'border-navy-800/60 bg-ink'
+                          : 'border-navy-800 bg-navy-950/98 backdrop-blur-md'
+                      }`}
+                    >
                       {link.children.map((child) => (
                         <li key={child.href}>
                           <Link
@@ -166,7 +183,9 @@ export function SiteNav() {
       {menuOpen ? (
         <div
           id="mobile-menu"
-          className="border-t border-navy-800/60 bg-navy-950/98 md:hidden"
+          className={`border-t md:hidden ${
+            onFlyer ? 'border-navy-800/60 bg-ink' : 'border-navy-800/60 bg-navy-950/98'
+          }`}
         >
           <ul className="mx-auto w-full max-w-6xl px-5 py-2">
             {navLinks.map((link) => (
