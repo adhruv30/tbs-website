@@ -39,7 +39,7 @@ export function cohortOf(member: Member): Cohort {
   return member.isExec === true ? 'exec' : 'active'
 }
 
-export function membersByCohort(cohort: Cohort): Member[] {
+function membersByCohort(cohort: Cohort): Member[] {
   return members.filter((member) => cohortOf(member) === cohort)
 }
 
@@ -47,7 +47,7 @@ export function membersByCohort(cohort: Cohort): Member[] {
  * Alphabetical by first name. Names are stored "First Last", so comparing the
  * whole string orders by first name and settles ties on the surname.
  */
-export function membersByFirstName(list: Member[] = members): Member[] {
+function membersByFirstName(list: Member[] = members): Member[] {
   return [...list].sort((a, b) =>
     a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }),
   )

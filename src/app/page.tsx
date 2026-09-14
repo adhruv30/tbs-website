@@ -6,12 +6,16 @@ import { HeroBackdrop } from '@/components/hero-backdrop'
 import { MemberAvatar } from '@/components/member-avatar'
 import { getValueBackdrops } from '@/components/value-backdrops'
 import { ValuesSection } from '@/components/values-section'
-import { wordStrokes } from '@/components/word-strokes'
+import {
+  SUPPORTING_SECONDS_PER_CHAR,
+  wordStrokes,
+} from '@/components/word-strokes'
 import { getMember } from '@/data/members'
 import {
   about,
   companies,
   hero,
+  join,
   letter,
   values,
   whereWereAt,
@@ -26,11 +30,29 @@ export default function HomePage() {
       <WhereWereAt />
       <About />
       <PresidentLetter />
+      <JoinBand />
     </>
   )
 }
 
 function Hero() {
+  /*
+   * One continuous hand: the wordmark is written, then the tagline picks up
+   * where it stopped and is written in the same stroke. Both lines hold their
+   * boxes throughout -- a clip-path reveals nothing, it does not collapse --
+   * so nothing below shifts while the writing runs.
+   */
+  const strokes = wordStrokes(hero.title)
+  const titleEnd = strokes.reduce(
+    (end, stroke) => Math.max(end, stroke.delay + stroke.duration),
+    0,
+  )
+  const taglineStrokes = wordStrokes(
+    hero.tagline,
+    titleEnd,
+    SUPPORTING_SECONDS_PER_CHAR,
+  )
+
   return (
     <section
       className="relative -mt-[calc(4rem+1px)] flex min-h-[min(calc(100svh_-_10rem),46rem)] items-end overflow-hidden sm:-mt-[calc(5rem+1px)]"
@@ -55,7 +77,7 @@ function Hero() {
           aria-label={hero.title}
           className="max-w-4xl font-serif text-[2.75rem] leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl"
         >
-          {wordStrokes(hero.title).map(({ word, duration, delay }, index) => (
+          {strokes.map(({ word, duration, delay }, index) => (
             <span
               key={`${word}-${index}`}
               className="hero-word"
@@ -68,7 +90,32 @@ function Hero() {
             </span>
           ))}
         </h1>
-        <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+
+        <p className="mt-3 max-w-2xl font-serif text-lg leading-snug text-balance text-parchment/85 sm:mt-4 sm:text-xl lg:text-2xl">
+          {/*
+            The h1 can hang its real string on `aria-label` because a heading
+            has a role for one to attach to; a <p> has none, and the label is
+            dropped. So the readable copy goes in a hidden span and the drawn
+            words are taken out of the a11y tree instead.
+          */}
+          <span className="sr-only">{hero.tagline}</span>
+          <span aria-hidden>
+            {taglineStrokes.map(({ word, duration, delay }, index) => (
+              <span
+                key={`${word}-${index}`}
+                className="hero-word"
+                style={{
+                  animationDuration: `${duration}s`,
+                  animationDelay: `${delay}s`,
+                }}
+              >
+                {word}
+              </span>
+            ))}
+          </span>
+        </p>
+
+        <div className="mt-5 flex flex-col items-center gap-3 sm:mt-6 sm:flex-row sm:gap-4">
           <Link
             href={hero.primaryCta.href}
             className="inline-flex items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-base font-semibold text-navy-950 transition-colors hover:bg-gold-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-300"
@@ -138,6 +185,43 @@ function WhereWereAt() {
 
         <div className="mt-12 sm:mt-16">
           <CompanyGrid items={companies} />
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/**
+ * The page's one ask. It takes the footer's own ground and runs straight into
+ * it, so the bottom of the page reads as a single closing block: the ask, then
+ * the contact details, with no seam between them.
+ */
+function JoinBand() {
+  return (
+    <section id="join" className="bg-navy-950 py-16 text-parchment sm:py-20">
+      <div className="mx-auto w-full max-w-6xl px-5 text-center sm:px-8">
+        {/* Same eyebrow device as About. */}
+        <p className="text-xs font-semibold tracking-[0.22em] text-gold-400 uppercase">
+          {join.eyebrow}
+        </p>
+        <h2 className="mt-4 font-serif text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
+          {join.heading}
+        </h2>
+
+        {/* Same pairing as the hero, so the page opens and closes on it. */}
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
+          <Link
+            href={join.primaryCta.href}
+            className="inline-flex items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-base font-semibold text-navy-950 transition-colors hover:bg-gold-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-300"
+          >
+            {join.primaryCta.label}
+          </Link>
+          <Link
+            href={join.secondaryCta.href}
+            className="inline-flex items-center justify-center rounded-full border border-parchment/35 px-6 py-3 text-base font-semibold text-parchment transition-colors hover:border-parchment hover:bg-navy-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-parchment"
+          >
+            {join.secondaryCta.label}
+          </Link>
         </div>
       </div>
     </section>

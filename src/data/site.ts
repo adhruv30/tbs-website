@@ -23,7 +23,7 @@ export type Social = {
   handle: string
 }
 
-export type PrivacySection = {
+type PrivacySection = {
   heading: string
   body: string
   /** Bulleted under `body`. */
@@ -45,7 +45,6 @@ export const site = {
     'Triton Business Society is a pre-professional business organization at UC San Diego building the next generation of principled, ambitious leaders.',
   url: 'https://tbsatucsd.com',
   email: 'tritonbusinesssociety@gmail.com',
-  location: 'Rady School of Management, UC San Diego',
 } as const
 
 /**
@@ -116,8 +115,31 @@ export const socials: Social[] = [
 
 export const hero = {
   title: 'Triton Business Society',
-  primaryCta: { label: 'Members', href: '/members' },
-  secondaryCta: { label: 'Recruitment', href: '/recruitment' },
+  /**
+   * The hero's own line, set large under the wordmark. Deliberately shorter
+   * than `site.tagline`, which has a different job: that one is a suffix on
+   * every browser tab and link preview, so it stays formal and spelled out.
+   */
+  tagline: 'Largest Professional Business Org at UC San Diego',
+  /*
+   * The gold button is the loudest element on the site, so it points at the
+   * one page that turns a visitor into a member. The roster is the browse,
+   * not the ask.
+   */
+  primaryCta: { label: 'Recruitment', href: '/recruitment' },
+  secondaryCta: { label: 'Members', href: '/members' },
+}
+
+/**
+ * The closing ask. Everything above it on the home page is the argument --
+ * values, placements, the President's letter -- so whoever reaches this has
+ * read the whole case and is the most interested visitor on the site.
+ */
+export const join = {
+  eyebrow: 'Recruitment',
+  heading: 'Find your place.',
+  primaryCta: { label: 'Learn More', href: '/recruitment' },
+  secondaryCta: { label: 'Meet the Members', href: '/members' },
 }
 
 export const recruitmentPage = {
