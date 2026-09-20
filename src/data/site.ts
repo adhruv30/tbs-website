@@ -231,7 +231,7 @@ export const about = {
 export const letter = {
   heading: 'From Our President',
   /** Slug of the member who signs the letter and appears in the portrait. */
-  authorSlug: 'darshana-zala',
+  authorSlug: 'fiona-chen',
   paragraphs: [
     'Hello!',
     'I joined Triton Business Society in my freshman fall quarter, and looking back, it was truly the best decision I could have made. Before coming to college, I had only a vague idea of what I wanted to do. I knew I was drawn to business and finance, but I had no clear direction on what to do next. Joining TBS changed that completely. It gave me not only direction and clarity, but also a support system, a group of people who were just as motivated as I was, many of whom have now become lifelong friends. TBS taught me how to not only break into a competitive field like finance but thrive in it, and more importantly, how to use the tools I’ve gained to give back and help others.',

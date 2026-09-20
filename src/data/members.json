@@ -642,6 +642,26 @@
     "linkedin": "https://www.linkedin.com/in/morgan-arrasmith/"
   },
   {
+    "slug": "nikhil-akiti",
+    "name": "Nikhil Akiti",
+    "role": null,
+    "isExec": null,
+    "year": 4,
+    "major": "Computer Science",
+    "hometown": "Orlando, FL",
+    "careerInterests": [
+      "Software Engineering",
+      "Software Development"
+    ],
+    "hobbies": [
+      "Basketball",
+      "Thrifting",
+      "Crying my heart out"
+    ],
+    "photo": "/members/nikhil-akiti.avif",
+    "linkedin": "https://www.linkedin.com/in/nikhil-akiti/"
+  },
+  {
     "slug": "nyle-santiago-millan",
     "name": "Nyle Santiago Millan",
     "role": null,
