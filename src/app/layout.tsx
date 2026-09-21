@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 
 import { SiteFooter } from '@/components/site-footer'
 import { SiteNav } from '@/components/site-nav'
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
         <SiteNav />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   )
