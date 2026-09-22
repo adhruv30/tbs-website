@@ -27,8 +27,8 @@ export default function HomePage() {
       <Hero />
       <GalleryStrip />
       <Values />
-      <WhereWereAt />
       <About />
+      <WhereWereAt />
       <PresidentLetter />
       <JoinBand />
     </>

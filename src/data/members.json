@@ -47,6 +47,28 @@
     "linkedin": "https://www.linkedin.com/in/krishna--patell/"
   },
   {
+    "slug": "brandon-covas",
+    "name": "Brandon Covas",
+    "role": "VP of Membership",
+    "isExec": true,
+    "year": 3,
+    "major": "International Business, Cognitive Science minor",
+    "hometown": "Ladera Ranch, CA",
+    "careerInterests": [
+      "Finance",
+      "Product Management"
+    ],
+    "hobbies": [
+      "Music",
+      "Watching movies",
+      "Tennis",
+      "Surfing",
+      "Roblox"
+    ],
+    "photo": "/members/brandon-covas.avif",
+    "linkedin": "https://www.linkedin.com/in/brandon-covas/"
+  },
+  {
     "slug": "richard-li",
     "name": "Richard Li",
     "role": "VP of Finance",
@@ -93,8 +115,8 @@
   {
     "slug": "nevin-peppers",
     "name": "Nevin Peppers",
-    "role": "VP of Social Activities",
-    "isExec": true,
+    "role": null,
+    "isExec": null,
     "year": 4,
     "major": "Business Economics",
     "hometown": "San Diego, CA",
@@ -266,7 +288,7 @@
   {
     "slug": "yejee-lee",
     "name": "Yejee Lee",
-    "role": "VP of Community Service",
+    "role": "VP of Community Service, Co-VP of Social Activities",
     "isExec": true,
     "year": 2,
     "major": "Cognitive and Behavioral Neuroscience",
@@ -949,5 +971,69 @@
     ],
     "photo": "/members/venkat-mangalampeta.avif",
     "linkedin": "https://www.linkedin.com/in/venkat-mangalampeta/"
+  },
+  {
+    "slug": "hanna-kwon",
+    "name": "Hanna Kwon",
+    "role": null,
+    "isExec": null,
+    "year": 4,
+    "major": "U.S. History",
+    "hometown": "Los Feliz, CA",
+    "careerInterests": [
+      "Law",
+      "Consulting"
+    ],
+    "hobbies": [
+      "Thrifting",
+      "Making Spotify Playlists",
+      "Guitar",
+      "Gardening"
+    ],
+    "photo": "/members/hanna-kwon.avif",
+    "linkedin": "https://www.linkedin.com/in/hanna-kwon-83657b354/"
+  },
+  {
+    "slug": "sophia-furnival",
+    "name": "Sophia Furnival",
+    "role": null,
+    "isExec": null,
+    "year": 3,
+    "major": "Cognitive Science (Machine Learning)",
+    "hometown": "Fort Worth, TX",
+    "careerInterests": [
+      "Finance",
+      "Consulting",
+      "Product Management"
+    ],
+    "hobbies": [
+      "Painting",
+      "Hiking",
+      "Traveling",
+      "Baking"
+    ],
+    "photo": "/members/sophia-furnival.avif",
+    "linkedin": "https://www.linkedin.com/in/snfurni/"
+  },
+  {
+    "slug": "sophie-mandal",
+    "name": "Sophie Mandal",
+    "role": null,
+    "isExec": null,
+    "year": 3,
+    "major": "Cognitive Science (Design & Interaction)",
+    "hometown": "Benicia, CA",
+    "careerInterests": [
+      "Product Management",
+      "UI/UX Design",
+      "Marketing"
+    ],
+    "hobbies": [
+      "Baking and cooking",
+      "Crafts",
+      "Finding new music (R&B + EDM)"
+    ],
+    "photo": "/members/sophie-mandal.avif",
+    "linkedin": "https://www.linkedin.com/in/sophie-c-mandal/"
   }
 ]
