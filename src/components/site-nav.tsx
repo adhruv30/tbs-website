@@ -20,7 +20,7 @@ export function SiteNav() {
   const solid = !overlaysHero || scrolled || menuOpen
 
   /*
-   * The recruitment page is a full-bleed black flyer, so the chrome above it
+   * The recruitment page is a full-bleed flyer spread on black, so the chrome above it
    * takes the flyer's own ground instead of the site navy -- navy would draw a
    * seam straight across the top of the artwork. Opaque rather than the usual
    * /95 blur, since a translucent bar over the parchment body lifts off black.

@@ -23,8 +23,8 @@ export const metadata: Metadata = {
  * Reads `public/recruitment/` at build time and resolves each flyer through
  * a static import, so dropping the design team's artwork in needs no code edit
  * and always gets a fresh content-hashed URL. Same convention as the hero and
- * the gallery strip. The page shows the first one; the rest of the panel is
- * the FAQ.
+ * the gallery strip. Every flyer is shown, side by side in filename order, so
+ * prefix them with a number to set the order.
  *
  * Extensions must be lowercase: the filter below is case-insensitive so an
  * uppercase `.PNG` off a design export still gets picked up, but Turbopack's
@@ -60,95 +60,85 @@ async function getFlyers(): Promise<StaticImageData[]> {
 
 export default async function RecruitmentPage() {
   const flyers = await getFlyers()
-  const flyer = flyers[0]
   const { faq } = recruitmentPage
   const instagramUrl = `https://www.instagram.com/${faq.more.instagram}/`
 
   return (
     /*
-     * Flyer left, FAQ right, together filling the viewport below the nav
-     * (5rem + 1px at md and up). `ink` is the flyer's own ground sampled from
-     * the artwork, not plain black: the flyer is black-backed edge to edge, so
-     * matching it exactly is what makes the letterboxing `contain` leaves over
-     * read as part of the artwork instead of as empty page. Pure black is a
-     * shade off and shows up as a seam beside the flyer. The nav and footer
-     * take the same ground on this route.
-     *
-     * Below md the two stack and the section grows normally -- half a phone
-     * width is not enough to read either the flyer or the answers.
+     * `ink` is near-black; the nav and footer take it too on this route, so
+     * the flyers sit on one continuous dark ground.
      */
-    <section className="bg-ink text-parchment">
-      <div className="flex min-h-[calc(100svh-4rem-1px)] flex-col sm:min-h-[calc(100svh-5rem-1px)] md:h-[calc(100svh-5rem-1px)] md:min-h-0 md:flex-row">
-        {/* The flyer carries its own copy, so the page heading is for screen
-            readers and the tab title only. */}
-        <h1 className="sr-only">{recruitmentPage.heading}</h1>
+    <section className="bg-ink text-white">
+      {/* The flyers carry their own copy, so the page heading is for screen
+          readers and the tab title only. */}
+      <h1 className="sr-only">{recruitmentPage.heading}</h1>
 
-        {flyer ? (
-          <Image
-            src={flyer}
-            alt={`${recruitmentPage.heading} flyer`}
-            sizes="(min-width: 768px) 42vw, 100vw"
-            priority
-            className="h-auto w-full object-contain md:h-full md:w-[42%] md:shrink-0 md:object-left"
-          />
-        ) : (
-          // Awaiting artwork -- a blank column would read as broken.
-          <p className="m-6 rounded-lg border border-dashed border-parchment/25 px-6 py-20 text-center text-parchment/70 md:w-[42%] md:shrink-0">
-            {recruitmentPage.emptyNote}
+      {flyers.length > 0 ? (
+        /*
+         * Edge to edge, split evenly across the viewport width. Below sm they
+         * stack -- half a phone width is too small to read the schedule.
+         */
+        <div className="grid grid-cols-1 sm:grid-flow-col sm:auto-cols-fr">
+          {flyers.map((flyer, i) => (
+            <Image
+              key={flyer.src}
+              src={flyer}
+              alt={`${recruitmentPage.heading} flyer ${i + 1}`}
+              sizes={`(min-width: 640px) ${Math.round(100 / flyers.length)}vw, 100vw`}
+              priority={i < 2}
+              className="h-auto w-full"
+            />
+          ))}
+        </div>
+      ) : (
+        // Awaiting artwork -- a blank band would read as broken.
+        <p className="mx-6 my-10 rounded-lg border border-dashed border-white/30 px-6 py-20 text-center text-white/80">
+          {recruitmentPage.emptyNote}
+        </p>
+      )}
+
+      <div className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10 sm:py-20">
+        {/* Set like the flyers' own headlines: heavy, uppercase, white. */}
+        <h2 className="text-center text-3xl leading-tight font-extrabold tracking-tight uppercase sm:text-4xl">
+          {faq.heading}
+        </h2>
+
+        <dl className="mt-10 divide-y divide-white/20 border-y border-white/20">
+          {faq.items.map((item) => (
+            <div key={item.question} className="py-5">
+              <dt className="text-lg leading-snug font-bold text-white">
+                {item.question}
+              </dt>
+              <dd className="mt-2 leading-relaxed text-white/80">
+                {item.answer}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        <div className="mt-10 text-center">
+          <h3 className="text-xl leading-snug font-extrabold tracking-tight uppercase">
+            {faq.more.heading}
+          </h3>
+          <p className="mt-2 leading-relaxed text-white/80">
+            {faq.more.before}
+            <a
+              href={`mailto:${site.email}`}
+              className="text-white underline decoration-white/40 underline-offset-2 transition-colors hover:text-gold-300 hover:decoration-gold-300"
+            >
+              {site.email}
+            </a>
+            {faq.more.between}
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-white underline decoration-white/40 underline-offset-2 transition-colors hover:text-gold-300 hover:decoration-gold-300"
+            >
+              @{faq.more.instagram}
+            </a>
+            .
           </p>
-        )}
-
-        {/*
-         * Sized off viewport height, since height is what has to stay inside
-         * the flyer's. The clamps keep it readable on a short laptop without
-         * overflowing; `overflow-y-auto` is the backstop if a future answer
-         * pushes past the bottom.
-         */}
-        <div className="min-w-0 flex-1 px-6 py-10 sm:px-10 md:h-full md:overflow-y-auto md:py-[clamp(1rem,4vh,3rem)]">
-          <h2 className="text-[clamp(1.15rem,3vh,1.9rem)] leading-tight font-semibold tracking-tight text-gold-400">
-            {faq.heading}
-          </h2>
-
-          <dl className="mt-[clamp(0.6rem,1.8vh,1.4rem)] divide-y divide-parchment/10">
-            {faq.items.map((item) => (
-              <div
-                key={item.question}
-                className="py-[clamp(0.35rem,1.1vh,0.8rem)]"
-              >
-                <dt className="text-[clamp(0.72rem,1.6vh,0.95rem)] leading-snug font-semibold text-parchment">
-                  {item.question}
-                </dt>
-                <dd className="mt-[0.2em] text-[clamp(0.68rem,1.45vh,0.875rem)] leading-snug text-parchment/70">
-                  {item.answer}
-                </dd>
-              </div>
-            ))}
-          </dl>
-
-          <div className="mt-[clamp(0.6rem,1.8vh,1.4rem)]">
-            <h3 className="text-[clamp(0.78rem,1.7vh,1.05rem)] leading-snug font-semibold text-gold-400">
-              {faq.more.heading}
-            </h3>
-            <p className="mt-[0.2em] text-[clamp(0.68rem,1.45vh,0.875rem)] leading-snug text-parchment/70">
-              {faq.more.before}
-              <a
-                href={`mailto:${site.email}`}
-                className="text-parchment underline decoration-parchment/30 underline-offset-2 transition-colors hover:text-gold-400 hover:decoration-gold-400"
-              >
-                {site.email}
-              </a>
-              {faq.more.between}
-              <a
-                href={instagramUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-parchment underline decoration-parchment/30 underline-offset-2 transition-colors hover:text-gold-400 hover:decoration-gold-400"
-              >
-                @{faq.more.instagram}
-              </a>
-              .
-            </p>
-          </div>
         </div>
       </div>
     </section>

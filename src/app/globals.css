@@ -11,10 +11,8 @@
   --color-gold-400: #d9b45f;
   --color-gold-300: #e8d199;
 
-  /* The recruitment flyer's own ground, sampled from the artwork. The
-     recruitment page, and the nav and footer while on it, are painted with it
-     so the flyer has no visible edge -- plain black is a shade off and shows
-     as a seam down the side of the artwork. */
+  /* Near-black ground for the recruitment page, and the nav and footer while
+     on it, so the flyers sit on a dark stage rather than the site navy. */
   --color-ink: #0b0b0b;
 
   --color-parchment: #faf8f4;
