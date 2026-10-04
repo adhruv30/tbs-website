@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!.env.example
+
+# member sign-in emails, read by `pnpm seed:emails`
+/scripts/member-emails.csv
+
+# mock backend data for `next dev` without Supabase
+/.dev-data

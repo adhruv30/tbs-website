@@ -3,6 +3,7 @@ import path from 'node:path'
 
 import type { Metadata } from 'next'
 import Image, { type StaticImageData } from 'next/image'
+import Link from 'next/link'
 
 import { pageOpenGraph, recruitmentPage, site } from '@/data/site'
 
@@ -98,6 +99,15 @@ export default async function RecruitmentPage() {
       )}
 
       <div className="mx-auto w-full max-w-3xl px-6 py-16 sm:px-10 sm:py-20">
+        <div className="mb-16 text-center">
+          <Link
+            href="/apply"
+            className="inline-block rounded-md bg-gold-500 px-8 py-3 text-lg font-extrabold tracking-tight text-ink uppercase transition-colors hover:bg-gold-400"
+          >
+            {recruitmentPage.applyCta}
+          </Link>
+        </div>
+
         {/* Set like the flyers' own headlines: heavy, uppercase, white. */}
         <h2 className="text-center text-3xl leading-tight font-extrabold tracking-tight uppercase sm:text-4xl">
           {faq.heading}

@@ -1,6 +1,13 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  experimental: {
+    serverActions: {
+      // The application form carries a headshot and a resume, each up to 5 MB.
+      bodySizeLimit: '11mb',
+    },
+  },
+
   images: {
     // Next.js 16 only allows qualities listed here (default: [75]).
     // 70 is used for the hero backdrop, which sits behind a heavy scrim.

@@ -88,9 +88,13 @@ export const navLinks: NavLink[] = [
     ],
   },
   { label: 'Recruitment', href: '/recruitment' },
+  { label: 'Apply', href: '/apply' },
   { label: 'About', href: '/#about' },
   { label: 'Contact', href: '/#contact' },
 ]
+
+/** Sits at the end of the nav, apart from the public links. */
+export const memberLogin = { label: 'Member Login', href: '/login' }
 
 export const socials: Social[] = [
   {
@@ -148,6 +152,7 @@ export const recruitmentPage = {
     'Recruitment week information and FAQs for Triton Business Society, fall quarter 2026.',
   /** Shown only while `public/recruitment/` is empty. */
   emptyNote: 'Flyers coming soon.',
+  applyCta: 'Apply now',
   faq: {
     heading: 'Recruitment FAQs',
     items: [
@@ -194,6 +199,62 @@ export const recruitmentPage = {
       between: ' or DM us on Instagram ',
       instagram: 'tritonbusinesssociety',
     },
+  },
+}
+
+export type ApplyPrompt = {
+  /** Key in `applications.answers`; renaming one orphans answers already submitted. */
+  id: string
+  label: string
+  maxLength: number
+}
+
+export const applyPage = {
+  heading: "Apply to TBS",
+  description:
+    "Apply to join Triton Business Society for fall quarter 2026. One application per email.",
+  /**
+   * Stamped on every submission. The one-per-email rule is per cycle, so bump
+   * this for winter recruitment and past applicants can apply again.
+   */
+  cycle: 'fall-2026',
+  intro:
+    'Tell us about yourself. Everything is on this one page, so you can submit in a single sitting. You can only apply once with each email address.',
+  photoHint: 'A clear photo of your face, so members can put a name to it. JPEG, PNG or WebP, up to 5 MB.',
+  resumeHint: 'PDF, up to 5 MB.',
+  prompts: [
+    {
+      id: 'why_tbs',
+      label: 'Why do you want to join Triton Business Society?',
+      maxLength: 1500,
+    },
+    {
+      id: 'contribution',
+      label: 'What would you bring to our community?',
+      maxLength: 1500,
+    },
+    {
+      id: 'goals',
+      label: 'What are your professional goals, and how would TBS help you reach them?',
+      maxLength: 1500,
+    },
+  ] satisfies ApplyPrompt[],
+  submit: 'Submit application',
+  success: {
+    heading: 'Application received',
+    body: "Thanks for applying! We'll be in touch by email. See you at recruitment week.",
+  },
+  duplicate:
+    'An application has already been submitted with this email. If you need to change it, email us.',
+}
+
+export const portalCopy = {
+  login: {
+    heading: 'Member sign in',
+    body: 'Active members sign in with the Google account their TBS roster email belongs to.',
+    notAMember:
+      "That Google account isn't on the member roster. Sign in with your roster email, or ask an admin to add you.",
+    failed: 'Sign in failed. Please try again.',
   },
 }
 
