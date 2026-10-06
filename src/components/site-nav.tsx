@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import { SocialLinks } from '@/components/social-icons'
-import { navLinks, site, socials } from '@/data/site'
+import { memberLogin, navLinks, site, socials } from '@/data/site'
 
 export function SiteNav() {
   const pathname = usePathname()
@@ -150,6 +150,12 @@ export function SiteNav() {
             className="flex items-center gap-4 border-l border-parchment/20 pl-7"
             linkClassName="block text-parchment/70 transition-colors hover:text-gold-400"
           />
+          <Link
+            href={memberLogin.href}
+            className="rounded-full border border-gold-400/60 px-4 py-1.5 text-sm font-medium tracking-wide text-gold-300 transition-colors hover:border-gold-400 hover:bg-gold-400 hover:text-navy-950"
+          >
+            {memberLogin.label}
+          </Link>
         </div>
 
         <button
@@ -219,6 +225,15 @@ export function SiteNav() {
                 )}
               </li>
             ))}
+            <li>
+              <Link
+                href={memberLogin.href}
+                onClick={() => setMenuOpen(false)}
+                className="block py-4 font-serif text-lg text-gold-300 transition-colors hover:text-gold-400"
+              >
+                {memberLogin.label}
+              </Link>
+            </li>
           </ul>
           <SocialLinks
             items={socials}

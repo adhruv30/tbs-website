@@ -92,6 +92,23 @@ export const navLinks: NavLink[] = [
   { label: 'Contact', href: '/#contact' },
 ]
 
+/** Sits at the end of the nav, apart from the public links. */
+export const memberLogin = { label: 'Member Login', href: '/login' }
+
+export const portalCopy = {
+  login: {
+    heading: 'Member sign in',
+    body: 'Active members sign in with the Google account their TBS roster email belongs to.',
+    notAMember:
+      "That Google account isn't on the member roster. Sign in with your roster email, or ask an admin to add you.",
+    failed: 'Sign in failed. Please try again.',
+  },
+  home: {
+    heading: 'Member portal',
+    body: "You're signed in. Member tools will show up here as they launch.",
+  },
+}
+
 export const socials: Social[] = [
   {
     label: 'Instagram',
