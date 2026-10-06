@@ -1,11 +1,21 @@
 /**
- * One-off seeder: pushes src/data/members.json into the Supabase `members`
- * table. Upserts on `slug`, so re-running it is safe and idempotent.
+ * Pushes src/data/members.json into the Supabase `members` table. Upserts on
+ * `slug`, so re-running it is safe and idempotent.
  *
  *   pnpm seed:members
  *
- * Runs with the service role key, which bypasses RLS — keep it local, never
- * import this from app code.
+ * Also runs before every Vercel production build (`--deploy`), so adding a
+ * member to the JSON and deploying is enough to put them on the roster. With
+ * `--deploy` anywhere else -- previews, local `pnpm build` -- it does nothing.
+ *
+ * Never writes `email`: sign-in emails are set separately (`pnpm seed:emails`
+ * or the Supabase dashboard), and the upsert only touches the columns it
+ * sends, so they survive a re-sync. Never deletes either: dropping a member
+ * from the JSON only warns, since deleting their row would also delete their
+ * votes.
+ *
+ * Runs with the service role key, which bypasses RLS — never import this from
+ * app code.
  */
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
@@ -17,6 +27,11 @@ import { config } from 'dotenv'
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
 config({ path: path.join(repoRoot, '.env.local') })
+
+if (process.argv.includes('--deploy') && process.env.VERCEL_ENV !== 'production') {
+  console.log('Skipping member sync: not a Vercel production build.')
+  process.exit(0)
+}
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
 const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -46,7 +61,6 @@ type MemberJson = {
 
 type MemberRow = {
   slug: string
-  email: null
   name: string
   role: string | null
   is_exec: boolean
@@ -63,7 +77,6 @@ type MemberRow = {
 function toRow(member: MemberJson): MemberRow {
   return {
     slug: member.slug,
-    email: null,
     name: member.name,
     role: member.role,
     // The column is NOT NULL; `isExec: null` means "unconfirmed" => not exec.
@@ -111,6 +124,16 @@ async function main() {
   console.log(
     `Admins: ${rows.filter((row) => row.is_admin).map((row) => row.slug).join(', ')}`,
   )
+
+  const { data: all, error: listError } = await supabase.from('members').select('slug')
+  if (listError) throw new Error(`Listing members failed: ${listError.message}`)
+  const inJson = new Set(rows.map((row) => row.slug))
+  const extra = all.map((row) => row.slug).filter((slug) => !inJson.has(slug))
+  if (extra.length > 0) {
+    console.warn(
+      `In Supabase but not members.json (left as is; clear their email to revoke sign-in): ${extra.join(', ')}`,
+    )
+  }
 }
 
 main().catch((error) => {
