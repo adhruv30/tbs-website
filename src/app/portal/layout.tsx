@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { requireMember } from '@/lib/dal'
 
 export const metadata: Metadata = {
-  title: { default: 'Member portal', template: '%s · TBS portal' },
+  title: { default: 'Member Portal', template: '%s · TBS portal' },
   robots: { index: false, follow: false },
 }
 
