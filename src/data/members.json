@@ -126,7 +126,7 @@
     ],
     "hobbies": [
       "Soccer",
-      "Food Vlogs", 
+      "Food Vlogs",
       "NYT MiniGames"
     ],
     "photo": "/members/nevin-peppers.avif",
@@ -530,28 +530,6 @@
     ],
     "photo": "/members/dina-choi.avif",
     "linkedin": "https://www.linkedin.com/in/dina-choi/"
-  },
-  {
-    "slug": "jessie-hu",
-    "name": "Jessie Hu",
-    "role": null,
-    "isExec": null,
-    "year": 3,
-    "major": "International Business & Art History",
-    "hometown": "Shanghai",
-    "careerInterests": [
-      "Art",
-      "Business"
-    ],
-    "hobbies": [
-      "Dancing",
-      "Music festivals",
-      "Film",
-      "Photography",
-      "Hinar"
-    ],
-    "photo": "/members/jessie-hu.avif",
-    "linkedin": "https://www.linkedin.com/in/jessie-hu1/"
   },
   {
     "slug": "katrina-dinh",
